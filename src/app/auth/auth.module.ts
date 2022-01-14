@@ -18,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     CommonModule,
     AuthRoutingModule,
     MatDialogModule
-  ]
+  ],
+  exports:[SignInComponent, ForgotPasswordComponent, CreateAccountComponent, VerificationComponent, SetPasswordComponent, ProfileSetupComponent, CongratulationsComponent]
 })
 export class AuthModule { }

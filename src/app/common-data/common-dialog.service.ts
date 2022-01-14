@@ -17,6 +17,7 @@ import { JobDetailsComponent } from './job-details/job-details.component';
 import { ApplyJobComponent } from './apply-job/apply-job.component';
 import { JobThankyouComponent } from './job-thankyou/job-thankyou.component';
 import { FireworksNightComponent } from './fireworks-night/fireworks-night.component';
+import { SignInComponent } from '../auth/sign-in/sign-in.component';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,14 @@ export class CommonDialogService {
     // dialogRef.componentInstance.data = val;
     return dialogRef.afterClosed();
   }
+  openSignIn() {
+    let dialogRef: MatDialogRef<SignInComponent>;
+    dialogRef = this.dialog.open(SignInComponent);
+    // dialogRef.componentInstance.data = val;
+    return dialogRef.afterClosed();
+  }
+  
+
   openforget() {
     let dialogRef: MatDialogRef<ForgetPassComponent>;
     dialogRef = this.dialog.open(ForgetPassComponent);
