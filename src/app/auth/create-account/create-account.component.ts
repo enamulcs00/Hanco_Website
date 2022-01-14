@@ -15,7 +15,7 @@ export class CreateAccountComponent implements OnInit {
   }
    
   openLogin(){
-    this.dialog.closeAll();
+    //this.dialog.closeAll();
     this.commonData.openSignIn();
   }
 
