@@ -9,13 +9,15 @@ import { VerificationComponent } from './verification/verification.component';
 import { SetPasswordComponent } from './set-password/set-password.component';
 import { ProfileSetupComponent } from './profile-setup/profile-setup.component';
 import { CongratulationsComponent } from './congratulations/congratulations.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [SignInComponent, ForgotPasswordComponent, CreateAccountComponent, VerificationComponent, SetPasswordComponent, ProfileSetupComponent, CongratulationsComponent],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    MatDialogModule
   ]
 })
 export class AuthModule { }
