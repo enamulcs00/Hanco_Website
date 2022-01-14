@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { CommonDialogService } from 'src/app/common-data/common-dialog.service';
+import { ProfileSetupComponent } from 'src/app/common-data/profile-setup/profile-setup.component';
 
 @Component({
   selector: 'app-create-account',
@@ -18,5 +19,9 @@ export class CreateAccountComponent implements OnInit {
     //this.dialog.closeAll();
     this.commonData.openSignIn();
   }
-
+  
+  openSigUp(){
+    this.dialog.closeAll();
+    this.commonData.profileSetup(0);
+  }
 }
