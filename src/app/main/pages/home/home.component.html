@@ -1,0 +1,392 @@
+<!-- <section class="banner_sec">
+    <div class="conta_iner">
+        <div class="bnner_inner">
+          <h2>URUS GRAPHITE CAPSULE</h2>
+          <h1>UNLOCK ANY ROAD</h1>
+          <p>LEARN MORE</p>
+        </div>
+      </div>
+  </section> -->
+  <section  class="banner_sec">
+    <ngx-slick-carousel class="carousel slide_point" #slickModal="slick-carousel" [config]="slideConfig" (afterChange)="afterChange($event)">
+      <div ngxSlickItem *ngFor="let slide of slides;let i=index">
+          <img [src]="slide.img" alt="" width="100%">
+          <div class="conta_iner">
+          <div class="bnner_inner">
+            <h2>URUS GRAPHITE CAPSULE</h2>
+            <h1>UNLOCK ANY ROAD</h1>
+            <p><a href="">LEARN MORE</a></p>
+            <div class="totl_sld"><span>{{currentSlide}}</span><span>/{{totalSlide}}</span></div>
+          </div>
+        
+        </div>
+      </div>
+  </ngx-slick-carousel>
+  </section>
+  <section class="emty_spec">
+  </section> 
+  <section class="form_sec">
+    <div class="conta_iner">
+        <div class="form_sec_inner">
+          <h2>Search Your Best Cars.</h2>
+          <form action="" class="f_form_in">
+            <div class="form-group loctin_cls">
+              <label for="search">Location</label>
+              <div class="psw_cls">
+                <input type="text" class="form-control" placeholder="Search" id="search">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </div>
+            </div> 
+            <div class="form-group">
+              <label for="price">Price</label>
+              <div class="psw_cls">
+              <select class="form-control" id="price">
+                <option selected>Select Price</option>
+                <option>100</option>
+                <option>200</option>
+                <option>300</option>
+              </select>
+              <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="year">Year</label>
+              <div class="psw_cls">
+              <select class="form-control" id="year">
+                <option selected>Select Year</option>
+                <option>2018</option>
+                <option>2019</option>
+                <option>2020</option>
+              </select>
+              <i class="fa fa-caret-down"></i>
+            </div>
+            </div>
+            <div class="form-group">
+              <label for="km">KM</label>
+              <div class="psw_cls">
+              <select class="form-control" id="km">
+                <option selected>Select Km</option>
+                <option>10km</option>
+                <option>20km</option>
+                <option>30km</option>
+              </select>
+              <i class="fa fa-caret-down"></i>
+            </div>
+            </div>
+            <div class="form-group">
+              <label for="body_type">Body Type</label>
+              <div class="psw_cls">
+              <select class="form-control" id="body_type">
+                <option selected>Select Body</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+              <i class="fa fa-caret-down"></i>
+            </div>
+            </div>
+  
+  
+  
+            <div class="form-group fom_grp_sec1">
+              <label for="brand_name">Brand Name</label>
+              <div class="psw_cls">
+              <select class="form-control" id="brand_name">
+                <option selected>Select Brand</option>
+                <option>Hyundai</option>
+                <option>Toyota</option>
+                <option>KIA</option>
+                <option>Mahindra</option>
+                <option>Tata Motors</option>
+              </select>
+              <i class="fa fa-caret-down"></i>
+            </div>
+            </div>
+            <div class="form-group fom_grp_sec1">
+              <label for="model_name">Model Name</label>
+              <div class="psw_cls">
+              <select class="form-control" id="model_name">
+                <option selected>Select Model</option>
+                <option>Hyundai Venue</option>
+                <option>Tata Punch</option>
+                <option>Hyundai Creta</option>
+              </select>
+              <i class="fa fa-caret-down"></i>
+            </div>
+            </div>
+            <div class="form-group fom_grp_sec">
+              <label for="fuel_type">Fuel Type</label>
+              <div class="psw_cls">
+              <select class="form-control" id="fuel_type">
+                <option selected>Select Fuel</option>
+                <option>10km</option>
+                <option>20km</option>
+                <option>30km</option>
+              </select>
+              <i class="fa fa-caret-down"></i>
+            </div>
+            </div>
+            <div class="form-group fom_grp_sec">
+              <label for="transmission">Transmission Type</label>
+              <div class="psw_cls">
+              <select class="form-control" id="transmission">
+                <option selected>Select</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+              <i class="fa fa-caret-down"></i>
+            </div>
+            </div>
+            <div class="form-group fom_grp_sec">
+              <label for="color">Color</label>
+              <div class="psw_cls">
+              <select class="form-control" id="color">
+                <option selected>Select Color</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+              <i class="fa fa-caret-down"></i>
+            </div>
+            </div>
+  
+              <div class="flter_btn">
+                <div class="btn_commn">
+                    <button type="submit" class="btn clr_btn" >Clear Filters</button>
+                    <button type="submit" class="btn btn-primary" routerLink="../carlisting" >Search</button>
+                  </div>
+            </div>
+            
+          
+          </form>
+        </div>
+      </div>
+  
+  </section> 
+  
+
+
+  <section class="logo_sec comn_pd">
+    <div class="conta_iner">
+        <ul class="nav nav-tabs logo_inner"  role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#logo1" role="tab"><img src="/assets/images/tesla.png " alt="Logo" class="img-fluid"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#logo2" role="tab"><img src="/assets/images/bmw.png " alt="Logo" class="img-fluid"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#logo3" role="tab"><img src="/assets/images/mg.png " alt="Logo" class="img-fluid"></a>
+            </li>      
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#logo4" role="tab"><img src="/assets/images/hyundai.png " alt="Logo" class="img-fluid"></a>
+            </li>   
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#logo6" role="tab"><img src="/assets/images/toyota.png " alt="Logo" class="img-fluid"></a>
+            </li>   
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#logo6" role="tab"><img src="/assets/images/car-logo.png " alt="Logo" class="img-fluid"></a>
+            </li>      
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="logo1" role="tabpanel">
+                <div class="logo_inner">
+                    <h2>Watchlist</h2>
+                    <a href="">See All</a>
+                </div>
+                <div class="d_flex logo_inner">
+                    <div class="watch_lst">
+                        <figure>
+                            <img src="/assets/images/car_2.jpg " alt="Logo" class="img-fluid">
+                        </figure>
+                        <div class="prc_lst">
+                               <h3>Range Rover 2018 Model</h3>
+                              <h4>$1500.00</h4>
+                        </div>
+                            <div class="prc_btn">
+                                <button type="submit" class="btn clr_btn"   routerLink="/main/buynow">Bid Now</button>
+                                <button type="submit" class="btn btn-primary"   routerLink="/main/buynow">Buy Now</button>
+                            </div>
+                    </div>
+                    <div class="watch_lst">
+                        <figure>
+                            <img src="/assets/images/car_1.jpg " alt="Logo" class="img-fluid">
+                        </figure>
+                        <div class="prc_lst">
+                               <h3>Range Rover 2018 Model</h3>
+                              <h4>$1500.00</h4>
+                        </div>
+                            <div class="prc_btn">
+                                <button type="submit" class="btn clr_btn"   routerLink="/main/buynow">Bid Now</button>
+                                <button type="submit" class="btn btn-primary"   routerLink="/main/buynow">Buy Now</button>
+                            </div>
+                    </div>
+                    <div class="watch_lst">
+                        <figure>
+                            <img src="/assets/images/car_3.jpg " alt="Logo" class="img-fluid">
+                        </figure>
+                        <div class="prc_lst">
+                               <h3>Range Rover 2018 Model</h3>
+                              <h4>$1500.00</h4>
+                        </div>
+                            <div class="prc_btn">
+                                <button type="submit" class="btn clr_btn"   routerLink="/main/buynow">Bid Now</button>
+                                <button type="submit" class="btn btn-primary"   routerLink="/main/buynow">Buy Now</button>
+                            </div>    
+                      </div>
+                </div>
+            </div>
+
+            <div  class="tab-pane " id="logo2" role="tabpanel">
+                <div class="logo_inner">
+                    <h2>Watchlist</h2>
+                    <a>See All</a>
+                </div>
+                <div class="d_flex logo_inner">
+                  
+                    <div class="watch_lst">
+                        <figure>
+                            <img src="/assets/images/car_1.jpg " alt="Logo" class="img-fluid">
+                        </figure>
+                        <div class="prc_lst">
+                               <h3>Range Rover 2018 Model</h3>
+                              <h4>$1500.00</h4>
+                        </div>
+                            <div class="prc_btn">
+                                <button type="submit" class="btn clr_btn" >Bid Now</button>
+                                <button type="submit" class="btn btn-primary" >Buy Now</button>
+                            </div>
+                    </div>
+                    <div class="watch_lst">
+                        <figure>
+                            <img src="/assets/images/car_2.jpg " alt="Logo" class="img-fluid">
+                        </figure>
+                        <div class="prc_lst">
+                               <h3>Range Rover 2018 Model</h3>
+                              <h4>$1500.00</h4>
+                        </div>
+                            <div class="prc_btn">
+                                <button type="submit" class="btn clr_btn" >Bid Now</button>
+                                <button type="submit" class="btn btn-primary" >Buy Now</button>
+                            </div>
+                    </div>
+                    <div class="watch_lst">
+                        <figure>
+                            <img src="/assets/images/car_3.jpg " alt="Logo" class="img-fluid">
+                        </figure>
+                        <div class="prc_lst">
+                               <h3>Range Rover 2018 Model</h3>
+                              <h4>$1500.00</h4>
+                        </div>
+                            <div class="prc_btn">
+                                <button type="submit" class="btn clr_btn" >Bid Now</button>
+                                <button type="submit" class="btn btn-primary" >Buy Now</button>
+                            </div>    
+                      </div>
+                </div>
+
+            </div>
+            <div  class="tab-pane " id="logo3" role="tabpanel">
+                <div class="logo_inner">
+                    <h2>Watchlist</h2>
+                    <a>See All</a>
+                </div>
+                <div class="d_flex logo_inner">
+                  
+                    <div class="watch_lst">
+                        <figure>
+                            <img src="/assets/images/car_1.jpg " alt="Logo" class="img-fluid">
+                        </figure>
+                        <div class="prc_lst">
+                               <h3>Range Rover 2018 Model</h3>
+                              <h4>$1500.00</h4>
+                        </div>
+                            <div class="prc_btn">
+                                <button type="submit" class="btn clr_btn" >Bid Now</button>
+                                <button type="submit" class="btn btn-primary" >Buy Now</button>
+                            </div>
+                    </div>
+                    <div class="watch_lst">
+                        <figure>
+                            <img src="/assets/images/car_3.jpg " alt="Logo" class="img-fluid">
+                        </figure>
+                        <div class="prc_lst">
+                               <h3>Range Rover 2018 Model</h3>
+                              <h4>$1500.00</h4>
+                        </div>
+                            <div class="prc_btn">
+                                <button type="submit" class="btn clr_btn" >Bid Now</button>
+                                <button type="submit" class="btn btn-primary" >Buy Now</button>
+                            </div>    
+                      </div>
+                      <div class="watch_lst">
+                        <figure>
+                            <img src="/assets/images/car_2.jpg " alt="Logo" class="img-fluid">
+                        </figure>
+                        <div class="prc_lst">
+                               <h3>Range Rover 2018 Model</h3>
+                              <h4>$1500.00</h4>
+                        </div>
+                            <div class="prc_btn">
+                                <button type="submit" class="btn clr_btn" >Bid Now</button>
+                                <button type="submit" class="btn btn-primary" >Buy Now</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>       
+      </div>
+  
+  </section>
+
+  <section class="abouthanco_sec">
+    <div class="conta_iner">
+        <div class="abouthanco_inner">
+          <div class="abouthanco_lft">
+            <h3>ABOUT Hanco</h3>
+            <h2><span>LEADING</span> Seller AND CAR Bidding</h2>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
+              ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo 
+              duo dolores et ea rebum. </p>
+          </div>
+          <div class="abouthanco_rgt">
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
+              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
+              labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                 justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </p>
+          </div>
+          <div class="abouthanco_btm">
+            <figure><img src="/assets/images/about_img.jpg " alt="Images" class="img-fluid"></figure>
+          </div>
+        </div>
+      </div>
+  
+  </section>
+
+
+  <section class="service_sec">
+    <div class="conta_iner">
+        <div class="srv_inner">
+          <div class="srv_lft">
+            <figure><img src="/assets/images/srev_img.jpg " alt="Images" class="img-fluid"></figure>
+          </div>
+          <div class="srv_rgt">
+            <h2>Service and Repair</h2>
+            
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+              no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet</p>
+              <ul>
+                <li><img src="/assets/images/checkicon.png " alt="Images" class="img-fluid"> Pay After Approval</li>
+                <li><img src="/assets/images/checkicon.png " alt="Images" class="img-fluid"> Experienced Team</li>
+                <li><img src="/assets/images/checkicon.png " alt="Images" class="img-fluid"> Quick Set-up Facility</li>
+                <li><img src="/assets/images/checkicon.png " alt="Images" class="img-fluid"> Bigger Fleet Capacity</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+  
+  </section>

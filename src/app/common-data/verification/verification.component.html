@@ -1,0 +1,34 @@
+<div class="pop_up">
+    <div class="ym_gtstr_skp">
+        <button type="button" (click)="Close()" class="close">×</button>
+    </div>
+    <div class="prep_login">
+        <div class="ym_gtstr_btm forget_pass">
+            <h4>Let's us verify your information</h4>
+            <p>
+                It is a long established fact that a reader will be distracted by the
+                readable content of a page when looking at its layout.
+            </p>
+            <div class="verfy_btn">
+                <div (click)="status1 = true; status0 = false">
+                    <div class="verfy_left" [ngClass]="status1 ==true ? 'active' : ''" >
+                        <figure class="mb-4">
+                            <img src="assets/images/email-vari.png" alt="" />
+                        </figure>
+                        <button class="btn vrfy_btn" [ngClass]="status1 ? 'active' : ''">Email</button>
+                    </div>
+                </div>
+                  <div (click)="status0 = true; status1 = false">
+                    <div class="verify_ryt" [ngClass]="status0 ? 'active' : ''">
+                        <figure class="mb-4">
+                            <img src="assets/images/phone-vari.png" alt="" />
+                        </figure>
+                        <button class="btn vrfy_btn" [ngClass]="status0 ? 'active' : ''">Phone</button>
+                    </div>
+                </div>                  
+            </div>
+
+            <button class="btn width-100 mt-4" (click)="onSubmit()" >Continue</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="pop_up ">
+    <div class="ym_gtstr_skp">
+      <button type="button" (click)="Close()" class="close">×</button>
+    </div>
+    <div class="prep_login  ">
+      <div class="ym_gtstr_btm forget_pass">
+        <h4>Phone Verification</h4>
+        <p>Enter 4 Digit Code. We’ll Text You On  <span class="blk_span">{{phone}}</span></p>
+        <figure class="mb-4">
+          <img src="assets/images/otp.png" alt="" />
+        </figure>
+        <div class="ym_gtstr_imgs">
+          <div class="otp_inpt">
+            <ng-otp-input  (onInputChange)="onOtpChange($event)" [config]="{length:4}"></ng-otp-input>
+          </div>  
+          <button class="btn btn-secondary width-100" (click)="verifyOtp()">Verify</button>
+          <p class="mt-3" (click)="resend()">Resend OTP</p>
+        </div>
+      </div>
+    </div>
+  </div>

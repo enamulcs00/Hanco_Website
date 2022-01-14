@@ -1,0 +1,53 @@
+<!-- profile basic setup -->
+<div class="pop_up ">
+    <div class="profile_setup">
+        <div class=" profile_heading ym_gtstr_skp">
+            <div></div>
+            <h4>Profile Setup</h4>
+            <button type="button" (click)="Close()" class="close">X</button>
+        </div>
+
+        <form [formGroup]="form">
+            <div class="basic_up">
+                <div class="profile_upload_img">
+                    <figure>
+                        <img [src]=" form.controls['image'].value ? form.controls['image'].value : 'assets/images/profile-setup.png'" alt="">
+                    </figure>
+                    <div class="upload_img">
+                        <input type="file" name="file" (change)="onImageSelect($event)" id="wizard-picture" aria-invalid="false" class="valid"
+                            accept="image/*" />
+                        <span><img src="assets/images/choose.png" alt=""></span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="continue_logn">
+                <input type="text" placeholder="First Name" formControlName="firstName" class="form_control" />
+            </div>
+            <div class="continue_logn">
+                <input type="text" placeholder="Last Name" formControlName="lastName" class="form_control" />
+            </div>
+            <div class="continue_logn">
+                <input type="email" placeholder="Phone" formControlName="phone" class="form_control" disabled />
+            </div>
+            <div class="continue_logn">
+                <input type="email" placeholder="Email" formControlName="email" class="form_control" disabled />
+            </div>
+            <div class="continue_logn">
+                <input type="date" class="form_control" formControlName="dob" placeholder="Date of birth">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div>
+            <div class="continue_logn">
+                <select id="inputState" class="form_control" formControlName="Gender">
+                    <option value="" disabled>Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+
+                </select>
+            </div>
+            <button class="btn btn-secondary w-100 p-3" (click)="onSubmit()">Next</button>
+        </form>
+        </div>
+</div>

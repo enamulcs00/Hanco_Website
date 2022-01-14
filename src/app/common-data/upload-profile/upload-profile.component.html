@@ -1,0 +1,62 @@
+<!-- upload dociment -->
+<div class="pop_up ">
+    <div class="profile_setup">
+
+
+        <div class=" profile_heading ym_gtstr_skp">
+            <div></div>
+            <h4>Profile Setup</h4>
+            <button type="button" (click)="Close()">X</button>
+        </div>
+
+        <div class="upload_doc">
+            <h5 class="academic">Upload your all Documents including experience and Certifications here:</h5>
+            <div class="doc">
+                <div class="document_up" *ngIf="images && images.length > 0">
+                    <figure *ngFor="let image of images">
+                        <img [src]=" image" alt="" />
+                    </figure>
+                    <button type="button">X</button>
+                </div>
+                <div class="document_up1">
+                   
+               <div class="doc_choose">
+                <input type="file" name="file" id="wizard-picture" (change)="onImageSelect($event)" aria-invalid="false" class="valid"
+                accept="image/*" />
+                <figure>
+                       <img src="assets/images/doc-canera.png" alt="">
+                   </figure>
+               </div>
+                
+                </div>
+            </div>
+            <div class="doc">
+               
+                <!-- <div class="document_up1">
+                   
+               <div class="doc_choose">
+                <input type="file" name="file" id="wizard-picture" aria-invalid="false" class="valid"
+                accept="image/*" />
+                <figure>
+                       <img src="assets/images/doc-canera.png" alt="">
+                   </figure>
+               </div>
+                
+                </div>
+                <div class="document_up1">
+                   
+                    <div class="doc_choose">
+                     <input type="file" name="file" id="wizard-picture" aria-invalid="false" class="valid"
+                     accept="image/*" />
+                     <figure>
+                            <img src="assets/images/doc-canera.png" alt="">
+                        </figure>
+                    </div>
+                     
+                     </div>  -->
+            </div>
+        </div>
+   <button class="btn btn-secondary w-100 p-3" (click)="onSubmit()">Submit</button>
+    </div>
+
+</div>

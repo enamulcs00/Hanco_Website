@@ -1,0 +1,104 @@
+<div class="profile">
+    <div class="conta_iner">
+        <h4>My Profile</h4>
+        <div class="my_profile">
+            <div class="side_profilr">
+                <div class="profilr_mg">
+                    <figure><img [src]=" userDetails.image ? userDetails.image :  'assets/images/profile-setup.png'" alt=""></figure>
+                </div>
+                <div class="profile_cont">
+                    <h4>{{userDetails?.firstName}} {{userDetails?.lastName}} <i class="fas fa-share-alt"></i> </h4>
+                    <p>Exp : 5 Years</p>
+                    <h5 *ngIf = "exp">{{exp?.position}} at {{exp?.EmployerName}}</h5>
+                    <h6><i class="fas fa-map-marker-alt"></i>Mohali, Chandigarh,India</h6>
+                </div>
+            </div>
+            <div class="profile_edit">
+                <p (click)="openProfile()">Edit</p>
+            </div>
+
+        </div>
+
+        <div class="education">
+            <div class="edu_head">
+                <h4>Education</h4>
+                <p (click)="openEducation()" >Edit</p>
+            </div>
+            <div class="edu_contnt" *ngFor="let edu of userDetails.EducationDetails">
+                <div class="edu_lyf">
+                    <figure><img src="assets/images/educaton.svg" alt=""></figure>
+                </div>
+                <div class="edu_contnt_ryt">
+                    <h4>B.tech (Graduate)</h4>
+                    <p>{{edu?.dateStarted | date}} - {{edu?.EndDate | date}} .{{edu?.fieldofstudy}}</p>
+                    <h6>{{edu?.college}}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="experience">
+            <div class="exp_head">
+                <h4>Work Experience</h4>
+                <p (click)="openExp()">Edit</p>
+            </div>
+            <div class="exp_contnt before" *ngFor="let exp of userDetails.ExperienceDetails">
+                <div class="exp_lyf">
+                    <figure class="after"><img src="assets/images/portfolio.svg" alt=""></figure>
+                </div>
+                <div class="exp_contnt_ryt">
+                    <h4>{{exp?.EmployerName}}</h4>
+                    <p>{{exp?.position}}</p>
+                    <h6>{{exp?.dateStarted | date}} - {{exp.dateEnd && exp.dateEnd != '' && exp.dateEnd != 'Invalid date' ? (exp.dateEnd | date) : 'Present'}}</h6>
+                </div>
+            </div>
+            <!-- <div class="exp_contnt">
+                <div class="exp_lyf1">
+                    <figure><img src="assets/images/portfolio.svg" alt=""></figure>
+                </div>
+                <div class="exp_contnt_ryt">
+                    <h4>Tech Mahindra</h4>
+                    <p>UI/UX Designer</p>
+                    <h6>January 2019 - May 2020</h6>
+                </div>
+            </div> -->
+        </div>
+        <div class="experience">
+            <div class="exp_head">
+                <h4>Skills</h4>
+                <p (click)="openSkill()">Edit</p>
+            </div>
+            <div class="exp_contnt_ryt1">
+                <p><span>. Management</span> <span>. Computers</span> <span>. Cooking</span></p>
+            
+            </div>
+        </div>
+        <div class="awards">
+            <div class="award_head">
+                <h4>Certifications & Awards</h4>
+                <p (click)="openCertificate()">Edit</p>
+            </div>
+            <div class="award_contnt">
+                <div class="award_lyf">
+                    <figure><img src="assets/images/certificate.svg" alt=""></figure>
+                </div>
+                <div class="award_contnt_ryt">
+                    <h4>Additional Certifications</h4>
+                    <p>Certified Advanced Emily Bryant</p> 
+                </div>
+            </div>
+            <div class="award_contnt">
+                <div class="award_lyf1">
+                    <figure><img src="assets/images/medal.svg" alt=""></figure>
+                </div>
+                <div class="award_contnt_ryt">
+                    <h4>Awards </h4>
+                    <p>Awarded as Topper of the Batch in B.Tech</p>
+             
+                </div>
+            </div>
+        </div>
+        <div class="awards_btn">
+            <button class="btn btn-secondary width-75">Set Preferences</button>
+        </div>
+    </div>
+
+</div>
