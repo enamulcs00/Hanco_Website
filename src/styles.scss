@@ -2488,7 +2488,7 @@ p {
 .prfle_stup{
   overflow-y: scroll;
     overflow-x: hidden;
-    height: 680px;
+    height: 580px;
 }
 /***********Popup*********************/
 .cdk-overlay-container {
@@ -2502,4 +2502,10 @@ p {
  .modal-body {
   padding: 0;
 }
+}
+.profile-setup-main {
+  max-width: 80% !important;
+}
+.custom-modalbox .btn_commn .btn {
+  width: 100%;
 }
