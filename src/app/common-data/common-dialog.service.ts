@@ -3,14 +3,12 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { EducationComponent1 } from './education/education.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { EmailVerificationComponent } from './email-verification/email-verification.component';
-import { ForgetPassComponent } from './forget-pass/forget-pass.component';
 import { PhoneVerificationComponent } from './phone-verification/phone-verification.component';
 import { SignUpComponent } from './signUp/sign-up/sign-up.component';
 import { SkillsComponent } from './skills/skills.component';
 import { WorkSkillComponent } from './work-skill/work-skill.component';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
 import { UploadProfileComponent } from './upload-profile/upload-profile.component';
-import { CongartsComponent } from './congarts/congarts.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { ApplyJobComponent } from './apply-job/apply-job.component';
 import { JobThankyouComponent } from './job-thankyou/job-thankyou.component';
@@ -18,6 +16,9 @@ import { FireworksNightComponent } from './fireworks-night/fireworks-night.compo
 import { SignInComponent } from '../auth/sign-in/sign-in.component';
 import { ProfileSetupComponent } from '../auth/profile-setup/profile-setup.component';
 import { VerificationComponent } from '../auth/verification/verification.component';
+import { CongratulationsComponent } from '../auth/congratulations/congratulations.component';
+import { ForgotPasswordComponent } from '../auth/forgot-password/forgot-password.component';
+import { SetPasswordComponent } from '../auth/set-password/set-password.component';
 
 @Injectable({
   providedIn: 'root'
@@ -55,8 +56,11 @@ export class CommonDialogService {
   
 
   openforget() {
-    let dialogRef: MatDialogRef<ForgetPassComponent>;
-    dialogRef = this.dialog.open(ForgetPassComponent);
+    let dialogRef: MatDialogRef<ForgotPasswordComponent>;
+    dialogRef = this.dialog.open(ForgotPasswordComponent,{ 
+      panelClass: ['custom-modalbox','custom-forget'],
+      // width:"800px",
+   } );
     // dialogRef.componentInstance.data = val;
     return dialogRef.afterClosed();
   }
@@ -72,19 +76,30 @@ export class CommonDialogService {
     dialogRef.componentInstance.data = {val,type};
     return dialogRef.afterClosed();
   }
-  verification() {
+  verification(val) {
     let dialogRef: MatDialogRef<VerificationComponent>;
     dialogRef = this.dialog.open(VerificationComponent ,{ 
       panelClass: ['custom-modalbox','custom-verf']
       // width:"800px",
    } );
-    // dialogRef.componentInstance.data = val;
+    dialogRef.componentInstance.data = val;
     return dialogRef.afterClosed();
   }
+
   profileSetup() {
     let dialogRef: MatDialogRef<ProfileSetupComponent>;
     dialogRef = this.dialog.open(ProfileSetupComponent, { 
       panelClass: ['custom-modalbox', 'profile-setup-main'],
+      // width:"800px",
+   });
+    // dialogRef.componentInstance.data = val;
+    return dialogRef.afterClosed();
+  }
+
+  setPassword() {
+    let dialogRef: MatDialogRef<SetPasswordComponent>;
+    dialogRef = this.dialog.open(SetPasswordComponent, { 
+      panelClass: ['custom-modalbox', 'set-pass-main'],
       // width:"800px",
    });
     // dialogRef.componentInstance.data = val;
@@ -115,8 +130,8 @@ education(val) {
     return dialogRef.afterClosed();
   }
   congrats() {
-    let dialogRef: MatDialogRef<CongartsComponent>;
-    dialogRef = this.dialog.open(CongartsComponent,{ 
+    let dialogRef: MatDialogRef<CongratulationsComponent>;
+    dialogRef = this.dialog.open(CongratulationsComponent,{ 
       panelClass: ['custom-modalbox','main-cls'],
       // width:"800px",
    });

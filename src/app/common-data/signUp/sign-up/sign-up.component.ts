@@ -48,7 +48,7 @@ export class SignUpComponent implements OnInit {
       data['phone'] = JSON.stringify(this.form.value.phone)
       localStorage.setItem("signupData", JSON.stringify(data));
       this.dialog.close();
-      this.modal.verification().subscribe((res : any)=>{
+      this.modal.verification(0).subscribe((res : any)=>{
       })
     }else{
       this.submitted = true;

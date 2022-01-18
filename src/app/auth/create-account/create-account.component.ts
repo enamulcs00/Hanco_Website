@@ -28,6 +28,6 @@ export class CreateAccountComponent implements OnInit {
 
   profileSetup() {
     this.dialog.closeAll();
-     this.commonData.verification();
+     this.commonData.verification(0);
     }
 }
