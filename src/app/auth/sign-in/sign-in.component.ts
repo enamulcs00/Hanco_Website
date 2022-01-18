@@ -18,16 +18,17 @@ export class SignInComponent implements OnInit {
 
   openSignUp(){
     this.dialog.closeAll();
-
- //  this.dialogRef.close({ event: 'close', data: 'sinup' });
     let dialogRef: MatDialogRef<CreateAccountComponent>;
     dialogRef = this.dialog.open( CreateAccountComponent,
       { 
         panelClass: 'custom-modalbox',
-        // width:"800px",
      } );
-    // dialogRef.componentInstance.data = data;
     return dialogRef.afterClosed();
+  }
+
+  forgetPass(){
+    this.dialog.closeAll();
+    this.common.openforget();
   }
 
 }
