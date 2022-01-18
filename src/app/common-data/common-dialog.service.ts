@@ -34,13 +34,21 @@ export class CommonDialogService {
   }
   openSignUp() {
     let dialogRef: MatDialogRef<SignUpComponent>;
-    dialogRef = this.dialog.open(SignUpComponent);
+    dialogRef = this.dialog.open(SignUpComponent,
+      { 
+        panelClass: 'custom-modalbox',
+        // width:"800px",
+     });
     // dialogRef.componentInstance.data = val;
     return dialogRef.afterClosed();
   }
   openSignIn() {
     let dialogRef: MatDialogRef<SignInComponent>;
-    dialogRef = this.dialog.open(SignInComponent);
+    dialogRef = this.dialog.open( SignInComponent,
+      { 
+        panelClass: 'custom-modalbox',
+        // width:"800px",
+     } );
     // dialogRef.componentInstance.data = val;
     return dialogRef.afterClosed();
   }

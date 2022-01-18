@@ -23,8 +23,8 @@ export class SignInComponent implements OnInit {
     let dialogRef: MatDialogRef<CreateAccountComponent>;
     dialogRef = this.dialog.open( CreateAccountComponent,
       { 
-        // panelClass: 'custom-modalbox',
-        width:"800px",
+        panelClass: 'custom-modalbox',
+        // width:"800px",
      } );
     // dialogRef.componentInstance.data = data;
     return dialogRef.afterClosed();
