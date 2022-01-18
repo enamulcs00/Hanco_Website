@@ -114,7 +114,7 @@ education(val) {
   congrats() {
     let dialogRef: MatDialogRef<CongartsComponent>;
     dialogRef = this.dialog.open(CongartsComponent,{ 
-      panelClass: 'custom-congrats',
+      panelClass: 'custom-modalbox',
       // width:"800px",
    });
     // dialogRef.componentInstance.data = val;
