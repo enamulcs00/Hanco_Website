@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { CommonDialogService } from 'src/app/common-data/common-dialog.service';
-import { ProfileSetupComponent } from 'src/app/common-data/profile-setup/profile-setup.component';
+import { ProfileSetupComponent } from '../profile-setup/profile-setup.component';
 
 @Component({
   selector: 'app-create-account',
@@ -21,7 +21,15 @@ export class CreateAccountComponent implements OnInit {
   }
   
   openSigUp(){
-    this.dialog.closeAll();
-    this.commonData.profileSetup(0);
+    // this.dialog.closeAll();
+    // this.commonData.profileSetup();
+    this.profileSetup();
+  }
+
+  profileSetup() {
+    let dialogRef: MatDialogRef<ProfileSetupComponent>;
+    dialogRef = this.dialog.open(ProfileSetupComponent);
+    // dialogRef.componentInstance.data = val;
+    return dialogRef.afterClosed();
   }
 }

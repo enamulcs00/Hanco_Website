@@ -60,7 +60,7 @@ export class PhoneVerificationComponent implements OnInit {
           localStorage.setItem("token",JSON.stringify(res.data.token));
           this.common.setProfile();
           localStorage.setItem("prep_user",res.data);
-          this.modal.profileSetup(0).subscribe((res : any)=>{
+          this.modal.profileSetup().subscribe((res : any)=>{
           })
         }
       }else{

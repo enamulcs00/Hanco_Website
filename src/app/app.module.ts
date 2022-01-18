@@ -20,7 +20,6 @@ import { ForgetPassComponent } from './common-data/forget-pass/forget-pass.compo
 import { NgOtpInputModule } from 'ng-otp-input';
 import { PhoneVerificationComponent } from './common-data/phone-verification/phone-verification.component';
 import { ResetPasswordComponent } from './common-data/reset-password/reset-password.component';
-import { ProfileSetupComponent } from './common-data/profile-setup/profile-setup.component';
 import { SetInterceptorService } from './servies/setInter/set-inter.service';
 import { GetInterService } from './servies/getInter/get-inter.service';
 import { ToastrModule } from 'ngx-toastr';
@@ -48,7 +47,6 @@ import { JobThankyouComponent } from './common-data/job-thankyou/job-thankyou.co
     ValidatorComponent,
     ForgetPassComponent,
     PhoneVerificationComponent,
-    ProfileSetupComponent,
     VerificationComponent,
     EducationComponent1,
     WorkExperienceComponent,

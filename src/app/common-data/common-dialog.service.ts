@@ -5,7 +5,6 @@ import { DialogComponent } from './dialog/dialog.component';
 import { EmailVerificationComponent } from './email-verification/email-verification.component';
 import { ForgetPassComponent } from './forget-pass/forget-pass.component';
 import { PhoneVerificationComponent } from './phone-verification/phone-verification.component';
-import { ProfileSetupComponent } from './profile-setup/profile-setup.component';
 import { SignUpComponent } from './signUp/sign-up/sign-up.component';
 import { VerificationComponent } from './verification/verification.component';
 import { SkillsComponent } from './skills/skills.component';
@@ -18,6 +17,7 @@ import { ApplyJobComponent } from './apply-job/apply-job.component';
 import { JobThankyouComponent } from './job-thankyou/job-thankyou.component';
 import { FireworksNightComponent } from './fireworks-night/fireworks-night.component';
 import { SignInComponent } from '../auth/sign-in/sign-in.component';
+import { ProfileSetupComponent } from '../auth/profile-setup/profile-setup.component';
 
 @Injectable({
   providedIn: 'root'
@@ -78,10 +78,10 @@ export class CommonDialogService {
     // dialogRef.componentInstance.data = val;
     return dialogRef.afterClosed();
   }
-  profileSetup(val) {
+  profileSetup() {
     let dialogRef: MatDialogRef<ProfileSetupComponent>;
     dialogRef = this.dialog.open(ProfileSetupComponent);
-    dialogRef.componentInstance.data = val;
+    // dialogRef.componentInstance.data = val;
     return dialogRef.afterClosed();
   }
 education(val) {

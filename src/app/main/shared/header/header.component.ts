@@ -34,32 +34,6 @@ export class HeaderComponent implements OnInit {
   openLogin(){
     // this.dialog.closeAll();
     this.commonData.openSignIn()
-  //  this.commonData.openSignIn().subscribe(res=>{
-   // let dialogRef: MatDialogRef<SignInComponent>;
-  //  let dialogRef = this.dialog.open(SignInComponent,{
-  //  // width: '250px',
-  //  // backdropClass: 'custom-dialog-backdrop-class',
-  //   //panelClass: 'custom-dialog-panel-class',
-  //   data:{}
-  // })
-   
-   
-   
-  // dialogRef.afterClosed().subscribe(res=>{
-
-   
-  //   // dialogRef.componentInstance.data = val;
-  //  // return dialogRef.afterClosed();
-  //     if(res.data =='signup')
-  //     {
-  //     //  let dialogRef: MatDialogRef<CreateAccountComponent>;
-  //      let dialogRef1 = this.dialog.open( CreateAccountComponent,
-  //         { 
-  //           // panelClass: 'custom-modalbox',
-  //           width:"800px",
-  //        } );
-  //     }
-  //   });
   }
 
 }
