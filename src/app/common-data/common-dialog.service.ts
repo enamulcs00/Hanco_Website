@@ -6,7 +6,6 @@ import { EmailVerificationComponent } from './email-verification/email-verificat
 import { ForgetPassComponent } from './forget-pass/forget-pass.component';
 import { PhoneVerificationComponent } from './phone-verification/phone-verification.component';
 import { SignUpComponent } from './signUp/sign-up/sign-up.component';
-import { VerificationComponent } from './verification/verification.component';
 import { SkillsComponent } from './skills/skills.component';
 import { WorkSkillComponent } from './work-skill/work-skill.component';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
@@ -18,6 +17,7 @@ import { JobThankyouComponent } from './job-thankyou/job-thankyou.component';
 import { FireworksNightComponent } from './fireworks-night/fireworks-night.component';
 import { SignInComponent } from '../auth/sign-in/sign-in.component';
 import { ProfileSetupComponent } from '../auth/profile-setup/profile-setup.component';
+import { VerificationComponent } from '../auth/verification/verification.component';
 
 @Injectable({
   providedIn: 'root'
@@ -74,14 +74,17 @@ export class CommonDialogService {
   }
   verification() {
     let dialogRef: MatDialogRef<VerificationComponent>;
-    dialogRef = this.dialog.open(VerificationComponent);
+    dialogRef = this.dialog.open(VerificationComponent ,{ 
+      panelClass: ['custom-modalbox','custom-verf']
+      // width:"800px",
+   } );
     // dialogRef.componentInstance.data = val;
     return dialogRef.afterClosed();
   }
   profileSetup() {
     let dialogRef: MatDialogRef<ProfileSetupComponent>;
     dialogRef = this.dialog.open(ProfileSetupComponent, { 
-      panelClass: 'custom-modalbox',
+      panelClass: ['custom-modalbox', 'profile-setup-main'],
       // width:"800px",
    });
     // dialogRef.componentInstance.data = val;
