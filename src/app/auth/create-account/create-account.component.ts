@@ -30,7 +30,7 @@ export class CreateAccountComponent implements OnInit {
     this.dialog.closeAll();
     let dialogRef: MatDialogRef<ProfileSetupComponent>;
     dialogRef = this.dialog.open(ProfileSetupComponent,{ 
-      panelClass: 'custom-modalbox',
+      panelClass: 'custom-main',
       // width:"800px",
    });
     // dialogRef.componentInstance.data = val;

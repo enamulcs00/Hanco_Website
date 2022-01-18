@@ -16,6 +16,7 @@ export class ProfileSetupComponent implements OnInit {
   }
 
   openCongrats(){
+    this.dialog.closeAll();
     this.commonData.congrats();
   }
 
