@@ -10,14 +10,15 @@ import { SetPasswordComponent } from './set-password/set-password.component';
 import { ProfileSetupComponent } from './profile-setup/profile-setup.component';
 import { CongratulationsComponent } from './congratulations/congratulations.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { NgOtpInputModule } from 'ng-otp-input';
 
 @NgModule({
   declarations: [SignInComponent, ForgotPasswordComponent, CreateAccountComponent, VerificationComponent, SetPasswordComponent, ProfileSetupComponent, CongratulationsComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
-    MatDialogModule
+    MatDialogModule,
+    NgOtpInputModule
   ],
   exports:[SignInComponent, ForgotPasswordComponent, CreateAccountComponent, VerificationComponent, SetPasswordComponent, ProfileSetupComponent, CongratulationsComponent]
 })

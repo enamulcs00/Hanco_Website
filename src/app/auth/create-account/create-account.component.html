@@ -3,18 +3,18 @@
 <!-- <div class="modal fade auth_pup" id="signup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content"> -->
-<div class="modal-body">
+<div class="modal-body" *ngIf="isOpenDialog">
 
     <div class="popu_mn popu_mn_cmn">
         <div class="popu_lft">
             <figure class="text-center">
-                <img src="/assets/images/auth/cret_acc.jpg " alt="Images" class="img-fluid">
+                <img loading="lazy" src="/assets/images/auth/cret_acc.jpg " alt="Images" class="img-fluid">
             </figure>
         </div>
         <div class="popu_rgt popu_rgt_cmmn">
             <div class="popu_rgt_inn">
                 <div class="back_arr">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    <img loading="lazy" src="/assets/images/back_aow.svg " alt="Images" class="img-fluid">
                 </div>
 
                 <h2>Create an Account</h2>
@@ -22,20 +22,20 @@
                 <form>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="number" class="form-control" placeholder="+91 9876543210" id="phone">
+                        <input type="text" class="form-control" placeholder="+91 9876543210" id="phone">
                     </div>
                     <div class="form-group sng_psw">
                         <label for="pwd_new">Password</label>
                         <div class="psw_cls">
                             <input type="password" class="form-control" placeholder="Password" id="pwd_new">
-                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            <img loading="lazy" src="/assets/images/eye_psw.svg " alt="Images" class="img-fluid">  
                         </div>
                     </div>
                     <div class="form-group sng_psw">
                         <label for="pwd_con">Confirm Password</label>
                         <div class="psw_cls">
                             <input type="password" class="form-control" placeholder="Password" id="pwd_con">
-                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            <img loading="lazy" src="/assets/images/eye_psw.svg " alt="Images" class="img-fluid">  
                         </div>
                     </div>
 

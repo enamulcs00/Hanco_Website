@@ -2,15 +2,15 @@
 <div class="modal fade auth_pup" id="signin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content"> -->
-<div class="modal-body">
+<div class="modal-body" *ngIf="isOpenDialog">
 
-    <div class="popu_mn">
+    <div class="popu_mn pd_st">
         <div class="popu_lft">
             <figure class="text-center">
-                <img src="/assets/images/auth/car_1.jpg " alt="Images" class="img-fluid">
+                <img loading="lazy" src="/assets/images/auth/car_1.jpg " alt="Images" class="img-fluid">
             </figure>
         </div>
-        <div class="popu_rgt">
+        <div class="popu_rgt sign_upcn">
             <h2>Welcome Back!</h2>
             <p class="sub_txt"> Sign In to Continue</p>
             <form action="">
@@ -19,10 +19,10 @@
                     <input type="email" class="form-control" placeholder="Hanco@gmail.com" id="email">
                 </div>
                 <div class="form-group sng_psw">
-                    <label for="pwd">Password:</label>
+                    <label for="pwd">Password</label>
                     <div class="psw_cls">
                         <input type="password" class="form-control" placeholder="Password" id="pwd">
-                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <img loading="lazy" src="/assets/images/eye_psw.svg " alt="Images" class="img-fluid">  
                     </div>
                 </div>
                 <div class="form-group chk_bx_mn">
@@ -43,9 +43,9 @@
                 <div class="sgn_wth">
                     <p>Or Sign In With</p>
                     <div class="d_flex">
-                        <figure> <img src="/assets/images/auth/fb.png " alt="Images" class="img-fluid"></figure>
-                        <figure> <img src="/assets/images/auth/apple.png " alt="Images" class="img-fluid"></figure>
-                        <figure> <img src="/assets/images/auth/google.png " alt="Images" class="img-fluid"></figure>
+                        <figure> <img loading="lazy" src="/assets/images/auth/fb.png " alt="Images" class="img-fluid"></figure>
+                        <figure> <img loading="lazy" src="/assets/images/auth/apple.png " alt="Images" class="img-fluid"></figure>
+                        <figure> <img loading="lazy" src="/assets/images/auth/google.png " alt="Images" class="img-fluid"></figure>
                     </div>
 
                 </div>

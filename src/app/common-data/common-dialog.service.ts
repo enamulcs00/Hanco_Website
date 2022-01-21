@@ -47,7 +47,7 @@ export class CommonDialogService {
     let dialogRef: MatDialogRef<SignInComponent>;
     dialogRef = this.dialog.open( SignInComponent,
       { 
-        panelClass: 'custom-modalbox',
+        panelClass: ['custom-modalbox' ,'custom-signpo']
         // width:"800px",
      } );
     // dialogRef.componentInstance.data = val;

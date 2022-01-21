@@ -106,7 +106,7 @@ h4 {
   margin: 0px;
 }
 .form-control:focus {
-  background-color: transparent;
+  background-color: #FAFAFA;
   border-color: #E6E6E6;
   outline: 0;
   box-shadow: unset;
@@ -133,6 +133,7 @@ div#navbarNav {
   justify-content: space-between;
   width: 60%;
   display: flex;
+  align-items: center;
 }
 .text_center {
   text-align: center;
@@ -266,10 +267,11 @@ nav.navbar.navbar-expand-lg.navbar-light {
       }
       }
     }
+    
 
   }
   
-  ul.navbar-nav {
+  .navbar-nav {
     align-items: center;
     li {
       padding: 0px 20px;
@@ -290,6 +292,12 @@ nav.navbar.navbar-expand-lg.navbar-light {
         }
       }
     }
+  }
+  .hd_lnk{
+    li{   padding:20px;}
+    .active {
+      background-color: #81171b;
+  }
   }
 }
 
@@ -478,13 +486,14 @@ body{font-family: Proxima Nova;}
 }
 .popu_rgt label {
   line-height: 21px;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
   font-size: 16px;
+  color: #1A110F;
 }
-.popu_rgt input {
-  border-radius: 25px;
-  padding: 24px
-}
+// .popu_rgt input {
+//   border-radius: 25px;
+//   padding: 24px
+// }
 
 /*****Checkbox************/ 
 .chk_box {
@@ -568,6 +577,12 @@ body{font-family: Proxima Nova;}
   position: absolute;
   right: 11px;
 }
+.sng_psw img {
+  position: absolute;
+  right: 11px;
+  
+}
+
 .sng_psw {
   position: relative;
 }
@@ -598,6 +613,7 @@ body{font-family: Proxima Nova;}
   width: 100%;
   text-align: center;
   position: relative;
+  color: #1A1A1A;
 }
 .sgn_wth p:before {
   content: '';
@@ -613,6 +629,7 @@ body{font-family: Proxima Nova;}
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding-top: 15px;
 }
 .sgn_wth figure {
   padding: 10px;
@@ -764,7 +781,8 @@ span.blk {
 
 .cong_txt {
   position: absolute;
-  bottom: 15px;
+  bottom: 0;
+  top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -795,10 +813,10 @@ span.blk {
   position: absolute;
   left: 0;
   right: 0;
-  background-color: #000;
+  background-color: #333;
   top: 0;
   bottom: 0;
-  opacity: .5;
+  opacity: .8;
 }
 .app_download_outr {
   background-image: url(assets/images/fot_bg.jpg);
@@ -816,6 +834,7 @@ span.blk {
     width: 50%;
     .app_store{ @include f_c_start;
       figure {padding: 10px;
+    width: 200px;
         img {
           cursor: pointer;
       }
@@ -861,8 +880,8 @@ footer.footer_outr {
         margin-bottom: 35px;
         border-bottom: 2px solid;
         width: fit-content;
-        font-size: 20px;
-        line-height: 56px;
+        font-size: 26px;
+        line-height: 24px;
         font-weight: 500;
       }
         .footer_inn p {
@@ -913,8 +932,9 @@ footer.footer_outr {
     input {
       border: 1px solid #AA1D1E;
       background-color: transparent;
-      padding: 30px 20px;
+      border-radius: 0;
       color: #fff;
+      padding: 20px 20px;
   
   }
   input::placeholder {
@@ -1003,13 +1023,13 @@ section.emty_spec {
 ************Form section***********
 ***********************************/ 
 section.form_sec {
-  margin-top: -340px;
+  margin-top: -420px;
   position: relative;
   padding: 20px 0px;
   .form_sec_inner {
     padding: 75px 60px 20px;
     background-color: #fff;
-    border-radius: 15px;
+    border-radius: 18px;
     box-shadow: 0px 3px 20px #00000029;
      h2 {
       font-size: 40px;
@@ -1024,6 +1044,9 @@ section.form_sec {
       font-size: 18px;
       color: #000;
     }
+    i.fa.fa-map-marker {
+      color: #DDDDDD ;
+  }
   }
   }
 }
@@ -1033,19 +1056,16 @@ section.form_sec {
   flex-wrap: wrap;
   justify-content: space-between;
   .form-group {
-    width: 16%;
-     select {
-      min-height: 50px;
-      border-radius: 25px;
-      padding: 0px 24px;
-  }
-  input {
-    border-radius: 25px;
-    padding: 24px;
-}
+    width: 15%;
+  //    select {
+  //     min-height: 50px;
+  //     border-radius: 25px;
+  //     padding: 0px 24px;
+  // }
+ 
 }
 .loctin_cls {
-  width: 34%;
+  width: 33%;
    i {
     position: absolute;
     right: 11px;
@@ -1054,10 +1074,10 @@ section.form_sec {
 }
 }
 .fom_grp_sec {
-  width: 16%;
+  width: 15%;
 }
 .fom_grp_sec1 {
-  width: 25%;
+  width: 24%;
 }
 .flter_btn {
   width: 100%;
@@ -1083,6 +1103,18 @@ section.form_sec {
 }
 }
 }
+}
+.form-control {
+  height: auto;
+  border: unset;
+  background: #FAFAFA;
+  border-radius: 50px;
+  line-height: normal;
+  font-weight: 400;
+  color: #B9B9B9;
+  font-size: 16px;
+  padding: 15px;
+
 }
 /***********************************
 ************Tab Section***********
@@ -1116,12 +1148,13 @@ p {
 
 
  li.nav-item {
-  border: 1px solid #ddd;
+  border: 1px solid #DADADA;
   width: 125px;
   height: 125px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 12px;
   .nav-link.active {
     border: unset;
 }
@@ -1164,11 +1197,12 @@ h4 {
   }
 }
 .watch_lst {
-  width: 33%;
+  width: 32%;
   box-shadow: 0px 3px 19px #00000029;
   padding: 12px;
   border-radius: 10px;
   border-radius: 18px;
+  background-color: #fff;
   z-index: 9;
    img {
     width: 100%;
@@ -1226,7 +1260,7 @@ h2 {
 p {
   font-size: 18px;
   line-height: 28px;
-  color: #000;
+  color: #3C3C3C;
   margin-top: 20px;
 }
 }
@@ -1235,8 +1269,8 @@ p {
   p {
     font-size: 18px;
     line-height: 28px;
-    color: #000;
-    margin-bottom: 20px;
+    color: #3C3C3C;
+    margin-bottom: 12px;
     &:last-child{margin-bottom: 0px;}
 }
 }
@@ -1262,8 +1296,8 @@ section.abouthanco_sec:after {
     background: url(assets/images/about_tp.png);
     position: absolute;
     right: 0px;
-    width: 699px;
-    top: -19px;
+    width: 803px;
+    top: -70px;
     z-index: -1;
     opacity: .1;
     background-repeat: no-repeat;
@@ -1277,7 +1311,7 @@ section.abouthanco_sec:after {
 }
 
 .service_sec {
-  padding: 40px 0;
+  padding: 60px 0 80px;
 }
 
 .srv_inner {
@@ -1326,7 +1360,6 @@ color: #333;
 ************Listing Section***********
 ***********************************/ 
 section.listing_sec {
-  background-image: url();
   background: url(assets/images/listing_img.jpg);
   height: 400px;
   width: 100%;
@@ -1339,7 +1372,7 @@ section.listing_sec {
   justify-content: center;
   position: absolute;
   top: 0;
-  bottom: 20px;
+  bottom: 40px;
   left: 0;
   right: 0;
   h1 {
@@ -1554,6 +1587,7 @@ section.car_lst_sec
                       border: 0;
                       border-bottom: 1px solid #bbb;
                       border-radius: 0;
+                      background-color: transparent;
                   }
                   p {
                     padding: 20px 0px;
@@ -1798,6 +1832,9 @@ select:focus {box-shadow: unset;}
 
      
 
+}
+.oder_rept .buynow_rgt {
+  background-color: #fff;
 }
 /***********************************
 ************Payment method***********
@@ -2068,7 +2105,7 @@ textarea {
   text-align: center;
   margin-top: 30px;
     button {
-      width: 55%;
+      width: 45%;
       padding: 18px;
       border-radius: 50px;
       font-size: 18px;
@@ -2093,7 +2130,7 @@ textarea {
     text-align: center;
     margin-top: 30px;
     button {
-      width: 55%;
+      width: 35%;
       padding: 18px;
       border-radius: 50px;
       font-size: 18px;
@@ -2189,7 +2226,7 @@ figure {
 ************Contact Us ***********
 ***********************************/ 
 section.cont_sec {
-  padding: 60px 0px;
+  padding: 120px 0px;
   .cont_txt {
     @include f_c_c;
    p {
@@ -2234,11 +2271,11 @@ h2 {
 ************About Us ***********
 ***********************************/ 
 section.about_sec {
-  padding: 60px 0px;
+  padding: 80px 0px;
   .about_inner p {
     font-size: 22px;
     line-height: 40px;
-    color: #333;
+    color: #404040;
     margin-bottom: 20px;
 }
 }
@@ -2246,7 +2283,7 @@ section.about_sec {
 ************My Bids ***********
 ***********************************/ 
 .mybd_sec {
-  padding: 60px 0px;
+  padding: 80px 0px;
 }
 .mybd_inner {
   .nav-tabs {
@@ -2295,11 +2332,16 @@ p {
 
 }
 .mybd_flx {
-@include f_c_c;
+@include f_c_alt;
 margin-bottom: 40px;
+background-color: #FAFAFA;
+border-radius: 10px;
 .mybd_flx_inn {
   @include f_c_c;
   gap: 15px;
+  figure {
+    padding: 10px;
+  }
 }
 .btn_my_bd {
   width: 18%;
@@ -2325,11 +2367,12 @@ margin-bottom: 40px;
 }
 }
 
+
 /***********************************
 ************Car Details***********
 ***********************************/ 
 .car_detal_sec {
-  padding: 60px 0px;
+  padding: 80px 0px;
 }
 .car_detal_inner {
   @include f_c_alt;
@@ -2488,7 +2531,9 @@ p {
 .prfle_stup{
   overflow-y: scroll;
     overflow-x: hidden;
-    height: 560px;
+    height: 600px;
+    padding-right: 6px;
+    margin-bottom: 30px;
 }
 /***********Popup*********************/
 .cdk-overlay-container {
@@ -2508,5 +2553,103 @@ p {
 }
 .custom-modalbox .btn_commn .btn {
   width: 100%;
-  padding: 15px;
+  padding: 20px;
+  border-radius: 50px;
+}
+.custom-modalbox.main-cls {
+  max-width:100% !important;
+}
+.custom-modalbox.main-cls mat-dialog-container {
+  border-radius: 0px !important;
+}
+
+
+
+
+.arrw_bnr {
+    text-align: center;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      color: #fff;
+      font-size: 30px;
+      border: 1px solid #fff;
+      margin: 3px;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      position: relative;
+  }
+  i.disable {
+    color: #ccc;
+    font-size: 30px;
+    border: 1px solid #ccc;
+}
+}
+.arrw_bnr .fa-angle-left:before {
+  position: relative;
+  top: 2px;
+  right: 2px;
+}
+.arrw_bnr .fa-angle-right:before {
+  position: relative;
+  top: 2px;
+  left: 2px;
+}.psw_cls img {
+  position: absolute;
+  position: absolute;
+  right: 11px;
+  font-size: 18px;
+}
+.vrifi_frm .ng-star-inserted {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding-top: 15px;
+}
+.vrifi_frm {
+  padding-right: 20px;
+}
+
+/* scroll */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.psw_cls i.fa.fa-caret-down {
+  position: absolute;
+  right: 11px;
+  font-size: 18px;
+  color: #000;
+}
+.custom-forget .popu_rgt_cmmn {
+  padding: 0px 50px 0px 30px;
+}
+.custom-modalbox.custom-forget {
+  max-width: 80% !important;
+}
+.custom-signpo .popu_rgt h2 {
+  padding-top: 15px;
+}
+.up_dat_flx input {
+  background-color: transparent;
 }

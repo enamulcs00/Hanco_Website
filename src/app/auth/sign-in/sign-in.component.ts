@@ -9,11 +9,13 @@ declare var $ :any
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-
+  isOpenDialog:boolean = false
   constructor(@Optional() @Inject(MAT_DIALOG_DATA) public data: any,private dialog: MatDialog,private common:CommonDialogService,public dialogRef: MatDialogRef<SignInComponent>,) { }
 
   ngOnInit(): void {
-    
+    setTimeout(() => {
+      this.isOpenDialog = true
+    }, 100);
   }
 
   openSignUp(){

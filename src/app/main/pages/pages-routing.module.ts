@@ -22,6 +22,8 @@ import { ManagePaymentsComponent } from './manage-payments/manage-payments.compo
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { MyBidsComponent } from './my-bids/my-bids.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
+import { CancelBidComponent } from './cancel-bid/cancel-bid.component';
+import { Biddingupdate2Component } from './biddingupdate2/biddingupdate2.component';
 
 
 const routes: Routes = [
@@ -72,6 +74,10 @@ const routes: Routes = [
   {
     path : 'biddingupdate',
     component :BiddingUpdateComponent
+  }, 
+  {
+    path : 'biddingupdate2',
+    component :Biddingupdate2Component
   }, 
   
   {
@@ -125,6 +131,10 @@ const routes: Routes = [
   {
     path : 'cardetails',
      component :CarDetailsComponent
+  },
+  {
+    path : 'cancelbid',
+     component :CancelBidComponent
   }
 ];
 

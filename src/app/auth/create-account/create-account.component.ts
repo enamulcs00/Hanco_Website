@@ -9,10 +9,13 @@ import { ProfileSetupComponent } from '../profile-setup/profile-setup.component'
   styleUrls: ['./create-account.component.scss']
 })
 export class CreateAccountComponent implements OnInit {
-
+  isOpenDialog:boolean = false
   constructor(private dialog: MatDialog,private commonData:CommonDialogService) { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.isOpenDialog = true
+    }, 100);
   }
    
   openLogin(){
