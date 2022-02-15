@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Pawan\hanco_new\hanco_angular\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! D:\Office\Angular_Project\hanco_angular\src\polyfills.ts */"hN/g");
 
 
 /***/ }),

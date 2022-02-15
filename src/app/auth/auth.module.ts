@@ -11,6 +11,7 @@ import { ProfileSetupComponent } from './profile-setup/profile-setup.component';
 import { CongratulationsComponent } from './congratulations/congratulations.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgOtpInputModule } from 'ng-otp-input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [SignInComponent, ForgotPasswordComponent, CreateAccountComponent, VerificationComponent, SetPasswordComponent, ProfileSetupComponent, CongratulationsComponent],
@@ -18,7 +19,9 @@ import { NgOtpInputModule } from 'ng-otp-input';
     CommonModule,
     AuthRoutingModule,
     MatDialogModule,
-    NgOtpInputModule
+    NgOtpInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[SignInComponent, ForgotPasswordComponent, CreateAccountComponent, VerificationComponent, SetPasswordComponent, ProfileSetupComponent, CongratulationsComponent]
 })

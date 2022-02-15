@@ -8,9 +8,9 @@ import { CommonDialogService } from 'src/app/common-data/common-dialog.service';
   styleUrls: ['./profile-setup.component.scss']
 })
 export class ProfileSetupComponent implements OnInit {
-
+  userTypeValue:any="1";
   constructor(private dialog: MatDialog,private commonData:CommonDialogService) { }
-
+  
   ngOnInit(): void {
     console.log('profile');
   }
@@ -18,6 +18,10 @@ export class ProfileSetupComponent implements OnInit {
   openCongrats(){
     this.dialog.closeAll();
     this.commonData.congrats();
+  }
+ 
+  updateUser(e){
+  this.userTypeValue=e.target.value;
   }
 
 }

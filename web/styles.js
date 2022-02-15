@@ -59,11 +59,11 @@ ___CSS_LOADER_EXPORT___.push([module.i, "/* based on angular-toastr css https://
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Pawan\hanco_new\hanco_angular\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"8jWO");
-__webpack_require__(/*! D:\Pawan\hanco_new\hanco_angular\node_modules\ngx-toastr\toastr.css */"G9EY");
-__webpack_require__(/*! D:\Pawan\hanco_new\hanco_angular\node_modules\slick-carousel\slick\slick.scss */"r7B0");
-__webpack_require__(/*! D:\Pawan\hanco_new\hanco_angular\node_modules\slick-carousel\slick\slick-theme.scss */"x1My");
-module.exports = __webpack_require__(/*! D:\Pawan\hanco_new\hanco_angular\src\styles.scss */"+EN/");
+__webpack_require__(/*! D:\Office\Angular_Project\hanco_angular\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"8jWO");
+__webpack_require__(/*! D:\Office\Angular_Project\hanco_angular\node_modules\ngx-toastr\toastr.css */"G9EY");
+__webpack_require__(/*! D:\Office\Angular_Project\hanco_angular\node_modules\slick-carousel\slick\slick.scss */"r7B0");
+__webpack_require__(/*! D:\Office\Angular_Project\hanco_angular\node_modules\slick-carousel\slick\slick-theme.scss */"x1My");
+module.exports = __webpack_require__(/*! D:\Office\Angular_Project\hanco_angular\src\styles.scss */"+EN/");
 
 
 /***/ }),

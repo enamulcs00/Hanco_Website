@@ -22,13 +22,12 @@
                     <div class="form-group">
                         <label for="user_type">User Type</label>
                         <div class="psw_cls">
-                        <select class="form-control" id="user_type">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                            <select class="form-control" id="user_type" (change)="updateUser($event)">
+                        <option [value]="1" >Individual</option>
+                        <option [value]="2">Cooperate</option>
                       </select>
-                      <i  class="fa fa-caret-down"></i>
-                      </div>
+                            <i class="fa fa-caret-down"></i>
+                        </div>
                     </div>
                     <div class="prfsp">
                         <div class="form-group">
@@ -55,11 +54,19 @@
                             <option>america</option>>
                           </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" *ngIf="userTypeValue==1">
+                        <label for="license">License</label>
+                        <input type="text" class="form-control" placeholder="license" id="license">
+                    </div>
+                    <div class="form-group" *ngIf="userTypeValue==2">
                         <label for="vat">VAT Registration Number</label>
                         <input type="text" class="form-control" placeholder="VAT Registration Number" id="vat">
                     </div>
-                    <div class="form-group file_up">
+                    <div class="form-group" *ngIf="userTypeValue==2">
+                        <label for="cr_no">CR Number</label>
+                        <input type="text" class="form-control" placeholder="CR Number" id="cr_no">
+                    </div>
+                    <div class="form-group file_up" *ngIf="userTypeValue==2">
                         <label for="vat">
                               <img src="/assets/images/auth/Icon_upload.png " alt="Images" class="img-fluid">
                               <p>Upload Document</p>

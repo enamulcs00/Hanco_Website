@@ -97,7 +97,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _profile_setup_profile_setup_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./profile-setup/profile-setup.component */ "y05r");
 /* harmony import */ var _congratulations_congratulations_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./congratulations/congratulations.component */ "g/yd");
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/dialog */ "iELJ");
-/* harmony import */ var ng_otp_input__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ng-otp-input */ "9OaD");
+/* harmony import */ var ng_otp_input__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ng-otp-input */ "BstE");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ "s7LF");
+
 
 
 
@@ -118,12 +120,16 @@ AuthModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjecto
             _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
             _auth_routing_module__WEBPACK_IMPORTED_MODULE_2__["AuthRoutingModule"],
             _angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__["MatDialogModule"],
-            ng_otp_input__WEBPACK_IMPORTED_MODULE_11__["NgOtpInputModule"]
+            ng_otp_input__WEBPACK_IMPORTED_MODULE_11__["NgOtpInputModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"]
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](AuthModule, { declarations: [_sign_in_sign_in_component__WEBPACK_IMPORTED_MODULE_3__["SignInComponent"], _forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_4__["ForgotPasswordComponent"], _create_account_create_account_component__WEBPACK_IMPORTED_MODULE_5__["CreateAccountComponent"], _verification_verification_component__WEBPACK_IMPORTED_MODULE_6__["VerificationComponent"], _set_password_set_password_component__WEBPACK_IMPORTED_MODULE_7__["SetPasswordComponent"], _profile_setup_profile_setup_component__WEBPACK_IMPORTED_MODULE_8__["ProfileSetupComponent"], _congratulations_congratulations_component__WEBPACK_IMPORTED_MODULE_9__["CongratulationsComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
         _auth_routing_module__WEBPACK_IMPORTED_MODULE_2__["AuthRoutingModule"],
         _angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__["MatDialogModule"],
-        ng_otp_input__WEBPACK_IMPORTED_MODULE_11__["NgOtpInputModule"]], exports: [_sign_in_sign_in_component__WEBPACK_IMPORTED_MODULE_3__["SignInComponent"], _forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_4__["ForgotPasswordComponent"], _create_account_create_account_component__WEBPACK_IMPORTED_MODULE_5__["CreateAccountComponent"], _verification_verification_component__WEBPACK_IMPORTED_MODULE_6__["VerificationComponent"], _set_password_set_password_component__WEBPACK_IMPORTED_MODULE_7__["SetPasswordComponent"], _profile_setup_profile_setup_component__WEBPACK_IMPORTED_MODULE_8__["ProfileSetupComponent"], _congratulations_congratulations_component__WEBPACK_IMPORTED_MODULE_9__["CongratulationsComponent"]] }); })();
+        ng_otp_input__WEBPACK_IMPORTED_MODULE_11__["NgOtpInputModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"]], exports: [_sign_in_sign_in_component__WEBPACK_IMPORTED_MODULE_3__["SignInComponent"], _forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_4__["ForgotPasswordComponent"], _create_account_create_account_component__WEBPACK_IMPORTED_MODULE_5__["CreateAccountComponent"], _verification_verification_component__WEBPACK_IMPORTED_MODULE_6__["VerificationComponent"], _set_password_set_password_component__WEBPACK_IMPORTED_MODULE_7__["SetPasswordComponent"], _profile_setup_profile_setup_component__WEBPACK_IMPORTED_MODULE_8__["ProfileSetupComponent"], _congratulations_congratulations_component__WEBPACK_IMPORTED_MODULE_9__["CongratulationsComponent"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AuthModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
@@ -132,7 +138,9 @@ AuthModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjecto
                     _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
                     _auth_routing_module__WEBPACK_IMPORTED_MODULE_2__["AuthRoutingModule"],
                     _angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__["MatDialogModule"],
-                    ng_otp_input__WEBPACK_IMPORTED_MODULE_11__["NgOtpInputModule"]
+                    ng_otp_input__WEBPACK_IMPORTED_MODULE_11__["NgOtpInputModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"]
                 ],
                 exports: [_sign_in_sign_in_component__WEBPACK_IMPORTED_MODULE_3__["SignInComponent"], _forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_4__["ForgotPasswordComponent"], _create_account_create_account_component__WEBPACK_IMPORTED_MODULE_5__["CreateAccountComponent"], _verification_verification_component__WEBPACK_IMPORTED_MODULE_6__["VerificationComponent"], _set_password_set_password_component__WEBPACK_IMPORTED_MODULE_7__["SetPasswordComponent"], _profile_setup_profile_setup_component__WEBPACK_IMPORTED_MODULE_8__["ProfileSetupComponent"], _congratulations_congratulations_component__WEBPACK_IMPORTED_MODULE_9__["CongratulationsComponent"]]
             }]
