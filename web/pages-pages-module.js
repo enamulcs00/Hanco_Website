@@ -864,7 +864,7 @@ BiddingUpdateComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "div", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "You\u2019ve been outbid");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "Your Offer");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "p", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "b");
@@ -1650,7 +1650,7 @@ BiddingBuyComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "div", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "You\u2019ve been outbid");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "Your Offer");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "p", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "b");
@@ -1664,7 +1664,7 @@ BiddingBuyComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 13);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "div", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "You\u2019ve been outbid ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "Your Offer");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "span");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, "02h 01m 45s");
@@ -1868,7 +1868,7 @@ BiddingCongratulationsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h1");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Bidding");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Offer's");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1965,7 +1965,7 @@ BiddingCongratulationsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "div", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "You\u2019ve been outbid");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "Your Offer");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "p", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "b");
@@ -1983,9 +1983,9 @@ BiddingCongratulationsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "p");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "span", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76, "You Won the Bid ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76, "You Won the Offer ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](77, "Please Pay The Bid Amount Within ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](77, "Please Pay The Offer Amount Within ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "span", 16);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, "20:25 Minutes");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2043,7 +2043,7 @@ MyBidsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h1");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "My Bids");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Offer");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2054,7 +2054,7 @@ MyBidsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "ul", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "li", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "a", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Bid Request");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Offer Request");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "li", 6);
@@ -2249,7 +2249,7 @@ BiddingComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h1");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Bidding");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Offer's");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2360,7 +2360,7 @@ BiddingComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 13);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "div", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "We\u2019ll bid for you, up to ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "We\u2019ll Offer for you, up to ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "span");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, "02h 01m 45s");
@@ -2369,12 +2369,12 @@ BiddingComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "div", 14);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](77, "input", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, "Place bid US $175.00 or higher");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, "Place Offer US $175.00 or higher");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "div", 16);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "button", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](82, "Place Bid");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](82, "Place Offer");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -5909,10 +5909,10 @@ CancelBidComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 12);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "button", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72, "Cancel Bid");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72, "Cancel Offer");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "button", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, "Update Bid");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, "Update Offer");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -5965,12 +5965,12 @@ class Biddingupdate2Component {
     }
 }
 Biddingupdate2Component.ɵfac = function Biddingupdate2Component_Factory(t) { return new (t || Biddingupdate2Component)(); };
-Biddingupdate2Component.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: Biddingupdate2Component, selectors: [["app-biddingupdate2"]], decls: 83, vars: 0, consts: [[1, "listing_sec"], [1, "conta_iner"], [1, "listing_inner"], [1, "bidding_sec"], [1, "bidding_inner"], [1, "bidding_lft"], ["src", "/assets/images/bar_bdd.png ", "alt", "Logo", 1, "img-fluid"], [1, "biddg_flx"], [1, "biddg_dic"], [1, "biddg_lst"], [1, "bdd_bt"], [1, "pric_bt"], [1, "bidding_rgt"], [1, "bidding_rgt_inn"], [1, "enter_amu", "up_dat_flx"], ["type", "text", "placeholder", "Enter the bid amount.", "id", "search", 1, "form-control"], [1, "bdd_btn"], ["type", "submit", "routerLink", "../biddingcongratulations", 1, "btn", "btn-primary"]], template: function Biddingupdate2Component_Template(rf, ctx) { if (rf & 1) {
+Biddingupdate2Component.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: Biddingupdate2Component, selectors: [["app-biddingupdate2"]], decls: 83, vars: 0, consts: [[1, "listing_sec"], [1, "conta_iner"], [1, "listing_inner"], [1, "bidding_sec"], [1, "bidding_inner"], [1, "bidding_lft"], ["src", "/assets/images/bar_bdd.png ", "alt", "Logo", 1, "img-fluid"], [1, "biddg_flx"], [1, "biddg_dic"], [1, "biddg_lst"], [1, "bdd_bt"], [1, "pric_bt"], [1, "bidding_rgt"], [1, "bidding_rgt_inn"], [1, "enter_amu", "up_dat_flx"], ["type", "text", "placeholder", "Enter the Offer amount.", "id", "search", 1, "form-control"], [1, "bdd_btn"], ["type", "submit", "routerLink", "../biddingcongratulations", 1, "btn", "btn-primary"]], template: function Biddingupdate2Component_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h1");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Bidding");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Offer's");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -6067,7 +6067,7 @@ Biddingupdate2Component.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "div", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "You\u2019ve been outbid");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "Your Offer");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "p", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "b");
@@ -6081,7 +6081,7 @@ Biddingupdate2Component.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 13);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "div", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "We\u2019ll bid for you, up to ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "We\u2019ll Offer for you, up to ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "div", 14);
@@ -6090,12 +6090,12 @@ Biddingupdate2Component.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](77, "input", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, "Place bid US $175.00 or higher");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, "Place Offer US $175.00 or higher");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "div", 16);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "button", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](82, "Update Bid");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](82, "Update Offer");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
