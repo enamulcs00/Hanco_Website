@@ -762,12 +762,12 @@ class BiddingUpdateComponent {
     }
 }
 BiddingUpdateComponent.ɵfac = function BiddingUpdateComponent_Factory(t) { return new (t || BiddingUpdateComponent)(); };
-BiddingUpdateComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BiddingUpdateComponent, selectors: [["app-bidding-update"]], decls: 85, vars: 0, consts: [[1, "listing_sec"], [1, "conta_iner"], [1, "listing_inner"], [1, "bidding_sec"], [1, "bidding_inner"], [1, "bidding_lft"], ["src", "/assets/images/bar_bdd.png ", "alt", "Logo", 1, "img-fluid"], [1, "biddg_flx"], [1, "biddg_dic"], [1, "biddg_lst"], [1, "bdd_bt"], [1, "pric_bt"], [1, "bidding_rgt"], [1, "bidding_rgt_inn"], [1, "enter_amu", "up_dat_flx"], ["type", "text", "placeholder", "Enter the bid amount.", "id", "search", 1, "form-control"], [1, "bdd_btn"], ["type", "submit", "routerLink", "../biddingbuy", 1, "btn", "btn-primary"]], template: function BiddingUpdateComponent_Template(rf, ctx) { if (rf & 1) {
+BiddingUpdateComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BiddingUpdateComponent, selectors: [["app-bidding-update"]], decls: 85, vars: 0, consts: [[1, "listing_sec"], [1, "conta_iner"], [1, "listing_inner"], [1, "bidding_sec"], [1, "bidding_inner"], [1, "bidding_lft"], ["src", "/assets/images/bar_bdd.png ", "alt", "Logo", 1, "img-fluid"], [1, "biddg_flx"], [1, "biddg_dic"], [1, "biddg_lst"], [1, "bdd_bt"], [1, "pric_bt"], [1, "bidding_rgt"], [1, "bidding_rgt_inn"], [1, "enter_amu", "up_dat_flx"], ["type", "text", "placeholder", "Enter the offer amount.", "id", "search", 1, "form-control"], [1, "bdd_btn"], ["type", "submit", "routerLink", "../biddingbuy", 1, "btn", "btn-primary"]], template: function BiddingUpdateComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h1");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Bidding");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Offer's");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -878,7 +878,7 @@ BiddingUpdateComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 13);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "div", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "We\u2019ll bid for you, up to ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "We\u2019ll offer for you, up to ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "span");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, "02h 01m 45s");
@@ -890,12 +890,12 @@ BiddingUpdateComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](79, "input", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](81, "Place bid US $175.00 or higher");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](81, "Place offer US $175.00 or higher");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "div", 16);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "button", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](84, "Update Bid");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](84, "Update offer");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
