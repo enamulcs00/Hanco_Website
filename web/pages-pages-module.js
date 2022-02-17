@@ -1443,7 +1443,7 @@ class ProfileComponent {
     }
 }
 ProfileComponent.ɵfac = function ProfileComponent_Factory(t) { return new (t || ProfileComponent)(); };
-ProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProfileComponent, selectors: [["app-profile"]], decls: 43, vars: 0, consts: [[1, "listing_sec"], [1, "conta_iner"], [1, "listing_inner"], [1, "profile_sec"], [1, "pro_inner"], [1, "pro_lft"], ["src", "/assets/images/user_profile.png ", "alt", "images", 1, "img-fluid"], [1, "pro_rht"], ["action", ""], [1, "form-group"], ["for", "F_Name"], ["type", "text", "value", "Andy", "id", "F_Name", "disabled", "", 1, "form-control"], ["type", "text", "value", "Wilson", "id", "F_Name", "disabled", "", 1, "form-control"], ["for", "email"], ["type", "email", "value", "andywilson@gmail.com", "id", "email", "disabled", "", 1, "form-control"], ["for", "pwd"], ["type", "text", "value", "+40767217315", "id", "pwd", "disabled", "", 1, "form-control"], ["type", "text", "value", "Arabic", "id", "F_Name", "disabled", "", 1, "form-control"], ["for", "Address"], ["id", "Address", "rows", "1", "disabled", "", 1, "form-control", "rounded-0"], [1, "bdd_btn"], ["type", "submit", "routerLink", "../", 1, "btn", "btn-primary"]], template: function ProfileComponent_Template(rf, ctx) { if (rf & 1) {
+ProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProfileComponent, selectors: [["app-profile"]], decls: 60, vars: 0, consts: [[1, "listing_sec"], [1, "conta_iner"], [1, "listing_inner"], [1, "profile_sec"], [1, "pro_inner"], [1, "pro_lft"], ["src", "/assets/images/user_profile.png ", "alt", "images", 1, "img-fluid"], [1, "pro_rht"], ["action", ""], [1, "form-group"], ["for", "F_Name"], ["type", "text", "value", "Andy", "id", "F_Name", "disabled", "", 1, "form-control"], ["type", "text", "value", "Wilson", "id", "F_Name", "disabled", "", 1, "form-control"], ["for", "email"], ["type", "email", "value", "andywilson@gmail.com", "id", "email", "disabled", "", 1, "form-control"], ["for", "pwd"], ["type", "text", "value", "+40767217315", "id", "pwd", "disabled", "", 1, "form-control"], ["type", "text", "value", "Arabic", "id", "F_Name", "disabled", "", 1, "form-control"], ["for", "Address"], ["id", "Address", "rows", "1", "disabled", "", 1, "form-control", "rounded-0"], ["type", "text", "value", "Mohali", "id", "city", "disabled", "", 1, "form-control"], ["type", "text", "value", "Punjab", "id", "State", "disabled", "", 1, "form-control"], ["type", "text", "value", "India", "id", "Country", "disabled", "", 1, "form-control"], [1, "bdd_btn"], ["type", "submit", "routerLink", "../", 1, "btn", "btn-primary"]], template: function ProfileComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -1498,15 +1498,41 @@ ProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "div", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "label", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37, "Address");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37, "Address line 1");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "textarea", 19);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "Bucharest, Romania");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 20);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "button", 21);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42, "Edit");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "label", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42, "Address line 2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "textarea", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "Bucharest, Romania");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "label", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, "City");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](48, "input", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "label", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "State");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](52, "input", 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "label", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, "Country");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](56, "input", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "div", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "button", 24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "Edit");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
