@@ -40,11 +40,12 @@ import { CarDetailsComponent } from './car-details/car-details.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { CancelBidComponent } from './cancel-bid/cancel-bid.component';
 import { Biddingupdate2Component } from './biddingupdate2/biddingupdate2.component';
+import { ConfirmAddressComponent } from './confirm-address/confirm-address.component';
 
 
 
 @NgModule({
-  declarations: [ BlogsComponent,  AboutComponent, MyProfileComponent, EditProfileComponent, ThankYouComponent, SaveListComponent, HomeComponent, CarListingComponent, BiddingComponent, BiddingUpdateComponent, BiddingCongratulationsComponent, BiddingBuyComponent, WatchlistComponent, BuyNowComponent, PaymentMethodComponent, OrderReceiptComponent, ProfileComponent, ChangePasswordComponent, NotificationComponent, ManagePaymentsComponent, ContactUsComponent, MyBidsComponent, CarDetailsComponent, CancelBidComponent, Biddingupdate2Component],
+  declarations: [ BlogsComponent,  AboutComponent, MyProfileComponent, EditProfileComponent, ThankYouComponent, SaveListComponent, HomeComponent, CarListingComponent, BiddingComponent, BiddingUpdateComponent, BiddingCongratulationsComponent, BiddingBuyComponent, WatchlistComponent, BuyNowComponent, PaymentMethodComponent, OrderReceiptComponent, ProfileComponent, ChangePasswordComponent, NotificationComponent, ManagePaymentsComponent, ContactUsComponent, MyBidsComponent, CarDetailsComponent, CancelBidComponent, Biddingupdate2Component, ConfirmAddressComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

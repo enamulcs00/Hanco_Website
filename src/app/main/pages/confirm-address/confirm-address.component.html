@@ -1,0 +1,116 @@
+<section class="listing_sec">
+    <div class="conta_iner">
+        <div class="listing_inner">
+            <h1>Offer's</h1>
+
+        </div>
+    </div>
+</section>
+<section class="cofrm_sec">
+    <div class="conta_iner cofrm_inn">
+        <div class="cofrm_lft">
+            <figure>
+                <img src="/assets/images/car_7.png " alt="Logo" class="img-fluid">
+            </figure>
+            <div class="car_img_lst">
+                <figure>
+                    <img src="/assets/images/car_list.png " alt="Logo" class="img-fluid">
+                </figure>
+                <figure>
+                    <img src="/assets/images/car_list.png " alt="Logo" class="img-fluid">
+                </figure>
+                <figure>
+                    <img src="/assets/images/car_list.png " alt="Logo" class="img-fluid">
+                </figure>
+            </div>
+        </div>
+        <div class="cofrm_rht" >
+            <ul class="cofrm_lst" *ngIf="!editFlag">
+                <div class="cof_edt_cn" (click)="editFlag=true"><i class="fa fa-edit"></i></div>
+                <li>
+                    <label>Name</label> <h4>Andy</h4>
+                </li>
+                <li>
+                    <label>Email</label> <h4>andywilson@gmail.com</h4>
+                </li>
+                <li>
+                    <label>Phone Number</label> <h4>+40767217315</h4>
+                </li>
+                <li>
+                    <label>Address line 1</label> <h4>Bucharest, Romania</h4>
+                </li>
+                <li>
+                    <label>Address line 2</label> <h4>Bucharest, Romania</h4>
+                </li>
+                <li>
+                    <label>City</label> <h4>Mohali</h4>
+                </li>
+                <li>
+                    <label>State</label> <h4>Punjab</h4>
+                </li>
+                <li>
+                    <label>Country</label> <h4>India</h4>
+                </li>
+                <li>
+                    <label>Pincode/Zipcode</label> <h4>1411001</h4>
+                </li>
+                <li>
+                    <label>Document</label> <figure><img src="/assets/images/car_list.png" alt="images" class="img-fluid">   </figure>
+                </li>
+                <div class="bdd_btn">
+                    <button type="submit" class="btn btn-primary" routerLink="/main/paymentmethod">Pay $300 Now</button>
+                </div>
+            </ul>
+            <form action="" class="prof_stup" *ngIf="editFlag">
+                <div class="form-group">
+                    <label for="l_name">Name</label>
+                    <input type="text" class="form-control" placeholder="Name" id="f_name">
+                  </div> 
+              <div class="form-group">
+                <label for="l_name">Email</label>
+                <input type="email" class="form-control" placeholder="Email" id="email">
+                </div> 
+                <div class="form-group">
+                    <label for="l_name">Phone Number</label>
+                    <input type="number" class="form-control" placeholder="Phone Number" id="phone">
+                  </div> 
+                 
+                <div class="form-group">
+                    <label for="l_name">Address line 1</label>
+                    <input type="text" class="form-control" placeholder="Address" id="address1">
+                </div>
+                <div class="form-group">
+                    <label for="l_name">Address line 2</label>
+                    <input type="text" class="form-control" placeholder="Address" id="address2">
+                </div>
+                <div class="form-group">
+                    <label for="l_name">City</label>
+                    <input type="text" class="form-control" placeholder="City" id="city">
+                </div>
+                <div class="form-group">
+                    <label for="l_name">State</label>
+                    <input type="text" class="form-control" placeholder="State" id="state">
+                </div>
+                <div class="form-group">
+                    <label for="l_name">Country</label>
+                    <input type="text" class="form-control" placeholder="Country" id="country">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Pincode/Zipcode</label>
+                    <input type="text" class="form-control" placeholder="Pincode/Zipcode" id="pincode">
+                </div>
+              
+                <div class="form-group file_up">
+                    <label for="vat">
+                        <img src="/assets/images/auth/Icon_upload.png " alt="Images" class="img-fluid">
+                        <p>Upload Document</p>
+                    </label>
+                    <input type="file" class="form-control" id="upload">
+                </div>
+                <div class="bdd_btn">
+                    <button type="submit" class="btn btn-primary" (click)="editFlag=false">update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

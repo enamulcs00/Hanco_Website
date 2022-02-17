@@ -2371,6 +2371,7 @@ border-radius: 10px;
 /***********************************
 ************Car Details***********
 ***********************************/ 
+
 .car_detal_sec {
   padding: 80px 0px;
 }
@@ -2653,3 +2654,63 @@ p {
 .up_dat_flx input {
   background-color: transparent;
 }
+.cofrm_sec {
+  padding: 80px 0px;
+}
+.cofrm_lft {
+  width: 50%;
+}
+.cofrm_rht {
+  width: 45%;
+  .bdd_btn {
+    text-align: center;
+}
+}
+.cofrm_inn{  @include f_c_alt;
+   .car_img_lst {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    figure {
+      padding: 10px 0px;
+  }
+  }
+}
+.buynow_inn.enr_dtls .buynow_lft input {
+  border: 1px solid #E6E6E6;
+  border-radius: 25px;
+  padding: 14px;
+}
+.agrs_txt label.chk_box {
+  font-size: 18px;
+  line-height: 20px;
+  color: #000;
+}
+.cofrm_lst{
+  position: relative;
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 30px;
+    padding-bottom: 10px;
+ img {
+      height: 50px;
+  }
+    h4 {
+      font-size: 16px;
+  }
+  }
+}
+.cof_edt_cn {
+  position: absolute;
+  right: 0;
+  top: -40px;
+  cursor: pointer;
+  i {
+    font-size: 20px;
+    color: #951516;
+}
+}
+
+

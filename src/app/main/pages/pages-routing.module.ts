@@ -24,6 +24,7 @@ import { MyBidsComponent } from './my-bids/my-bids.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { CancelBidComponent } from './cancel-bid/cancel-bid.component';
 import { Biddingupdate2Component } from './biddingupdate2/biddingupdate2.component';
+import { ConfirmAddressComponent } from './confirm-address/confirm-address.component';
 
 
 const routes: Routes = [
@@ -135,6 +136,10 @@ const routes: Routes = [
   {
     path : 'cancelbid',
      component :CancelBidComponent
+  },
+  {
+    path : 'confirm',
+     component :ConfirmAddressComponent
   }
 ];
 
