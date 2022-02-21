@@ -2,31 +2,10 @@
 @import '~ngx-toastr/toastr';
 @import 'assets/fonts/fonts.scss';
 
-@mixin f_c_c {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-@mixin f_c_start {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-@mixin f_c_center {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-@mixin f_c_alt {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content:  space-between;
-}
+@mixin f_c_c { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+ @mixin f_c_start { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; } 
+ @mixin f_c_center { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; } 
+@mixin f_c_alt { display: flex; flex-wrap: wrap; align-items: stretch; justify-content:  space-between; }
 * {
   outline: none !important;
   margin: 0;
@@ -1365,6 +1344,7 @@ section.listing_sec {
   width: 100%;
   background-repeat: no-repeat;
   position: relative;
+  background-size: cover;
 } 
 .listing_inner {
   display: flex;
@@ -2642,38 +2622,21 @@ p {
   font-size: 18px;
   color: #000;
 }
-.custom-forget .popu_rgt_cmmn {
-  padding: 0px 50px 0px 30px;
-}
-.custom-modalbox.custom-forget {
-  max-width: 80% !important;
-}
-.custom-signpo .popu_rgt h2 {
-  padding-top: 15px;
-}
-.up_dat_flx input {
-  background-color: transparent;
-}
-.cofrm_sec {
-  padding: 80px 0px;
-}
-.cofrm_lft {
-  width: 50%;
-}
-.cofrm_rht {
-  width: 45%;
-  .bdd_btn {
-    text-align: center;
-}
+.custom-forget .popu_rgt_cmmn {padding: 0px 50px 0px 30px;}
+.custom-modalbox.custom-forget {max-width: 80% !important;}
+.custom-signpo .popu_rgt h2 {padding-top: 15px;}
+.up_dat_flx input {background-color: transparent;}
+.cofrm_sec {padding: 80px 0px;}
+.cofrm_lft {width: 50%;}
+.cofrm_rht {width: 45%;
+.bdd_btn{text-align: center;}
 }
 .cofrm_inn{  @include f_c_alt;
    .car_img_lst {
     display: flex;
     padding: 10px;
     justify-content: space-between;
-    figure {
-      padding: 10px 0px;
-  }
+    figure {padding: 10px 0px;  }
   }
 }
 .buynow_inn.enr_dtls .buynow_lft input {
@@ -2694,12 +2657,8 @@ p {
     align-items: center;
     line-height: 30px;
     padding-bottom: 10px;
- img {
-      height: 50px;
-  }
-    h4 {
-      font-size: 16px;
-  }
+ img {height: 50px;}
+  h4 {font-size: 16px;}
   }
 }
 .cof_edt_cn {
@@ -2707,10 +2666,37 @@ p {
   right: 0;
   top: -40px;
   cursor: pointer;
-  i {
-    font-size: 20px;
-    color: #951516;
-}
+  i {font-size: 20px;color: #951516;}
 }
 
 
+@media(max-width:1366px) {
+  section.about_sec .about_inner p {
+    font-size: 18px;
+    line-height: 30px;
+}
+.banner_sec{
+  h1 {
+    font-size: 66px;
+    line-height: 100px;
+  }
+  h2 {
+    width: 100%;
+    color: #fff;
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+section.form_sec .form_sec_inner h2 {
+  font-size: 32px;
+  line-height: 40px;
+} 
+.listing_inner h1 {
+  font-size: 64px;
+  line-height: 106px;
+}
+section.about_sec .about_inner p {
+  font-size: 18px;
+  line-height: 30px;
+}
+}
