@@ -4499,39 +4499,39 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function ProfileSetupComponent_div_78_Template(rf, ctx) { if (rf & 1) {
+function ProfileSetupComponent_div_82_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label", 42);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "License");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "input", 42);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "input", 43);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function ProfileSetupComponent_div_79_Template(rf, ctx) { if (rf & 1) {
+function ProfileSetupComponent_div_83_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label", 44);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "VAT Registration Number");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "input", 44);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "input", 45);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function ProfileSetupComponent_div_80_Template(rf, ctx) { if (rf & 1) {
+function ProfileSetupComponent_div_84_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label", 45);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label", 46);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "CR Number");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "input", 46);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "input", 47);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function ProfileSetupComponent_div_81_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 47);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label", 43);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 48);
+function ProfileSetupComponent_div_85_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 48);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label", 44);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 49);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Upload Document");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "input", 49);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "input", 50);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 class ProfileSetupComponent {
@@ -4552,7 +4552,7 @@ class ProfileSetupComponent {
     }
 }
 ProfileSetupComponent.ɵfac = function ProfileSetupComponent_Factory(t) { return new (t || ProfileSetupComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_common_data_common_dialog_service__WEBPACK_IMPORTED_MODULE_2__["CommonDialogService"])); };
-ProfileSetupComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProfileSetupComponent, selectors: [["app-profile-setup"]], decls: 85, vars: 6, consts: [[1, "modal-body"], [1, "popu_mn", "popu_mn_cmn"], [1, "popu_lft"], [1, "text-center"], ["src", "/assets/images/auth/profile_setup.jpg ", "alt", "Images", 1, "img-fluid"], [1, "popu_rgt", "popu_rgt_cmmn"], [1, "popu_rgt_inn", "prfle_stup"], [1, "back_arr"], ["src", "/assets/images/back_aow.svg ", "alt", "Images", 1, "img-fluid"], [1, "sub_txt"], ["action", "", 1, "prof_stup"], [1, "usr_img"], ["src", "/assets/images/auth/user_bg.png ", "alt", "Images", 1, "img-fluid"], [1, "usr_camra"], ["aria-hidden", "true", 1, "fa", "fa-camera"], [1, "form-group"], ["for", "user_type"], [1, "psw_cls"], ["id", "user_type", 1, "form-control", 3, "change"], [3, "value"], [1, "fa", "fa-caret-down"], [1, "prfsp"], ["for", "f_name"], ["type", "text", "placeholder", "Draco", "id", "f_name", 1, "form-control"], ["for", "l_name"], ["type", "text", "placeholder", "Malfoy", "id", "l_name", 1, "form-control"], ["for", "email"], ["type", "email", "placeholder", "Hanco@gmail.com", "id", "email", 1, "form-control"], ["for", "phone"], ["type", "text", "placeholder", "+91 9876543210", "id", "phone", 1, "form-control"], ["type", "text", "placeholder", "Address", "id", "address1", 1, "form-control"], ["type", "text", "placeholder", "Address", "id", "address2", 1, "form-control"], ["type", "text", "placeholder", "City", "id", "city", 1, "form-control"], ["type", "text", "placeholder", "State", "id", "state", 1, "form-control"], ["type", "text", "placeholder", "Country", "id", "country", 1, "form-control"], ["type", "text", "placeholder", "Pincode/Zipcode", "id", "pincode", 1, "form-control"], ["id", "user_type", 1, "form-control"], ["class", "form-group", 4, "ngIf"], ["class", "form-group file_up", 4, "ngIf"], [1, "btn_commn"], ["href", "javascript:void(0)", 1, "btn", "btn-primary", 3, "click"], ["for", "license"], ["type", "text", "placeholder", "license", "id", "license", 1, "form-control"], ["for", "vat"], ["type", "text", "placeholder", "VAT Registration Number", "id", "vat", 1, "form-control"], ["for", "cr_no"], ["type", "text", "placeholder", "CR Number", "id", "cr_no", 1, "form-control"], [1, "form-group", "file_up"], ["src", "/assets/images/auth/Icon_upload.png ", "alt", "Images", 1, "img-fluid"], ["type", "file", "id", "upload", 1, "form-control"]], template: function ProfileSetupComponent_Template(rf, ctx) { if (rf & 1) {
+ProfileSetupComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProfileSetupComponent, selectors: [["app-profile-setup"]], decls: 89, vars: 6, consts: [[1, "modal-body"], [1, "popu_mn", "popu_mn_cmn"], [1, "popu_lft"], [1, "text-center"], ["src", "/assets/images/auth/profile_setup.jpg ", "alt", "Images", 1, "img-fluid"], [1, "popu_rgt", "popu_rgt_cmmn"], [1, "popu_rgt_inn", "prfle_stup"], [1, "back_arr"], ["src", "/assets/images/back_aow.svg ", "alt", "Images", 1, "img-fluid"], [1, "sub_txt"], ["action", "", 1, "prof_stup"], [1, "usr_img"], ["src", "/assets/images/auth/user_bg.png ", "alt", "Images", 1, "img-fluid"], [1, "usr_camra"], ["aria-hidden", "true", 1, "fa", "fa-camera"], [1, "form-group"], ["for", "user_type"], [1, "psw_cls"], ["id", "user_type", 1, "form-control", 3, "change"], [3, "value"], [1, "fa", "fa-caret-down"], [1, "prfsp"], ["for", "f_name"], ["type", "text", "placeholder", "Draco", "id", "f_name", 1, "form-control"], ["for", "l_name"], ["type", "text", "placeholder", "Malfoy", "id", "l_name", 1, "form-control"], ["for", "email"], ["type", "email", "placeholder", "Hanco@gmail.com", "id", "email", 1, "form-control"], ["for", "phone"], ["type", "text", "placeholder", "+91 9876543210", "id", "phone", 1, "form-control"], ["type", "text", "placeholder", "Resident ID or National ID", "id", "resident", 1, "form-control"], ["type", "text", "placeholder", "Address", "id", "address1", 1, "form-control"], ["type", "text", "placeholder", "Address", "id", "address2", 1, "form-control"], ["type", "text", "placeholder", "City", "id", "city", 1, "form-control"], ["type", "text", "placeholder", "State", "id", "state", 1, "form-control"], ["type", "text", "placeholder", "Country", "id", "country", 1, "form-control"], ["type", "text", "placeholder", "Pincode/Zipcode", "id", "pincode", 1, "form-control"], ["id", "user_type", 1, "form-control"], ["class", "form-group", 4, "ngIf"], ["class", "form-group file_up", 4, "ngIf"], [1, "btn_commn"], ["href", "javascript:void(0)", 1, "btn", "btn-primary", 3, "click"], ["for", "license"], ["type", "text", "placeholder", "license", "id", "license", 1, "form-control"], ["for", "vat"], ["type", "text", "placeholder", "VAT Registration Number", "id", "vat", 1, "form-control"], ["for", "cr_no"], ["type", "text", "placeholder", "CR Number", "id", "cr_no", 1, "form-control"], [1, "form-group", "file_up"], ["src", "/assets/images/auth/Icon_upload.png ", "alt", "Images", 1, "img-fluid"], ["type", "file", "id", "upload", 1, "form-control"]], template: function ProfileSetupComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -4623,62 +4623,68 @@ ProfileSetupComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "div", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "label", 24);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, "Address line 1");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, "Resident ID or National ID");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](48, "input", 30);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "div", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "label", 24);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "Address line 2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "Address line 1");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](52, "input", 31);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "label", 24);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, "City");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, "Address line 2");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](56, "input", 32);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "div", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "label", 24);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "State");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "City");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](60, "input", 33);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "label", 24);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "Country");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "State");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](64, "input", 34);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "label", 28);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "Pincode/Zipcode");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "label", 24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "Country");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](68, "input", 35);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "label", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, "Nationality");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "label", 28);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, "Pincode/Zipcode");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "select", 36);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "option");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, "Arabic");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](72, "input", 36);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "option");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76, "america");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "label", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, "Nationality");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](77, "> ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "select", 37);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "option");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](78, "Arabic");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "option");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](80, "america");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](81, "> ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](78, ProfileSetupComponent_div_78_Template, 4, 0, "div", 37);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](79, ProfileSetupComponent_div_79_Template, 4, 0, "div", 37);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](80, ProfileSetupComponent_div_80_Template, 4, 0, "div", 37);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](81, ProfileSetupComponent_div_81_Template, 6, 0, "div", 38);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "div", 39);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "a", 40);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProfileSetupComponent_Template_a_click_83_listener() { return ctx.openCongrats(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](84, "Done");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](82, ProfileSetupComponent_div_82_Template, 4, 0, "div", 38);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](83, ProfileSetupComponent_div_83_Template, 4, 0, "div", 38);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](84, ProfileSetupComponent_div_84_Template, 4, 0, "div", 38);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](85, ProfileSetupComponent_div_85_Template, 6, 0, "div", 39);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "div", 40);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](87, "a", 41);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProfileSetupComponent_Template_a_click_87_listener() { return ctx.openCongrats(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](88, "Done");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -4691,7 +4697,7 @@ ProfileSetupComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](53);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](57);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.userTypeValue == 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.userTypeValue == 2);
