@@ -5,6 +5,7 @@ import { map, catchError } from "rxjs/operators";
 import { Observable } from 'rxjs/internal/Observable';
 import { Router } from '@angular/router';
 import { CommonService } from '../common/common.service';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -54,12 +55,30 @@ export class ApiService {
     );
   }
 
+  MustMatch(controlName: string, matchingControlName: string) {
+    return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
+      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+        // return if another validator has already found an error on the matchingControl
+        return;
+      }
+      // set error on matchingControl if validation fails
+      if (control.value !== matchingControl.value) {
+        matchingControl.setErrors({ mustMatch: true });
+      } else {
+        matchingControl.setErrors(null);
+      }
+    };
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       if(false){
-        // this._commonService.errorMsg("Error!")
+        this._commonService.errorMsg("Error!")
       } else {
         console.error(error);
+        this._commonService.errorMsg(error)
       }
       return;
     };

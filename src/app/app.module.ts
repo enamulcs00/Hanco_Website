@@ -1,3 +1,4 @@
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -11,49 +12,51 @@ import { environment } from '../environments/environment';
 import { NotFound404Component } from './notFound404/not-found404/not-found404.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { SignUpComponent } from './common-data/signUp/sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ValidatorComponent } from './validator/validator/validator.component';
-import { DialogComponent } from './common-data/dialog/dialog.component';
-import { ForgetPassComponent } from './common-data/forget-pass/forget-pass.component';
 import { NgOtpInputModule } from 'ng-otp-input';
-import { PhoneVerificationComponent } from './common-data/phone-verification/phone-verification.component';
-import { ResetPasswordComponent } from './common-data/reset-password/reset-password.component';
 import { SetInterceptorService } from './servies/setInter/set-inter.service';
 import { GetInterService } from './servies/getInter/get-inter.service';
 import { ToastrModule } from 'ngx-toastr';
-import { VerificationComponent } from './common-data/verification/verification.component';
-import { EducationComponent1 } from './common-data/education/education.component';
 // import { ForgetPassComponent } from './common-data/forget-pass/forget-pass.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { WorkExperienceComponent } from './common-data/work-experience/work-experience.component';
-import { UploadProfileComponent } from './common-data/upload-profile/upload-profile.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
-import { JobDetailsComponent } from './common-data/job-details/job-details.component';
-import { ApplyJobComponent } from './common-data/apply-job/apply-job.component';
-import { JobThankyouComponent } from './common-data/job-thankyou/job-thankyou.component';
-
-
+import { NgxUiLoaderConfig, NgxUiLoaderModule, NgxUiLoaderService } from 'ngx-ui-loader';
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  "bgsColor": "rgba(255,255,255,0)",
+  "bgsOpacity": 1,
+  "bgsPosition": "bottom-right",
+  "bgsSize": 150,
+  "bgsType": "ball-spin-clockwise",
+  "blur": 5,
+  "delay": 0,
+  "fastFadeOut": true,
+  "fgsColor": "rgba(255,255,255,0)",
+  "fgsPosition": "center-center",
+  "fgsSize": 60,
+  "fgsType": "ball-spin-clockwise",
+  "gap": 24,
+  "logoPosition": "center-center",
+  "logoSize": 120,
+  "logoUrl": "",
+  "masterLoaderId": "master",
+  "overlayBorderRadius": "0",
+  "overlayColor": "rgba(255,255,255,0)",
+  "pbColor": "#4d429a",
+  "pbDirection": "ltr",
+  "pbThickness": 3,
+  "hasProgressBar": true,
+  "maxTime": -1,
+  "minTime": 300
+};
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFound404Component,
-    SignUpComponent,
-    ResetPasswordComponent,
-    DialogComponent,
     ValidatorComponent,
-    ForgetPassComponent,
-    PhoneVerificationComponent,
-    VerificationComponent,
-    EducationComponent1,
-    WorkExperienceComponent,
-    UploadProfileComponent,
-    JobDetailsComponent,
-    ApplyJobComponent,
-    JobThankyouComponent
   ],
   imports:[
     BrowserModule,
@@ -76,9 +79,12 @@ import { JobThankyouComponent } from './common-data/job-thankyou/job-thankyou.co
     MatFormFieldModule,
     MatInputModule,
     SlickCarouselModule,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxIntlTelInputModule
   ],
   providers: [ 
+    NgxUiLoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: SetInterceptorService, multi: true },
     // { provide: HTTP_INTERCEPTORS, useClass: GetInterService, multi: true },
   ],

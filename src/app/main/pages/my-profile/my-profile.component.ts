@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonDialogService } from 'src/app/common-data/common-dialog.service';
+import { ModalService } from 'src/app/auth/modal.service';
 import { ApiService } from 'src/app/servies/api/api.service';
 import { CommonService } from 'src/app/servies/common/common.service';
 
@@ -16,7 +16,7 @@ export class MyProfileComponent implements OnInit {
   constructor(
     private api : ApiService,
     private common : CommonService,
-    private modal : CommonDialogService,
+    private modal : ModalService,
     private route : Router
   ) { }
 
@@ -43,20 +43,20 @@ export class MyProfileComponent implements OnInit {
     })
   }
   openEducation(){
-    this.modal.education(1).subscribe((res : any)=>{
-      this.getProfile();
-    })
+    // this.modal.education(1).subscribe((res : any)=>{
+    //   this.getProfile();
+    // })
   }
 
   openExp(){
-    this.modal.experience().subscribe((res : any)=>{
-      this.getProfile();
-    })
+    // this.modal.experience().subscribe((res : any)=>{
+    //   this.getProfile();
+    // })
   }
   openSkill(){
-    this.modal.skill().subscribe((res : any)=>{
-      this.getProfile();
-    })
+    // this.modal.skill().subscribe((res : any)=>{
+    //   this.getProfile();
+    // })
   }
   openCertificate(){
     this.route.navigate(['/main/certifications-awards']);

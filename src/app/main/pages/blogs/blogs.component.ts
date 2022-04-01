@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonDialogService } from 'src/app/common-data/common-dialog.service';
+import { ModalService } from 'src/app/auth/modal.service';
 import { ApiService } from 'src/app/servies/api/api.service';
 import { CommonService } from 'src/app/servies/common/common.service';
 
@@ -20,7 +20,7 @@ export class BlogsComponent implements OnInit {
   constructor(
     private api : ApiService,
     private common : CommonService,
-    private commonDialog : CommonDialogService,
+    private commonDialog : ModalService,
     private route : Router
   ) { }
 
@@ -55,9 +55,9 @@ export class BlogsComponent implements OnInit {
         }
       })
     }else{
-      this.commonDialog.showModal().subscribe((res : any)=>{
-        this.getBlogs();
-      })
+      // this.commonDialog.showModal().subscribe((res : any)=>{
+      //   this.getBlogs();
+      // })
     }
   }
 

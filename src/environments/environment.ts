@@ -1,10 +1,11 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+//ng build --base-href "/hanco/web/" --prod
 export const environment = {
   production: false,
-  baseUrl: 'http://dev.webdevelopmentsolution.net:3052/api/v1/'
+  baseUrl:'https://appgrowthcompany.com:4020/api/v1',
+  storageKey: 'webKey',
 };
 
 /*

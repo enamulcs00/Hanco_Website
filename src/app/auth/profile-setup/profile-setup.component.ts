@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CommonDialogService } from 'src/app/common-data/common-dialog.service';
+import { ModalService } from '../modal.service';
 
 @Component({
   selector: 'app-profile-setup',
@@ -9,7 +9,7 @@ import { CommonDialogService } from 'src/app/common-data/common-dialog.service';
 })
 export class ProfileSetupComponent implements OnInit {
   userTypeValue:any="1";
-  constructor(private dialog: MatDialog,private commonData:CommonDialogService) { }
+  constructor(private dialog: MatDialog,private commonData:ModalService) { }
   
   ngOnInit(): void {
     console.log('profile');

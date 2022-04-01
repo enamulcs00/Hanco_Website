@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CommonDialogService } from 'src/app/common-data/common-dialog.service';
 
 @Component({
   selector: 'app-congratulations',
@@ -9,7 +8,7 @@ import { CommonDialogService } from 'src/app/common-data/common-dialog.service';
 })
 export class CongratulationsComponent implements OnInit {
 
-  constructor(private dialog: MatDialog,private commonData:CommonDialogService) { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }

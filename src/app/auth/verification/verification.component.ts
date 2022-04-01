@@ -1,8 +1,7 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Config } from 'ng-otp-input/lib/models/config';
-import { CommonDialogService } from 'src/app/common-data/common-dialog.service';
-
+import { ModalService } from '../modal.service';
 @Component({
   selector: 'app-verification',
   templateUrl: './verification.component.html',
@@ -57,7 +56,7 @@ export class VerificationComponent implements OnInit {
       this.showOtpComponent = true;
     }, 0);
   }
-  constructor(private dialog: MatDialog,private commonData:CommonDialogService, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(private dialog: MatDialog,private commonData:ModalService, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
   }

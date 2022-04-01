@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -13,7 +14,8 @@ export class CommonService {
 
   constructor(
     private http : HttpClient,
-    private toastr : ToastrService
+    private toastr : ToastrService,
+    private ngxService: NgxUiLoaderService
   ) { 
     if(localStorage.getItem('token')){
       this.setProfile();
@@ -52,4 +54,13 @@ export class CommonService {
   successMsg(msg) {
     this.toastr.success(msg);
   }
-}
+   
+  showSpinner(){
+    this.ngxService.start();
+  }
+
+  hideSpinner(){
+    this.ngxService.stop();
+  }
+
+} 

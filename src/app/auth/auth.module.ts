@@ -12,7 +12,7 @@ import { CongratulationsComponent } from './congratulations/congratulations.comp
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 @NgModule({
   declarations: [SignInComponent, ForgotPasswordComponent, CreateAccountComponent, VerificationComponent, SetPasswordComponent, ProfileSetupComponent, CongratulationsComponent],
   imports: [
@@ -21,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     NgOtpInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxIntlTelInputModule
   ],
   exports:[SignInComponent, ForgotPasswordComponent, CreateAccountComponent, VerificationComponent, SetPasswordComponent, ProfileSetupComponent, CongratulationsComponent]
 })

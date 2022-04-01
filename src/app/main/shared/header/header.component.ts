@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { CreateAccountComponent } from 'src/app/auth/create-account/create-account.component';
-import { SignInComponent } from 'src/app/auth/sign-in/sign-in.component';
-import { CommonDialogService } from 'src/app/common-data/common-dialog.service';
+import { ModalService } from 'src/app/auth/modal.service';
 import { CommonService } from 'src/app/servies/common/common.service';
 
 @Component({
@@ -13,7 +12,7 @@ import { CommonService } from 'src/app/servies/common/common.service';
 export class HeaderComponent implements OnInit {
   userDetails: any;
 
-  constructor(private commonData : CommonDialogService,
+  constructor(private commonData : ModalService,
     private common : CommonService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -21,11 +20,11 @@ export class HeaderComponent implements OnInit {
       this.userDetails = JSON.parse(localStorage.getItem("prep_user"));       
     })
   }
-  show(){
-    this.commonData.showModal().subscribe((res : any)=>{
-      console.log(res);
-    })
-  }
+  // show(){
+  //   this.commonData.showModal().subscribe((res : any)=>{
+  //     console.log(res);
+  //   })
+  // }
   logout(){
     localStorage.clear();
     this.common.setProfile();   
