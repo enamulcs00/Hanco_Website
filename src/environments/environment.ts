@@ -4,7 +4,7 @@
 //ng build --base-href "/hanco/web/" --prod
 export const environment = {
   production: false,
-  baseUrl:'https://appgrowthcompany.com:4020/api/v1',
+  baseUrl:'https://appgrowthcompany.com:4020/api/v1//user/',
   storageKey: 'webKey',
 };
 

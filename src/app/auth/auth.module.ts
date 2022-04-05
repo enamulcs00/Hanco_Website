@@ -13,6 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 @NgModule({
   declarations: [SignInComponent, ForgotPasswordComponent, CreateAccountComponent, VerificationComponent, SetPasswordComponent, ProfileSetupComponent, CongratulationsComponent],
   imports: [
@@ -22,7 +23,8 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
     NgOtpInputModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxIntlTelInputModule
+    NgxIntlTelInputModule,
+    GooglePlaceModule
   ],
   exports:[SignInComponent, ForgotPasswordComponent, CreateAccountComponent, VerificationComponent, SetPasswordComponent, ProfileSetupComponent, CongratulationsComponent]
 })

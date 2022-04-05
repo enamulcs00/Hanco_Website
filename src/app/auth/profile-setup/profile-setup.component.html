@@ -2,21 +2,23 @@
     <div class="popu_mn popu_mn_cmn">
         <div class="popu_lft">
             <figure class="text-center">
-                <img src="/assets/images/auth/profile_setup.jpg " alt="Images" class="img-fluid">
+                <img src="assets/images/auth/profile_setup.jpg " alt="Images" class="img-fluid">
             </figure>
         </div>
         <div class="popu_rgt popu_rgt_cmmn">
             <div class="popu_rgt_inn prfle_stup">
                 <div class="back_arr">
-                    <img src="/assets/images/back_aow.svg " alt="Images" class="img-fluid">
+                    <img src="assets/images/back_aow.svg " alt="Images" class="img-fluid">
                 </div>
                 <h2>Profile setup</h2>
                 <p class="sub_txt">We just need some more information.</p>
-                <form action="" class="prof_stup">
+                <form [formGroup]="profileForm" class="prof_stup">
                     <div class="usr_img">
-                        <img src="/assets/images/auth/user_bg.png " alt="Images" class="img-fluid">
-                        <div class="usr_camra">
-                            <i class="fa fa-camera" aria-hidden="true"></i>
+                        <input type="file" id="myfile" name="myfile" (change)="onFileChanged($event)" />
+                        <img [src]="profileForm?.value?.image || 'assets/images/auth/user_bg.png' " alt="Images" class="img-fluid">
+                        <div class="usr_camra" #myfile.click()>
+                            <i class="fa fa-camera" aria-hidden="true">
+                            </i>
                         </div>
                     </div>
                     <div class="form-group">
@@ -28,36 +30,81 @@
                       </select>
                             <i class="fa fa-caret-down"></i>
                         </div>
+                        <mat-error *ngIf="f.userType.errors?.required && submitted">
+                            User Type is required
+                        </mat-error>
                     </div>
                     <div class="prfsp">
                         <div class="form-group">
                             <label for="f_name">First Name</label>
-                            <input type="text" class="form-control" placeholder="Draco" id="f_name">
+                            <input type="text" class="form-control" placeholder="Draco" #firstName (keydown.space)="!firstName.value?$event.preventDefault():null" minlength="3" maxlength="15" formControlName="firstName" id="f_name">
+                            <mat-error *ngIf="f.firstName.errors?.required && submitted">
+                                First name is required
+                            </mat-error>
+                            <mat-error *ngIf="f.firstName.errors?.minlength && submitted">
+                                first name must have at least 3 characters
+                            </mat-error>
+                            <mat-error *ngIf="f.firstName.errors?.maxlength && submitted">
+                                first name must have at most 15 characters
+                            </mat-error>
                         </div>
                         <div class="form-group">
                             <label for="l_name">Last Name</label>
-                            <input type="text" class="form-control" placeholder="Malfoy" id="l_name">
+                            <input type="text" class="form-control" #lastName (keydown.space)="!lastName.value?$event.preventDefault():null" minlength="3" maxlength="15" formControlName="lastName" placeholder="Malfoy" id="l_name">
+                            <mat-error *ngIf="f.lastName.errors?.required && submitted">
+                                Last name is required
+                            </mat-error>
+                            <mat-error *ngIf="f.lastName.errors?.minlength && submitted">
+                                Last name must have at least 3 characters
+                            </mat-error>
+                            <mat-error *ngIf="f.lastName.errors?.maxlength && submitted">
+                                Last name must have at most 15 characters
+                            </mat-error>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" placeholder="Hanco@gmail.com" id="email">
+                        <input type="email" class="form-control" #email (keydown.space)="!email.value?$event.preventDefault():null" formControlName="email" placeholder="Hanco@gmail.com" id="email">
+                        <mat-error *ngIf="f.email.errors?.required && submitted">
+                            Email Address is required
+                        </mat-error>
+                        <mat-error *ngIf="f.email.errors?.pattern && submitted">
+                            Email Address is invalid
+                        </mat-error>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="text" class="form-control" placeholder="+91 9876543210" id="phone">
+                        <label for="phone">Phone Number</label> <br>
+                        <!-- <input type="text" class="form-control" placeholder="+91 9876543210" id="phone"> -->
+                        <ngx-intl-tel-input matInput cssClass="form-control" [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true" [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                            [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.India" [maxLength]="'15'" [phoneValidation]="true" [separateDialCode]="separateDialCode" [numberFormat]="PhoneNumberFormat.National" name="phoneNo" formControlName="phoneNo">
+                        </ngx-intl-tel-input> <br>
+                        <mat-error *ngIf="submitted && f['phoneNo'].touched && f['phoneNo'].invalid && !(f['phoneNo'].hasError('required'))" class="text-danger d-inline-block pt-1">
+                            Phone No is Invalid
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted  && f['phoneNo'].hasError('required')">
+                            Phone No is required
+                        </mat-error>
                     </div>
                     <div class="form-group">
                         <label for="l_name">Customer ID (Resident or National ID)</label>
-                        <input type="text" class="form-control" placeholder="Customer ID (Resident or National ID)" id="resident">
+                        <input type="text" class="form-control" formControlName="customerId" #customerId (keydown.space)="!customerId.value?$event.preventDefault():null" minlength="7" maxlength="15" placeholder="Customer ID (Resident or National ID)" id="resident">
+                        <mat-error *ngIf="f.customerId.errors?.required && submitted">
+                            Customer ID is required
+                        </mat-error>
+                        <mat-error *ngIf="f.customerId.errors?.minlength && submitted">
+                            Customer ID must have at least 7 characters
+                        </mat-error>
+                        <mat-error *ngIf="f.customerId.errors?.maxlength && submitted">
+                            Customer ID must have at most 15 characters
+                        </mat-error>
                     </div>
                     <div class="form-group">
                         <label for="l_name">Address line 1</label>
-                        <input type="text" class="form-control" placeholder="Address" id="address1">
+                        <input type="text" class="form-control" (change)="onInputChange($event)" ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="AddressChange($event)" formControlName="address1" placeholder="Address" id="address1">
                     </div>
                     <div class="form-group">
                         <label for="l_name">Address line 2</label>
-                        <input type="text" class="form-control" placeholder="Address" id="address2">
+                        <input type="text" class="form-control" (change)="onInputChange1($event)" ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="AddressChange1($event)" formControlName="address2" placeholder="Address" id="address2">
                     </div>
                     <div class="form-group">
                         <label for="l_name">City</label>
@@ -71,7 +118,7 @@
                         <label for="l_name">Country</label>
                         <input type="text" class="form-control" placeholder="Country" id="country">
                     </div>
-                     <div class="form-group">
+                    <div class="form-group">
                         <label for="phone">Pincode/Zipcode</label>
                         <input type="text" class="form-control" placeholder="Pincode/Zipcode" id="pincode">
                     </div>
@@ -96,7 +143,7 @@
                     </div>
                     <div class="form-group file_up" *ngIf="userTypeValue==2">
                         <label for="vat">
-                              <img src="/assets/images/auth/Icon_upload.png " alt="Images" class="img-fluid">
+                              <img src="assets/images/auth/Icon_upload.png " alt="Images" class="img-fluid">
                               <p>Upload Document</p>
                           </label>
                         <input type="file" class="form-control" id="upload">

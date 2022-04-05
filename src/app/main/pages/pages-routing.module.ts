@@ -25,6 +25,7 @@ import { CarDetailsComponent } from './car-details/car-details.component';
 import { CancelBidComponent } from './cancel-bid/cancel-bid.component';
 import { Biddingupdate2Component } from './biddingupdate2/biddingupdate2.component';
 import { ConfirmAddressComponent } from './confirm-address/confirm-address.component';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 
 const routes: Routes = [
@@ -44,21 +45,25 @@ const routes: Routes = [
  
   {
     path : 'myProfile',
-    component :MyProfileComponent
+    component :MyProfileComponent,
+    canActivate:[AuthGuard],
   },
   {
     path : 'edit-profile',
-    component :EditProfileComponent
+    component :EditProfileComponent,
+    canActivate:[AuthGuard],
   },
  
   {
     path : 'edit-profile',
-    component :EditProfileComponent
+    component :EditProfileComponent,
+    canActivate:[AuthGuard],
   },
  
   {
     path : 'save_list',
-    component :SaveListComponent
+    component :SaveListComponent,
+    canActivate:[AuthGuard],
   }, 
   {
     path : 'home',
@@ -123,7 +128,9 @@ const routes: Routes = [
   },
   {
     path : 'contact',
-     component :ContactUsComponent
+     component :ContactUsComponent,
+    canActivate:[AuthGuard],
+
   },
   {
     path : 'mybids',

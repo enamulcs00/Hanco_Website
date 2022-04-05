@@ -3,14 +3,15 @@ import {HttpEvent, HttpHandler, HttpRequest, HttpHeaders, HttpInterceptor} from 
 import {Observable, timer} from 'rxjs';
 import { CommonService } from '../common/common.service';
 import { environment } from 'src/environments/environment';
-import { finalize } from 'rxjs/operators';
+import { finalize, tap } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SetInterceptorService implements HttpInterceptor  {
   totalRequests: number = 0;
-  constructor(private common:CommonService){ }
+  constructor(private common:CommonService,private toastr :ToastrService){ }
   intercept(request: HttpRequest<any>,next: HttpHandler): Observable<HttpEvent<any>> {
     // add authorization header with jwt token if available
     this.totalRequests++;
@@ -21,12 +22,16 @@ export class SetInterceptorService implements HttpInterceptor  {
     if (token) {
       request = request.clone({
         setHeaders: {
-          Authorization: `${token?.token}`,
+          Authorization: `${token?.accessToken}`,
         },
       });
     }
   
-    return next.handle(request).pipe( finalize(() => {
+    return next.handle(request).pipe(tap((data: any) => {
+      if(data.body && data.body.statusCode == 208){
+        this.toastr.error(data?.body?.message);
+        return 
+      }}),finalize(() => {
       this.totalRequests--;
       if (this.totalRequests === 0) {
         this.common.hideSpinner();

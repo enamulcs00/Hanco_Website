@@ -17,6 +17,8 @@ export class CreateAccountComponent implements OnInit {
   signUpForm:FormGroup;
   separateDialCode = false;
   submitted = false;
+  passText="password";
+  passText1="password";
   SearchCountryField = SearchCountryField;
   CountryISO = CountryISO;
   PhoneNumberFormat = PhoneNumberFormat;
@@ -43,6 +45,7 @@ export class CreateAccountComponent implements OnInit {
     setTimeout(() => {
       this.isOpenDialog = true
     }, 100);
+    this.changeStatus('email');
   }
    
   openLogin(){
@@ -52,9 +55,62 @@ export class CreateAccountComponent implements OnInit {
   openSigUp(){
     this.profileSetup();
   }
+  
+  changeStatus(res: any) {
+    this.phoneEmail = res;
+    if (this.phoneEmail == 'email') {
+      this.signUpForm.controls[this.phoneEmail].setValidators([Validators.required, Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)]);
+      this.signUpForm.controls[this.phoneEmail].updateValueAndValidity();
+      this.signUpForm.controls['phone'].reset();
+      this.signUpForm.controls['phone'].clearValidators();
+      this.signUpForm.controls['phone'].updateValueAndValidity()
+    }
+    else {
+      if (this.phoneEmail == 'phone') {
+        this.signUpForm.controls[this.phoneEmail].setValidators([Validators.required]);
+        this.signUpForm.controls[this.phoneEmail].updateValueAndValidity();
+        this.signUpForm.controls['email'].reset();
+        this.signUpForm.controls['email'].clearValidators();
+        this.signUpForm.controls['email'].updateValueAndValidity()
+      }
+    }
+  }
+
 
   profileSetup() {
-    this.dialog.closeAll();
-     this.commonData.verification(0);
+    this.submitted=true;
+    if(this.signUpForm.invalid){
+      this.signUpForm.markAllAsTouched();
+      return
+    }
+    let body: any;
+    if (this.phoneEmail == 'email') {
+      body = {
+        "email": this.signUpForm.controls['email'].value,
+        "password": this.signUpForm.controls['password'].value,
+        "verifyBy": 'email',
+        "role" : "USER",
+        "latitude": "30.7046",
+        "longitude": "76.7179"
+      }
+    } else {
+      body = {
+        "phoneNo": this.signUpForm.controls['phone'].value.number,
+        "dialCode": this.signUpForm.controls['phone'].value.dialCode,
+        "password": this.signUpForm.controls['password'].value,
+        "verifyBy": 'phone',
+        "role" : "USER",
+        "latitude": "30.7046",
+        "longitude": "76.7179"
+      }
+    }
+    console.log(body, this.signUpForm)
+    this.http.postRequest('register', body).subscribe((res: any) => {
+      if (res.statusCode == 200) {
+        this.common.successMsg(res.message)
+        this.dialog.closeAll();
+        this.commonData.verification(body);
+      }
+    })
     }
 }

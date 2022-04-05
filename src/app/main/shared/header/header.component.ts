@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { CreateAccountComponent } from 'src/app/auth/create-account/create-account.component';
 import { ModalService } from 'src/app/auth/modal.service';
+import { ApiService } from 'src/app/servies/api/api.service';
 import { CommonService } from 'src/app/servies/common/common.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -11,27 +14,32 @@ import { CommonService } from 'src/app/servies/common/common.service';
 })
 export class HeaderComponent implements OnInit {
   userDetails: any;
-
+  showTokenFlag:boolean=false;
   constructor(private commonData : ModalService,
-    private common : CommonService,private dialog: MatDialog) { }
+    private common : CommonService,
+    private router:Router,
+    private http:ApiService,
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.common.getProfile().subscribe(res => {
-      this.userDetails = JSON.parse(localStorage.getItem("prep_user"));       
-    })
+    this.showTokenFlag=localStorage[environment?.storageKey]?true:false;
+    // this.showTokenFlag?this.getProfile():'';
+    this.http.isLoggedInOut.subscribe((res:any) => {
+      this.showTokenFlag=localStorage[environment?.storageKey]?true:false;
+      // this.showTokenFlag?this.getProfile():"";
+    });
   }
-  // show(){
-  //   this.commonData.showModal().subscribe((res : any)=>{
-  //     console.log(res);
-  //   })
-  // }
-  logout(){
-    localStorage.clear();
-    this.common.setProfile();   
+
+  logOut(){
+    localStorage.removeItem(environment.storageKey);
+    this.common.successMsg("Logout Successfully");
+    this.http.isLoggedInOut.next(false);
+    this.router.navigate(['/main/home']);
+    this.common.showSpinner();
+    setTimeout(()=>{this.common.hideSpinner()},3000);
   }
 
   openLogin(){
-    // this.dialog.closeAll();
     this.commonData.openSignIn()
   }
 

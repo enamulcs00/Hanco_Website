@@ -7,26 +7,28 @@
     <div class="popu_mn popu_mn_cmn">
         <div class="popu_lft">
             <figure class="text-center">
-                <img src="/assets/images/auth/verify.jpg " alt="Images" class="img-fluid">
+                <img src="assets/images/auth/verify.jpg " alt="Images" class="img-fluid">
             </figure>
         </div>
         <div class="popu_rgt popu_rgt_cmmn">
             <div class="  popu_rgt_inn ">
-            <div class="back_arr">
-                <img src="/assets/images/back_aow.svg " alt="Images" class="img-fluid">
-            </div>
-            <h2>Verification</h2>
-            <p class="sub_txt">Enter the Email associated with your account to<span class="blk"> reset your password.</span> </p>
-            <form action="" class="frgt_psw vrifi_frm">
-                <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" *ngIf="showOtpComponent" [config]="config"></ng-otp-input>
-
-                <div class="btn_commn">
-                    <!-- <button type="submit" class="btn btn-primary" routerLink="../setpassword" data-toggle="modal" data-target="#setpassword">Next</button> -->
-                    <a class="btn btn-primary" href="javascript:void(0)" (click)="profileSetup()">Next</a>
-                    <p class="cnt-txt"><a href="javascript:void(0)">Resend</a></p>
+                <div class="back_arr">
+                    <img src="assets/images/back_aow.svg " alt="Images" class="img-fluid">
                 </div>
-            </form>
-        </div>
+                <h2>Verification</h2>
+                <p class="sub_txt">Enter the {{data?.phone?'Phone':'Email'}} associated with your account to<span class="blk"> reset your password.</span> </p>
+                <form [formGroup]="otpForm" class="frgt_psw vrifi_frm">
+                    <ng-otp-input (onInputChange)="onOtpChange($event)" (keyup.enter)="profileSetup()" [config]="config"></ng-otp-input>
+                    <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted && otpForm.controls['code'].touched  && otpForm.controls['code'].hasError('required')">
+                        OTP is required
+                    </mat-error>
+                    <div class="btn_commn">
+                        <!-- <button type="submit" class="btn btn-primary" routerLink="../setpassword" data-toggle="modal" data-target="#setpassword">Next</button> -->
+                        <a class="btn btn-primary" href="javascript:void(0)" (click)="profileSetup()">Next</a>
+                        <p class="cnt-txt"><a href="javascript:void(0)">Resend</a></p>
+                    </div>
+                </form>
+            </div>
 
         </div>
 

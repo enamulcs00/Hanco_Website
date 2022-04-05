@@ -833,6 +833,11 @@ span.blk {
     }
     .usr_img img {
         width: 75px;
+        // background: #951516;
+        object-fit: contain;
+        height: 75px;
+        border-radius: 50%;
+        padding: 5px;
     }
     form {
         width: 100%;
@@ -2880,6 +2885,20 @@ section.about_sec {
         font-size: 18px;
         line-height: 30px;
     }
+}
+
+.usr_img input {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.pac-container {
+    z-index: 1051 !important;
 }
 
 

@@ -1,6 +1,10 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Config } from 'ng-otp-input/lib/models/config';
+import { ApiService } from 'src/app/servies/api/api.service';
+import { CommonService } from 'src/app/servies/common/common.service';
+import { environment } from 'src/environments/environment';
 import { ModalService } from '../modal.service';
 @Component({
   selector: 'app-verification',
@@ -10,10 +14,10 @@ import { ModalService } from '../modal.service';
 
 export class VerificationComponent implements OnInit {
 
-  otp: string;
-  showOtpComponent = true;
-  @ViewChild('ngOtpInput', { static: false}) ngOtpInput: any;
-  config :Config = {
+  otpForm:FormGroup;
+  otpvalue: any;
+  submitted=false;
+    config :Config = {
     allowNumbersOnly: false,
     length:4,
     isPasswordInput: false,
@@ -31,43 +35,54 @@ export class VerificationComponent implements OnInit {
  
     }
   };
-  onOtpChange(otp) {
-    this.otp = otp;
-  }
-
-  setVal(val) {
-    this.ngOtpInput.setValue(val);
-  }
-
-  toggleDisable(){
-    if(this.ngOtpInput.otpForm){
-      if(this.ngOtpInput.otpForm.disabled){
-        this.ngOtpInput.otpForm.enable();
-      }else{
-        this.ngOtpInput.otpForm.disable();
-      }
+  constructor(private dialog: MatDialog,
+    private fb:FormBuilder,
+    private http:ApiService,
+    private common:CommonService,
+    private commonData:ModalService, 
+    @Inject(MAT_DIALOG_DATA) public data: any) { 
+      this.otpForm = this.fb.group({
+        code: ['', [Validators.required]],
+      });
     }
-  }
-
-  onConfigChange() {
-    this.showOtpComponent = false;
-    this.otp = null;
-    setTimeout(() => {
-      this.showOtpComponent = true;
-    }, 0);
-  }
-  constructor(private dialog: MatDialog,private commonData:ModalService, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
   }
 
-  profileSetup() {
-    this.dialog.closeAll();
-     if(this.data==1){
-     this.commonData.setPassword();
-     }else{
-     this.commonData.profileSetup();
+  onOtpChange(event: any) {
+    this.otpvalue = event;
+    if (this.otpvalue.length == 4) {
+      this.otpForm.patchValue({ code: this.otpvalue });
+      this.otpForm.markAllAsTouched();
+      // this.openSetPassword();
+    } else {
+      // this.otpForm.patchValue({ code: '' });
     }
+  }
+
+  profileSetup() {
+    this.submitted=true;
+    if(this.otpForm.invalid){
+      this.otpForm.markAllAsTouched();
+      return
+    }
+    let body=this.data;
+    let keyList=['verifyBy','latitude','longitude','password','role','verifyBy']
+    keyList.filter(res=>{delete body[res]});
+    body['oneTimeCode']=this.otpForm.value.code
+    this.http.postRequest('verifyOtp', body).subscribe((res: any) => {
+      if (res.statusCode == 200) {
+        this.dialog.closeAll();
+        this.common.successMsg(res.message)
+        if(this.data==1){
+        this.commonData.setPassword();
+        }else{
+        localStorage.setItem(environment.storageKey,JSON.stringify(res?.data));
+        this.commonData.profileSetup(body);
+       }
+      }
+    })
+   
     }
 
 }

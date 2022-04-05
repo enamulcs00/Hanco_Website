@@ -390,6 +390,9 @@ ngx-bootstrap/positioning
 
 ngx-bootstrap/utils
 
+ngx-google-places-autocomplete
+MIT
+
 ngx-intl-tel-input
 MIT
 MIT License

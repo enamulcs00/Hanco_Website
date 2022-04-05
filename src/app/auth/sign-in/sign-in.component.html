@@ -1,33 +1,50 @@
-<!-- <a href="" rel="" data-toggle="modal" data-target="javascipt:void(0)signin">  Sign Up</a>
-<div class="modal fade auth_pup" id="signin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content"> -->
 <div class="modal-body" *ngIf="isOpenDialog">
-
     <div class="popu_mn pd_st">
         <div class="popu_lft">
             <figure class="text-center">
-                <img loading="lazy" src="/assets/images/auth/car_1.jpg " alt="Images" class="img-fluid">
+                <img loading="lazy" src="assets/images/auth/car_1.jpg " alt="Images" class="img-fluid">
             </figure>
         </div>
         <div class="popu_rgt sign_upcn">
             <h2>Welcome Back!</h2>
             <p class="sub_txt"> Sign In to Continue</p>
-            <form action="">
-                <div class="form-group">
+            <form [formGroup]="LoginForm">
+                <div class="form-group" *ngIf="phoneEmail=='email'">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" placeholder="Hanco@gmail.com" id="email">
+                    <input type="email" class="form-control" formControlName="email" #email (keydown.space)="!email.value?$event.preventDefault():null" placeholder="Hanco@gmail.com" id="email">
+                    <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted  && LoginForm.controls['email'].hasError('required')">
+                        Email is required
+                    </mat-error>
+                    <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted  && LoginForm.controls['email'].hasError('pattern')">
+                        Email is invalid
+                    </mat-error>
+                </div>
+                <div class="form-group" *ngIf="phoneEmail=='phone'">
+                    <label for="phoneNo">Phone Number</label> <br>
+                    <ngx-intl-tel-input cssClass="form-control" [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true" [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]" [selectFirstCountry]="false"
+                        [selectedCountryISO]="CountryISO.India" [maxLength]="'15'" [phoneValidation]="true" [separateDialCode]="separateDialCode" [numberFormat]="PhoneNumberFormat.National" name="phoneNo" formControlName="phoneNo">
+                    </ngx-intl-tel-input> <br>
+                    <mat-error *ngIf="submitted && LoginForm.controls['phoneNo'].touched && LoginForm.controls['phoneNo'].invalid && !(LoginForm.controls['phoneNo'].hasError('required'))" class="text-danger d-inline-block pt-1">
+                        Phone No is Invalid
+                    </mat-error>
+                    <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted  && LoginForm.controls['phoneNo'].hasError('required')">
+                        Phone No is required
+                    </mat-error>
                 </div>
                 <div class="form-group sng_psw">
                     <label for="pwd">Password</label>
                     <div class="psw_cls">
-                        <input type="password" class="form-control" placeholder="Password" id="pwd">
-                        <img loading="lazy" src="/assets/images/eye_psw.svg " alt="Images" class="img-fluid">  
+                        <input [type]="passText" formControlName="password" (keyUp.enter)="login()" class="form-control" placeholder="Password" id="pwd">
+                        <img loading="lazy" style="cursor: pointer;" *ngIf="passText=='password'" (click)="passText='text'" src="assets/images/eye_psw_cross.svg " alt="Images" class="img-fluid">
+                        <img loading="lazy" style="cursor: pointer;" *ngIf="passText=='text'" (click)="passText='password'" src="assets/images/eye_psw.svg " alt="Images" class="img-fluid">
                     </div>
+                    <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted  && LoginForm.controls['password'].hasError('required')">
+                        Password is required
+                    </mat-error>
                 </div>
                 <div class="form-group chk_bx_mn">
                     <label class="chk_box">Remember me
-                                        <input type="checkbox" >
+                                        <input type="checkbox" formControlName="rememberMe" >
                                          <span class="checkmark"></span>
                                     </label>
                     <label class="chk_box">
@@ -36,16 +53,16 @@
 
                 </div>
                 <div class="btn_commn">
-                    <a href="javascipt:void(0)" class="btn btn-primary">Sign In</a>
-                    <p class="cnt-txt"><a href="javascipt:void(0)">Continue With Phone number</a></p>
+                    <a href="javascipt:void(0)" class="btn btn-primary" (click)="login()">Sign In</a>
+                    <p class="cnt-txt"><a href="javascipt:void(0)" (click)="changeStatus(phoneEmail=='email'?'phone':'email')">Continue With {{phoneEmail=='email'?'Phone number':'Email'}}</a></p>
                 </div>
 
                 <div class="sgn_wth">
                     <p>Or Sign In With</p>
                     <div class="d_flex">
-                        <figure> <img loading="lazy" src="/assets/images/auth/fb.png " alt="Images" class="img-fluid"></figure>
-                        <figure> <img loading="lazy" src="/assets/images/auth/apple.png " alt="Images" class="img-fluid"></figure>
-                        <figure> <img loading="lazy" src="/assets/images/auth/google.png " alt="Images" class="img-fluid"></figure>
+                        <figure> <img loading="lazy" src="assets/images/auth/fb.png " alt="Images" class="img-fluid"></figure>
+                        <figure> <img loading="lazy" src="assets/images/auth/apple.png " alt="Images" class="img-fluid"></figure>
+                        <figure> <img loading="lazy" src="assets/images/auth/google.png " alt="Images" class="img-fluid"></figure>
                     </div>
 
                 </div>
@@ -62,6 +79,3 @@
     </div>
 
 </div>
-<!-- </div>
-    </div>
-</div> -->

@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
   afterChange(ev){
 this.currentSlide=ev.currentSlide
 this.currentSlide=this.currentSlide+1;
-console.log(this.currentSlide);
+// console.log(this.currentSlide);
 
 
   }

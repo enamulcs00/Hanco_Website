@@ -38,7 +38,7 @@ export class MyProfileComponent implements OnInit {
     })
   }
   openProfile(){
-    this.modal.profileSetup().subscribe((res : any)=>{
+    this.modal.profileSetup(0).subscribe((res : any)=>{
       this.getProfile();
     })
   }

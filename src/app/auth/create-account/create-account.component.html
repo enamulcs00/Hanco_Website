@@ -14,29 +14,65 @@
 
                 <h2>Create an Account</h2>
                 <p class="sub_txt"> We just need some more information.</p>
-                <form>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="text" class="form-control" placeholder="+91 9876543210" id="phone">
+                <form [formGroup]="signUpForm">
+                    <div class="form-group" *ngIf="phoneEmail=='phone'">
+                        <label for="phone">Phone Number</label> <br>
+                        <!-- <input type="text" class="form-control" placeholder="+91 9876543210" id="phone"> -->
+                        <ngx-intl-tel-input cssClass="form-control" [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true" [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]" [selectFirstCountry]="false"
+                            [selectedCountryISO]="CountryISO.India" [maxLength]="'15'" [phoneValidation]="true" [separateDialCode]="separateDialCode" [numberFormat]="PhoneNumberFormat.National" name="phone" formControlName="phone">
+                        </ngx-intl-tel-input> <br>
+                        <mat-error *ngIf="submitted && signUpForm.controls['phone'].touched && signUpForm.controls['phone'].invalid && !(signUpForm.controls['phone'].hasError('required'))" class="text-danger d-inline-block pt-1">
+                            Phone No is Invalid
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted  && signUpForm.controls['phone'].hasError('required')">
+                            Phone No is required
+                        </mat-error>
+                    </div>
+                    <div class="form-group" *ngIf="phoneEmail=='email'">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" formControlName="email" #email (keydown.space)="!email.value?$event.preventDefault():null" placeholder="Email">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted  && signUpForm.controls['email'].hasError('required')">
+                            Email is required
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted  && signUpForm.controls['email'].hasError('pattern')">
+                            Email is invalid
+                        </mat-error>
                     </div>
                     <div class="form-group sng_psw">
                         <label for="pwd_new">Password</label>
                         <div class="psw_cls">
-                            <input type="password" class="form-control" placeholder="Password" id="pwd_new">
-                            <img loading="lazy" src="assets/images/eye_psw.svg " alt="Images" class="img-fluid">
+                            <input [type]="passText1" formControlName="password" class="form-control" placeholder="Password" id="pwd_new">
+                            <img loading="lazy" *ngIf="passText1=='password'" style="cursor: pointer;" (click)="passText1='text'" src="assets/images/eye_psw_cross.svg " alt="Images" class="img-fluid">
+                            <img loading="lazy" *ngIf="passText1=='text'" style="cursor: pointer;" (click)="passText1='password'" src="assets/images/eye_psw.svg " alt="Images" class="img-fluid">
                         </div>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted && signUpForm.controls['password'].hasError('required')">
+                            Password is required
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted && signUpForm.controls['password'].hasError('minlength')">
+                            Password should be of minimum 8 characters
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted && signUpForm.controls['password'].hasError('maxlength')">
+                            Password should be of minimum 15 characters
+                        </mat-error>
                     </div>
                     <div class="form-group sng_psw">
                         <label for="pwd_con">Confirm Password</label>
                         <div class="psw_cls">
-                            <input type="password" class="form-control" placeholder="Password" id="pwd_con">
-                            <img loading="lazy" src="assets/images/eye_psw.svg " alt="Images" class="img-fluid">
+                            <input [type]="passText" class="form-control" placeholder="Password" formControlName="cnfpassword" (keyup.enter)="openSigUp()" id="pwd_con">
+                            <img loading="lazy" style="cursor: pointer;" *ngIf="passText=='password'" (click)="passText='text'" src="assets/images/eye_psw_cross.svg " alt="Images" class="img-fluid">
+                            <img loading="lazy" style="cursor: pointer;" *ngIf="passText=='text'" (click)="passText='password'" src="assets/images/eye_psw.svg " alt="Images" class="img-fluid">
                         </div>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted && signUpForm.controls['cnfpassword'].hasError('required')">
+                            Confirm Password is required
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted && signUpForm.controls['cnfpassword'].hasError('mustMatch')">
+                            Password and confirm password must match.
+                        </mat-error>
                     </div>
 
                     <div class="btn_commn">
                         <a href="javascript:void(0)" class="btn btn-primary" (click)="openSigUp()">Sign up</a>
-                        <p class="cnt-txt"><a href="javascript:void(0)">Sign up with email</a></p>
+                        <p class="cnt-txt"><a href="javascript:void(0)" (click)="changeStatus(phoneEmail=='email'?'phone':'email')">Sign up with {{phoneEmail=='email'?'Phone':'Email'}}</a></p>
                     </div>
                 </form>
 

@@ -6,6 +6,7 @@ import { ProfileSetupComponent } from './profile-setup/profile-setup.component';
 import { VerificationComponent } from './verification/verification.component';
 import { CongratulationsComponent } from './congratulations/congratulations.component';
 import { SetPasswordComponent } from './set-password/set-password.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +40,16 @@ export class ModalService {
     // dialogRef.componentInstance.data = val;
     return dialogRef.afterClosed();
   }
+
+  openSignUp(){
+    this.dialog.closeAll();
+    let dialogRef: MatDialogRef<CreateAccountComponent>;
+    dialogRef = this.dialog.open( CreateAccountComponent,
+      { 
+        panelClass: 'custom-modalbox',
+     } );
+    return dialogRef.afterClosed();
+  }
   
 
   openforget() {
@@ -50,35 +61,21 @@ export class ModalService {
     // dialogRef.componentInstance.data = val;
     return dialogRef.afterClosed();
   }
-  // phoneVerification(val,type) {
-  //   let dialogRef: MatDialogRef<PhoneVerificationComponent>;
-  //   dialogRef = this.dialog.open(PhoneVerificationComponent);
-  //   dialogRef.componentInstance.data = {val, type};
-  //   return dialogRef.afterClosed();
-  // } 
-  // emailVerification(val,type) {
-  //   let dialogRef: MatDialogRef<EmailVerificationComponent>;
-  //   dialogRef = this.dialog.open(EmailVerificationComponent);
-  //   dialogRef.componentInstance.data = {val,type};
-  //   return dialogRef.afterClosed();
-  // }
   verification(val) {
     let dialogRef: MatDialogRef<VerificationComponent>;
     dialogRef = this.dialog.open(VerificationComponent ,{ 
       panelClass: ['custom-modalbox','custom-verf']
-      // width:"800px",
    } );
     dialogRef.componentInstance.data = val;
     return dialogRef.afterClosed();
   }
 
-  profileSetup() {
+  profileSetup(val) {
     let dialogRef: MatDialogRef<ProfileSetupComponent>;
     dialogRef = this.dialog.open(ProfileSetupComponent, { 
       panelClass: ['custom-modalbox', 'profile-setup-main'],
-      // width:"800px",
+      data:val
    });
-    // dialogRef.componentInstance.data = val;
     return dialogRef.afterClosed();
   }
 
@@ -86,7 +83,6 @@ export class ModalService {
     let dialogRef: MatDialogRef<SetPasswordComponent>;
     dialogRef = this.dialog.open(SetPasswordComponent, { 
       panelClass: ['custom-modalbox', 'set-pass-main'],
-      // width:"800px",
    });
     // dialogRef.componentInstance.data = val;
     return dialogRef.afterClosed();
