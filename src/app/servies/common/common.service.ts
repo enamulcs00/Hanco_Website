@@ -48,11 +48,17 @@ export class CommonService {
   }
 
   errorMsg(msg) {    
-    this.toastr.error(msg);
+    this.toastr.error(msg, "", {
+      closeButton: true,
+      timeOut: 2500,
+    });
   }
 
   successMsg(msg) {
-    this.toastr.success(msg);
+    this.toastr.success(msg, "", {
+      closeButton: true,
+      timeOut: 2500,
+    });
   }
    
   showSpinner(){

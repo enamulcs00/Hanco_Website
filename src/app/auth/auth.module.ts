@@ -14,6 +14,10 @@ import { NgOtpInputModule } from 'ng-otp-input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+
 @NgModule({
   declarations: [SignInComponent, ForgotPasswordComponent, CreateAccountComponent, VerificationComponent, SetPasswordComponent, ProfileSetupComponent, CongratulationsComponent],
   imports: [
@@ -24,7 +28,12 @@ import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
     FormsModule,
     ReactiveFormsModule,
     NgxIntlTelInputModule,
-    GooglePlaceModule
+    GooglePlaceModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+         
+
   ],
   exports:[SignInComponent, ForgotPasswordComponent, CreateAccountComponent, VerificationComponent, SetPasswordComponent, ProfileSetupComponent, CongratulationsComponent]
 })

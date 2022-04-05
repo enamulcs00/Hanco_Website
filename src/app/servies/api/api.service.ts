@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { CommonService } from '../common/common.service';
 import { FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
+import { urls } from './urls';
 
 @Injectable({
   providedIn: 'root'
@@ -22,35 +23,78 @@ export class ApiService {
   ) { }
 
   getRequest(endPoint, reqBody) {
-    return this._http.get(`${this.baseUrl}${endPoint}`, reqBody)
+    return this._http.get(`${this.baseUrl}${urls[endPoint]}`, reqBody)
+    .pipe(
+      catchError(this.handleError<any>('Get Request'))
+    );
+  }
+   
+  getRequestWithParam(endPoint, reqBody) {
+    return this._http.get(`${this.baseUrl}${urls[endPoint]}?${reqBody}`)
     .pipe(
       catchError(this.handleError<any>('Get Request'))
     );
   }
 
+  getRequestWithId(endPoint,id):Observable<any>
+  {
+    return this._http.get(`${this.baseUrl}${urls[endPoint]}/${id}`)
+    .pipe(
+      catchError(this.handleError<any>('Get Request'))
+    );
+  }
+
+  getRequestWithParamId(endPoint,id,reqBody) {
+    return this._http.get(`${this.baseUrl}${urls[endPoint]}/${id}?${reqBody}`)
+    .pipe(
+      catchError(this.handleError<any>('Get Request'))
+    );
+  }
+
+  postRequestWithParam(endPoint, param,reqBody) {
+    return this._http.post(`${this.baseUrl}${urls[endPoint]}?${param}`,reqBody)
+    .pipe(
+      catchError(this.handleError<any>('Post Request'))
+    );
+  }
+  
+  postRequestWithId(endPoint,id,reqbody) {
+    return this._http.post(`${this.baseUrl}${urls[endPoint]}/${id}`,reqbody)
+    .pipe(
+      catchError(this.handleError<any>('Post Request'))
+    );
+  }
+ 
   postRequest(endPoint, reqBody) {    
-    return this._http.post(`${this.baseUrl}${endPoint}`, reqBody)
+    return this._http.post(`${this.baseUrl}${urls[endPoint]}`, reqBody)
     .pipe(
       catchError(this.handleError<any>('Post Request'))
     );
   }
 
   postRequestUpload(endPoint, reqBody) {
-    return this._http.post(`${this.uploadProfile}${endPoint}`, reqBody)
+    return this._http.post(`${this.uploadProfile}${urls[endPoint]}`, reqBody)
     .pipe(
       catchError(this.handleError<any>('Post Request'))
     );
   }
 
-  putRequest(endPoint, reqBody) {
-    return this._http.put(`${this.baseUrl}${endPoint}`, reqBody)  
+  putRequest(endPoint,reqBody) {
+    return this._http.put(`${this.baseUrl}${urls[endPoint]}`, reqBody)  
     .pipe(
       catchError(this.handleError<any>('Put Request'))
     );
   }
 
-  deleteRequest(endPoint, reqBody) {
-    return this._http.delete(`${this.baseUrl}${endPoint}`, reqBody)
+  putRequestWithId(endPoint,id,reqBody) {
+    return this._http.put(`${this.baseUrl}${urls[endPoint]}/${id}`, reqBody)  
+    .pipe(
+      catchError(this.handleError<any>('Put Request'))
+    );
+  }
+
+  deleteRequest(endPoint, id) {
+    return this._http.delete(`${this.baseUrl}${urls[endPoint]}/${id}`)
     .pipe(
       catchError(this.handleError<any>('Delete Request'))
     );

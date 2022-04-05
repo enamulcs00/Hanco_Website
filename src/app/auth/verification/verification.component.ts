@@ -67,15 +67,17 @@ export class VerificationComponent implements OnInit {
       return
     }
     let body=this.data;
-    let keyList=['verifyBy','latitude','longitude','password','role','verifyBy']
+    var type=this.data.type;
+    let keyList=['verifyBy','latitude','longitude','password','role','verifyBy','type']
     keyList.filter(res=>{delete body[res]});
     body['oneTimeCode']=this.otpForm.value.code
     this.http.postRequest('verifyOtp', body).subscribe((res: any) => {
       if (res.statusCode == 200) {
         this.dialog.closeAll();
         this.common.successMsg(res.message)
-        if(this.data==1){
+        if(type==1){
         this.commonData.setPassword();
+        localStorage.setItem(environment.storageKey,JSON.stringify(res?.data));
         }else{
         localStorage.setItem(environment.storageKey,JSON.stringify(res?.data));
         this.commonData.profileSetup(body);

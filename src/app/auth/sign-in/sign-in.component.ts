@@ -39,6 +39,7 @@ export class SignInComponent implements OnInit {
       password: ['', [Validators.required]],
       rememberMe: [""],
     });
+    this.changeStatus('email');
    }
 
   ngOnInit(): void {
@@ -53,6 +54,10 @@ export class SignInComponent implements OnInit {
         phoneNo: formData.dialCode+" "+formData.phoneNo,
         rememberMe: formData.rememberMe,
       });
+      console.log(formData.phoneNo,formData);
+      if(formData.phoneNo!=' ' && formData.phoneNo!='' && formData.phoneNo!=undefined){
+      this.changeStatus('phone');
+      }
     }
   }
 
@@ -111,16 +116,17 @@ export class SignInComponent implements OnInit {
     // console.log(body, this.LoginForm)
     this.http.postRequest('login', body).subscribe((res: any) => {
       if (res.statusCode == 200) {
-        this.common.successMsg(res.message)
-        this.dialog.closeAll();
-        localStorage.setItem(environment.storageKey,JSON.stringify(res?.data));
+        this.common.successMsg(res.message);
         if (this.LoginForm.value.rememberMe) {
           var remember=this.LoginForm.value;
-          remember['dialCode']=this.LoginForm.controls['phone'].value.dialCode;
+          remember['phoneNo']=this.LoginForm.controls['phoneNo'].value?this.LoginForm.controls['phoneNo'].value?.dialCode+" "+this.LoginForm.controls['phoneNo'].value.e164Number.replace(this.LoginForm?.value?.phoneNo?.dialCode,''):''
+          remember['dialCode']=this.LoginForm.controls['phoneNo'].value?this.LoginForm.controls['phoneNo'].value?.dialCode:'';
           localStorage.setItem("remember",JSON.stringify(remember));
         } else {
           localStorage.removeItem("remember");
         }
+        this.dialog.closeAll();
+        localStorage.setItem(environment.storageKey,JSON.stringify(res?.data));
         this.http.isLoggedInOut.next(true);
       }
     })

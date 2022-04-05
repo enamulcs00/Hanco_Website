@@ -7,6 +7,7 @@ import { VerificationComponent } from './verification/verification.component';
 import { CongratulationsComponent } from './congratulations/congratulations.component';
 import { SetPasswordComponent } from './set-password/set-password.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -76,6 +77,7 @@ export class ModalService {
       panelClass: ['custom-modalbox', 'profile-setup-main'],
       data:val
    });
+   this.dialog.afterAllClosed.subscribe(res=>{localStorage.removeItem(environment.storageKey)})
     return dialogRef.afterClosed();
   }
 
@@ -85,7 +87,7 @@ export class ModalService {
       panelClass: ['custom-modalbox', 'set-pass-main'],
    });
     // dialogRef.componentInstance.data = val;
-    return dialogRef.afterClosed();
+    this.dialog.afterAllClosed.subscribe(res=>{localStorage.removeItem(environment.storageKey)})
   }
 // education(val) {
 //     let dialogRef: MatDialogRef<EducationComponent1>;

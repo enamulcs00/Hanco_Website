@@ -24,6 +24,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { NgxUiLoaderConfig, NgxUiLoaderModule, NgxUiLoaderService } from 'ngx-ui-loader';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "rgba(255,255,255,0)",
   "bgsOpacity": 1,
@@ -81,7 +82,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     SlickCarouselModule,
     PaginationModule.forRoot(),
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
-    NgxIntlTelInputModule
+    NgxIntlTelInputModule,
+    MatDatepickerModule
   ],
   providers: [ 
     NgxUiLoaderService,

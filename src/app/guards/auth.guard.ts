@@ -17,7 +17,8 @@ export class AuthGuard implements CanActivate {
       user = '';
     }
     if (user) {
-      if(user.isProfileSetup){
+      console.log(user)
+      if(!(user.isProfileSetup)){
         this.modalService.profileSetup(user);
         this.router.navigate(['/main/home']);
         return false

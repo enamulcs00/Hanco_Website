@@ -3,5 +3,8 @@ export const urls:any= {
 	verifyOtp:'verifyOtp',
 	updateProfile:'updateProfile',
 	uploadProfilePic:'uploadProfilePic',
-	login:'login'
+	login:'login',
+	forgotPassword:'forgotPassword',
+	uploadFile:'uploadFile',
+	resetPassword:'resetPassword'
 }
