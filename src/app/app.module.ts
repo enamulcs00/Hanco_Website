@@ -25,6 +25,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { NgxUiLoaderConfig, NgxUiLoaderModule, NgxUiLoaderService } from 'ngx-ui-loader';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "rgba(255,255,255,0)",
   "bgsOpacity": 1,
@@ -83,10 +84,27 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     PaginationModule.forRoot(),
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxIntlTelInputModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    SocialLoginModule
   ],
   providers: [ 
     NgxUiLoaderService,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(environment.GOOGLE_PROVIDER_ID)
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider(environment.FACEBOOK_PROVIDER_ID)
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    },
     { provide: HTTP_INTERCEPTORS, useClass: SetInterceptorService, multi: true },
     // { provide: HTTP_INTERCEPTORS, useClass: GetInterService, multi: true },
   ],

@@ -31,12 +31,13 @@ export class HeaderComponent implements OnInit {
   }
 
   logOut(){
+    this.http.postRequest('logout',{}).subscribe(res=>{
+    if(res.statusCode==200){
     localStorage.removeItem(environment.storageKey);
     this.common.successMsg("Logout Successfully");
     this.http.isLoggedInOut.next(false);
     this.router.navigate(['/main/home']);
-    this.common.showSpinner();
-    setTimeout(()=>{this.common.hideSpinner()},3000);
+    }})
   }
 
   openLogin(){

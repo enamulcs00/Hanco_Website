@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1649166764666,
+  "timestamp": 1649228640822,
   "index": "/hanco/web/index.html",
   "assetGroups": [
     {
@@ -11,16 +11,16 @@
         "ignoreVary": true
       },
       "urls": [
-        "/hanco/web/1.cef1b6d844cce37951b1.js",
+        "/hanco/web/1.6545ec460beb3a465d6e.js",
         "/hanco/web/5.99d4835464747eb34d42.js",
-        "/hanco/web/6.370560cab97a8b39f83c.js",
+        "/hanco/web/6.41cb41ca897bfef0f281.js",
         "/hanco/web/7.85e6b40e8aa916f8fc63.js",
         "/hanco/web/favicon.ico",
         "/hanco/web/index.html",
-        "/hanco/web/main.4b395a0d9af9caf8b53b.js",
+        "/hanco/web/main.1804850a256f38c65536.js",
         "/hanco/web/manifest.webmanifest",
         "/hanco/web/polyfills.c79abaedf3533a4e30d8.js",
-        "/hanco/web/runtime.6f2d2bf6f393f138a1d8.js",
+        "/hanco/web/runtime.66598303203f9e46c365.js",
         "/hanco/web/scripts.126ec44fa30e87a7be91.js",
         "/hanco/web/styles.e4adb6dc1708ca5fbd1f.css"
       ],
@@ -146,9 +146,9 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/hanco/web/1.cef1b6d844cce37951b1.js": "a74db3d1417064e466d3ea5cb390d5469b8ef23d",
+    "/hanco/web/1.6545ec460beb3a465d6e.js": "d5b12f5c89dddee84b45524dad09aa86f4cabfad",
     "/hanco/web/5.99d4835464747eb34d42.js": "8ab6efe95042f35b60bf0fb42a04871d267ce84a",
-    "/hanco/web/6.370560cab97a8b39f83c.js": "4eedacb3e2190492d639698af59e521745f34817",
+    "/hanco/web/6.41cb41ca897bfef0f281.js": "d78510db2bc5140a5563d0a14d27fe527859b055",
     "/hanco/web/7.85e6b40e8aa916f8fc63.js": "49870f57aebff925e9acde0d1a17878c5e8036cf",
     "/hanco/web/ProximaNova-Black.330329718c3b7f7a2d51.woff2": "4e40c0ccd264044c675a68a1b61d19f3a9ef1010",
     "/hanco/web/ProximaNova-Black.786c5b02790e1f7ff378.woff": "664fa9253774c2af7036bc34f02ce5c5e4b06d99",
@@ -252,12 +252,12 @@
     "/hanco/web/flags.007b2705c0a8f69dfdf6.png": "21572c9751e5a3dc20395befa0fcb349c32c4811",
     "/hanco/web/flags@2x.9d5328fb490cddd43f66.png": "d6f843711c3cfe6d9a037e4c61d293f563e55802",
     "/hanco/web/fot_bg.bb8e042ffb0acbe60a7a.jpg": "aad61f98124088ba97acfbbde0f26f681241be36",
-    "/hanco/web/index.html": "c02a50d6bbc643127012a882cde57813283a1b5c",
+    "/hanco/web/index.html": "4037d40ab5b8a685896170d6ac90a16795e883c5",
     "/hanco/web/listing_img.2155f97e29492e71b8e8.jpg": "cf0e1f5e24907c0c51458563fc4bb9c911a2dfa4",
-    "/hanco/web/main.4b395a0d9af9caf8b53b.js": "934cafe4382251541a0f3f653c6009c0235d2b21",
+    "/hanco/web/main.1804850a256f38c65536.js": "26ac144dfef06133f083ca787edb99f3edbe6d5a",
     "/hanco/web/manifest.webmanifest": "e6c3b7308e3f69ea29d066d767e564400f09ee8d",
     "/hanco/web/polyfills.c79abaedf3533a4e30d8.js": "9db3f1bf5afbecb31233abc0b143858b395cc9e9",
-    "/hanco/web/runtime.6f2d2bf6f393f138a1d8.js": "c2842c513de5e83a8835b913c990d6a722bd58f8",
+    "/hanco/web/runtime.66598303203f9e46c365.js": "46e76922b8d023ce19045c92849e75a35e428762",
     "/hanco/web/scripts.126ec44fa30e87a7be91.js": "484b36de5276e5a3a7f39d7c1d2490dd53feb1e3",
     "/hanco/web/slick.2630a3e3eab21c607e21.svg": "17f63c6f6131389462ba3d814b7ddf83344705f9",
     "/hanco/web/slick.295183786cd8a1389865.woff": "af91c12f0f406a4f801aeb3b398768fe41d8f864",

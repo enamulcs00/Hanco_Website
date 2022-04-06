@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
 import { CountryISO, PhoneNumberFormat, SearchCountryField } from 'ngx-intl-tel-input';
 import { ApiService } from 'src/app/servies/api/api.service';
 import { CommonService } from 'src/app/servies/common/common.service';
@@ -26,10 +27,13 @@ export class SignInComponent implements OnInit {
     CountryISO.UnitedKingdom,
   ];
   passText="password";
+  yourRedirectURIVar: any = 'https://uniform-deal.com/home';
+  clientId: any = 'com.uniformdeal';
   constructor(@Optional() @Inject(MAT_DIALOG_DATA) public data: any,
   private dialog: MatDialog,
   private modal:ModalService,
   private common:CommonService,
+  private socialService: SocialAuthService,
   private fb: FormBuilder,
   private http: ApiService,
   public dialogRef: MatDialogRef<SignInComponent>,) {
@@ -119,8 +123,8 @@ export class SignInComponent implements OnInit {
         this.common.successMsg(res.message);
         if (this.LoginForm.value.rememberMe) {
           var remember=this.LoginForm.value;
-          remember['phoneNo']=this.LoginForm.controls['phoneNo'].value?this.LoginForm.controls['phoneNo'].value?.dialCode+" "+this.LoginForm.controls['phoneNo'].value.e164Number.replace(this.LoginForm?.value?.phoneNo?.dialCode,''):''
-          remember['dialCode']=this.LoginForm.controls['phoneNo'].value?this.LoginForm.controls['phoneNo'].value?.dialCode:'';
+          remember['phoneNo']=this.LoginForm.controls['phoneNo'].value.number?(this.LoginForm.controls['phoneNo'].value?.dialCode+" "+this.LoginForm.controls['phoneNo'].value.e164Number.replace(this.LoginForm?.value?.phoneNo?.dialCode,'')):''
+          remember['dialCode']=this.LoginForm.controls['phoneNo'].value.number?this.LoginForm.controls['phoneNo'].value?.dialCode:'';
           localStorage.setItem("remember",JSON.stringify(remember));
         } else {
           localStorage.removeItem("remember");
@@ -130,6 +134,66 @@ export class SignInComponent implements OnInit {
         this.http.isLoggedInOut.next(true);
       }
     })
+  }
+  
+  signIn(provider: 'facebook' | 'google') {
+    const providers = {
+      facebook: {
+        id: FacebookLoginProvider.PROVIDER_ID
+      },
+      google: { id: GoogleLoginProvider.PROVIDER_ID },
+    };
+    const socialProvider = providers[provider];
+    this.socialService.signIn(socialProvider.id).then((socialUser: SocialUser) => {
+        console.log(socialUser);
+        let userData:any = {
+          firstName: socialUser.firstName,
+          lastName: socialUser.lastName,
+          email: socialUser.email,
+        };
+        provider=='google'?userData['googleId']=socialUser.id:userData['facebookId']=socialUser.id;
+        this.http.postRequest('socialLogin', userData).subscribe((response: any) => {
+            if (response.statusCode == 200) {
+              localStorage.setItem(environment.storageKey,JSON.stringify(response.data));
+              this.common.successMsg(response.message);
+              this.dialog.closeAll()
+              this.http.isLoggedInOut.next(true);
+            } else {
+              this.common.errorMsg(response.message);
+            }
+          });
+      })
+      .catch((error) => {
+        let message;
+        if (error.error) {
+          message = error.error.replace(/_/g, ' ');
+        } else {
+          message = error.message ? error.message : error;
+        }
+        if (
+          message ===
+          'Login providers not ready yet. Are there errors on your console?'
+        ) {
+          message =
+            "Login providers not ready yet. Check your browser's cookie settings.";
+        }
+        this.common.errorMsg(message);
+      });
+  }
+  
+  openAppleAuthWindow() {
+    window.open(
+      'https://appleid.apple.com/auth/authorize?' +
+        `client_id=${this.clientId}&` +
+        `redirect_uri=${encodeURIComponent(this.yourRedirectURIVar)}&` +
+        //`redirect_uri=${this.yourRedirectURIVar}&` +
+        'response_type=code id_token&' +
+        'state=state&' +
+        'nonce=nonce&' +
+        //'scope=name email&' +
+        'response_mode=fragment',
+      '_self'
+    );
   }
 
 }

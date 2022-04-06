@@ -1,5 +1,5 @@
 {
-    "name": "prep-website",
+    "name": "hanco-website",
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
@@ -24,6 +24,7 @@
         "@angular/platform-browser-dynamic": "~10.2.4",
         "@angular/router": "~10.2.4",
         "@angular/service-worker": "~10.2.4",
+        "angularx-social-login": "^3.5.7",
         "bootstrap": "^4.5.3",
         "google-libphonenumber": "^3.2.27",
         "intl-tel-input": "^17.0.3",

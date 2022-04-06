@@ -4,7 +4,9 @@ export const urls:any= {
 	updateProfile:'updateProfile',
 	uploadProfilePic:'uploadProfilePic',
 	login:'login',
+	logout:'logout',
 	forgotPassword:'forgotPassword',
 	uploadFile:'uploadFile',
-	resetPassword:'resetPassword'
+	resetPassword:'resetPassword',
+	socialLogin:'socialLogin'
 }
