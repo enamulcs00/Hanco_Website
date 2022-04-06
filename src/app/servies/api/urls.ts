@@ -8,5 +8,8 @@ export const urls:any= {
 	forgotPassword:'forgotPassword',
 	uploadFile:'uploadFile',
 	resetPassword:'resetPassword',
-	socialLogin:'socialLogin'
+	socialLogin:'socialLogin',
+	getProfile:'getProfile',
+	getCMS:'getCMS',
+	sendContactUs:'sendContactUs'
 }

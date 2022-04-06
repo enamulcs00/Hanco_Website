@@ -41,6 +41,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import { CancelBidComponent } from './cancel-bid/cancel-bid.component';
 import { Biddingupdate2Component } from './biddingupdate2/biddingupdate2.component';
 import { ConfirmAddressComponent } from './confirm-address/confirm-address.component';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 
 
 
@@ -60,7 +62,9 @@ import { ConfirmAddressComponent } from './confirm-address/confirm-address.compo
     NgxPaginationModule,
     SlickCarouselModule,
     PaginationModule,
-    NgxSliderModule,MatRadioModule
+    NgxSliderModule,MatRadioModule,
+    NgxIntlTelInputModule,
+    GooglePlaceModule
   ],
   providers: [
     {

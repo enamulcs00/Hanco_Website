@@ -1,85 +1,202 @@
 <section class="listing_sec">
     <div class="conta_iner">
         <div class="listing_inner">
-          <h1>Profile</h1>
+            <h1>Profile</h1>
         </div>
-      </div>
-  </section>
-  <section class="profile_sec">
+    </div>
+</section>
+<section class="profile_sec">
     <div class="conta_iner">
         <div class="pro_inner">
             <div class="pro_lft">
                 <figure>
-                    <img src="/assets/images/user_profile.png " alt="images" class="img-fluid">
+                    <img [src]="userDetails?.image||'assets/images/user_profile.png'" alt="images" class="img-fluid">
                 </figure>
-                <h2>Draco Malfoy</h2>
-         
+                <h2>{{userDetails?.firstName}} {{userDetails?.lastName}}</h2>
+
             </div>
             <div class="pro_rht">
-                <form action="">
+                <form [formGroup]="profileForm">
+                    <!-- <div class="form-group">
+                        <label for="user_type">User Type</label>
+                        <div class="psw_cls">
+                            <select class="form-control" id="user_type" (change)="updateUser($event)">
+                    <option [value]="1" >Individual</option>
+                    <option [value]="2">Corporate</option>
+                  </select>
+                            <i class="fa fa-caret-down"></i>
+                        </div>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.userType.hasError('required') && submitted">
+                            User Type is required
+                        </mat-error>
+                    </div> -->
                     <div class="form-group">
-                      <label for="F_Name">First Name</label>
-                      <input type="text" class="form-control" value="Andy" id="F_Name" disabled>
-                    </div> 
-                    <div class="form-group">
-                        <label for="F_Name">Last name</label>
-                        <input type="text" class="form-control" value="Wilson" id="F_Name" disabled>
-                      </div> 
-                      <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" value="andywilson@gmail.com" id="email" disabled>
-                      </div> 
-                    <div class="form-group">
-                      <label for="pwd">Phone number</label>
-                            <input type="text" class="form-control" value="+40767217315" id="pwd" disabled>
-                           
+                        <label for="F_Name">First Name</label>
+                        <input type="text" class="form-control" id="F_Name" #firstName (keydown.space)="!firstName.value?$event.preventDefault():null" minlength="3" maxlength="15" formControlName="firstName">
+                        <mat-error *ngIf="f.firstName.hasError('required') && submitted">
+                            First name is required
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.firstName.errors?.minlength && submitted">
+                            first name must have at least 3 characters
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.firstName.errors?.maxlength && submitted">
+                            first name must have at most 15 characters
+                        </mat-error>
                     </div>
                     <div class="form-group">
-                      <label for="F_Name">Nationality</label>
-                      <input type="text" class="form-control" value="Arabic" id="F_Name" disabled>
-                    </div> 
+                        <label for="l_name">Last Name</label>
+                        <input type="text" class="form-control" #lastName (keydown.space)="!lastName.value?$event.preventDefault():null" minlength="3" maxlength="15" formControlName="lastName" placeholder="Malfoy" id="l_name">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.lastName.hasError('required') && submitted">
+                            Last name is required
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.lastName.errors?.minlength && submitted">
+                            Last name must have at least 3 characters
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.lastName.errors?.maxlength && submitted">
+                            Last name must have at most 15 characters
+                        </mat-error>
+                    </div>
                     <div class="form-group">
-                        <label for="Address">Address line 1</label>
-                        <textarea class="form-control rounded-0" id="Address" rows="1" disabled>Bucharest, Romania</textarea>
-                      </div>
-                      <div class="form-group">
-                        <label for="Address">Address line 2</label>
-                        <textarea class="form-control rounded-0" id="Address" rows="1" disabled>Bucharest, Romania</textarea>
-                      </div>
-                      <div class="form-group">
-                        <label for="pwd">City</label>
-                              <input type="text" class="form-control" value="Mohali" id="city" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label for="pwd">State</label>
-                              <input type="text" class="form-control" value="Punjab" id="State" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label for="pwd">Country</label>
-                              <input type="text" class="form-control" value="India" id="Country" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label for="pwd">Pincode/Zipcode</label>
-                              <input type="text" class="form-control" value="1411001" id="Country" disabled>
-                      </div>
-                      <div class="bdd_btn">
-                        <button type="submit" class="btn btn-primary" routerLink="../" >Edit</button>
-                      </div> 
-                  </form>
-
-
-
-
-
-
-                    <!-- <ul>
-                        <li><span>First Name</span> <span>Andy</span></li>
-                        <li><span>Last name</span> <span>Wilson</span></li>
-                        <li><span>Email</span> <span>andywilson@gmail.com</span></li>
-                        <li><span>Phone number</span> <span>+40767217315</span></li>
-                        <li><span>Address</span> <span>Bucharest, Romania</span></li>
-                    </ul> -->
+                        <label for="email">Email</label>
+                        <input type="email" matInput class="form-control" #email (keydown.space)="!email.value?$event.preventDefault():null" formControlName="email" placeholder="Hanco@gmail.com" id="email">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.email.hasError('required') && submitted">
+                            Email Address is required
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.email.errors?.pattern && submitted">
+                            Email Address is invalid
+                        </mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label> <br>
+                        <!-- <input type="text" class="form-control" placeholder="+91 9876543210" id="phone"> -->
+                        <ngx-intl-tel-input matInput cssClass="form-control" [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true" [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                            [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.India" [maxLength]="'15'" [phoneValidation]="true" [separateDialCode]="separateDialCode" [numberFormat]="PhoneNumberFormat.National" name="phoneNo" formControlName="phoneNo">
+                        </ngx-intl-tel-input> <br>
+                        <mat-error *ngIf="submitted && f['phoneNo'].touched && f['phoneNo'].invalid && !(f['phoneNo'].hasError('required'))" class="text-danger d-inline-block pt-1">
+                            Phone No is Invalid
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="submitted  && f['phoneNo'].hasError('required')">
+                            Phone No is required
+                        </mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="l_name">Date of Birth</label>
+                        <input type="date" matInput [max]="todayDate" class="form-control" formControlName="birthDate" placeholder="Birth Date" id="birthDate">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.birthDate.hasError('required') && submitted">
+                            Date of Birth is required
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.birthDate.hasError('invalid') && submitted">
+                            Date of Birth is invalid
+                        </mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="l_name">Customer ID (Resident or National ID)</label>
+                        <input type="text" class="form-control" formControlName="customerId" #customerId (keydown.space)="!customerId.value?$event.preventDefault():null" minlength="7" maxlength="15" placeholder="Customer ID (Resident or National ID)" id="resident">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.customerId.hasError('required') && submitted">
+                            Customer ID is required
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.customerId.errors?.minlength && submitted">
+                            Customer ID must have at least 7 characters
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.customerId.errors?.maxlength && submitted">
+                            Customer ID must have at most 15 characters
+                        </mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="l_name">Customer Id Expire Date</label>
+                        <input type="date" matInput [min]="todayDate" class="form-control" formControlName="customerIdExpDate" placeholder="Birth Date" id="customerIdExpDate">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.customerIdExpDate.hasError('required') && submitted">
+                            Customer Id Expire Date is required
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.customerIdExpDate.hasError('invalid') && submitted">
+                            Customer Id Expire Date is invalid
+                        </mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="l_name">Address line 1</label>
+                        <input type="text" class="form-control" (change)="onInputChange($event)" ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="AddressChange($event)" formControlName="address1" placeholder="Address" id="address1">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.address1.hasError('required') && submitted">
+                            Address line 1 is required
+                        </mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="l_name">Address line 2</label>
+                        <input type="text" class="form-control" formControlName="address2" placeholder="Address" id="address2">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.address2.hasError('required') && submitted">
+                            Address line 2 is required
+                        </mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="l_name">City</label>
+                        <input type="text" class="form-control" formControlName="city" placeholder="City" id="city">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.city.hasError('required') && submitted">
+                            City is required
+                        </mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="l_name">State</label>
+                        <input type="text" class="form-control" formControlName="state" placeholder="State" id="state">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.state.hasError('required') && submitted">
+                            State is required
+                        </mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="l_name">Country</label>
+                        <input type="text" class="form-control" formControlName="country" placeholder="Country" id="country">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.country.hasError('required') && submitted">
+                            Country is required
+                        </mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">PinCode/ZipCode</label>
+                        <input type="text" class="form-control" formControlName="pinCode" placeholder="Pincode/Zipcode" id="pincode">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.pinCode.hasError('required') && submitted">
+                            PinCode is required
+                        </mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_type">Nationality</label>
+                        <input type="text" class="form-control" formControlName="nationality" placeholder="Nationality" id="nationality">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.nationality.hasError('required') && submitted">
+                            Nationality is required
+                        </mat-error>
+                    </div>
+                    <div class="form-group" *ngIf="userTypeValue==1">
+                        <label for="license">License</label>
+                        <input type="text" class="form-control" formControlName="license" placeholder="license" id="license">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.license.hasError('required') && submitted">
+                            License is required
+                        </mat-error>
+                    </div>
+                    <div class="form-group" *ngIf="userTypeValue==1">
+                        <label for="l_name">License Expire Date</label>
+                        <input type="date" matInput [min]="todayDate" class="form-control" formControlName="licenseExpDate" placeholder="Birth Date" id="licenseExpDate">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.licenseExpDate.hasError('required') && submitted">
+                            License Expire Date is required
+                        </mat-error>
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.licenseExpDate.hasError('invalid') && submitted">
+                            License Expire Date is invalid
+                        </mat-error>
+                    </div>
+                    <div class="form-group" *ngIf="userTypeValue==2">
+                        <label for="vat">VAT Registration Number</label>
+                        <input type="text" class="form-control" formControlName="vatRegistrationNo" placeholder="VAT Registration Number" id="vat">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.vatRegistrationNo.hasError('required') && submitted">
+                            VAT Registration Number is required
+                        </mat-error>
+                    </div>
+                    <div class="form-group" *ngIf="userTypeValue==2">
+                        <label for="cr_no">CR Number</label>
+                        <input type="text" class="form-control" formControlName="crNumber" placeholder="CR Number" id="cr_no">
+                        <mat-error class="text-danger d-inline-block pt-1" *ngIf="f.crNumber.hasError('required') && submitted">
+                            CR Number is required
+                        </mat-error>
+                    </div>
+                    <div class="bdd_btn">
+                        <button type="submit" class="btn btn-primary" (click)="openCongrats()">Edit</button>
+                    </div>
+                </form>
             </div>
         </div>
-      </div>
-  </section>
+    </div>
+</section>

@@ -39,7 +39,7 @@ const routes: Routes = [
     component :ThankYouComponent
   },
   {
-    path : 'about',
+    path : 'cms/:type',
     component :AboutComponent
   },
  

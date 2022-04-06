@@ -1,36 +1,46 @@
 <section class="listing_sec">
     <div class="conta_iner">
         <div class="listing_inner">
-          <h1>Contact us</h1>
-         
+            <h1>Contact us</h1>
         </div>
-      </div>
-  </section>
-  <section class="cont_sec">
+    </div>
+</section>
+<section class="cont_sec">
     <div class="conta_iner">
         <div class="cont_inner">
             <div class="cont_txt">
-                <p>Email: <a href="mailto:CollenEd5237@gmail.com" >CollenEd5237@gmail.com</a></p>
-                <p>Telephone: <a href="tel:+15550860012" >+1 555 086 0012</a></p>
+                <p>Email: <a href="mailto:{{cms?.email}}">{{cms?.email}}</a></p>
+                <p>Telephone: <a href="tel:+1{{cms?.phone}}">+1 {{cms?.phone}}</a></p>
             </div>
             <h2>Feel free to drop us a message!</h2>
-            <form action="" class="contact_form">
-                
-                
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name" id="f_name">
-                    </div> 
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Your Email" id="email">
-                    </div> 
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Message" id="l_name">
-                    </div> 
-                    <div class="bdd_btn">
-                        <button type="submit" class="btn btn-primary" routerLink="../" >Send</button>
-                        </div> 
-                 </form>
-         
-        </div> 
-      </div>
-  </section>
+            <form [formGroup]="helpCenter" class="contact_form">
+
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Name" id="f_name" formControlName="userName" maxlength="30">
+                    <mat-error class="text-danger" *ngIf="isSubmitted &&  fval.userName.hasError('required')">Name is required
+                    </mat-error>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" formControlName="userEmail" maxlength="30" placeholder="Your Email" id="email">
+                    <div class="text-danger" *ngIf="isSubmitted &&  fval.userEmail.hasError('required')">Email is required
+                    </div>
+                    <div class="text-danger" *ngIf="isSubmitted && fval.userEmail.hasError('pattern')">Email is invalid
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="message" placeholder="Your Message" id="l_name">
+
+                    <div class="text-danger" *ngIf="isSubmitted && fval.message.errors.required">Message is required
+                    </div>
+
+                </div>
+                <div class="bdd_btn">
+                    <button type="submit" class="btn btn-primary" (click)="onProcced()">Send</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>

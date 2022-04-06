@@ -1,14 +1,14 @@
 <section class="listing_sec">
     <div class="conta_iner">
         <div class="listing_inner">
-          <h1>About us</h1>
+            <h1>{{type=='aboutUs'?"About Us":(type=='termsAndConditions'?"Terms And Conditions":(type=='Privacy'?"Privacy":''))}}</h1>
         </div>
-      </div>
-  </section>
-  <section class="about_sec">
+    </div>
+</section>
+<section class="about_sec">
     <div class="conta_iner">
-        <div class="about_inner">
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is 
+        <div class="about_inner" [innerHtml]="cms">
+            <!-- <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is 
                 that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop 
                 publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many 
                 web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
@@ -21,8 +21,8 @@
                  believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t 
                  anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the 
                  Internet tend to repeat 
-                predefined chunks as necessary, making this the first true generator on the Internet.</p>
+                predefined chunks as necessary, making this the first true generator on the Internet.</p> -->
 
-            </div>
         </div>
-    </section>
+    </div>
+</section>

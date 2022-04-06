@@ -23,10 +23,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.showTokenFlag=localStorage[environment?.storageKey]?true:false;
-    // this.showTokenFlag?this.getProfile():'';
+    this.showTokenFlag?this.getProfile():'';
     this.http.isLoggedInOut.subscribe((res:any) => {
       this.showTokenFlag=localStorage[environment?.storageKey]?true:false;
-      // this.showTokenFlag?this.getProfile():"";
+      this.showTokenFlag?this.getProfile():"";
     });
   }
 
@@ -39,6 +39,12 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/main/home']);
     }})
   }
+
+  getProfile(){
+    this.http.getRequest('getProfile',{}).subscribe((res:any)=>{
+      this.userDetails=res?.data;
+    })
+    }
 
   openLogin(){
     this.commonData.openSignIn()
