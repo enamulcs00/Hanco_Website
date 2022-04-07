@@ -2973,7 +2973,9 @@ section.about_sec {
 }
 
 .pric_flt {
-    margin-right: 25px;
+.dropdown-toggle {
+    padding: 15px 30px;
+}
 }
 
 .pric_flt button {
@@ -2989,7 +2991,108 @@ section.about_sec {
     padding: 15px;
 }
 
-
+.pric_flt .dropdown-menu {
+    padding: 24px  20px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    border: 1px solid #dde5eb;
+    -webkit-box-shadow: 0 8px 20px #ebf4f9;
+    box-shadow: 0 8px 20px #ebf4f9;
+    border-radius: 5px;
+    cursor: default;
+    z-index: 99;
+    width: 460px;
+}
+.rnge_sld {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .ngx-slider {
+        width: 100%;
+    }
+    .rnge_sld_inn {
+        width: 48%;
+        label {
+            display: block;
+            opacity: .7;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #465166;
+            margin-bottom: 8px;
+        }
+    }
+    .rnge_conpu {
+        position: relative;
+        display: flex;
+        align-items: center;
+        i {
+            position: absolute;
+            left: 10px;
+            font-size: 20px;
+            color: #ccc;
+        }
+        input {
+            padding-left: 25px;
+            height: 40px;
+            border: unset;
+            background: #FAFAFA;
+            border-radius: 50px;
+            line-height: normal;
+            font-weight: 400;
+            color: #B9B9B9;
+            font-size: 16px;
+            width: 100%;
+        }
+    }
+    .ngx-slider .ngx-slider-pointer {
+        cursor: pointer;
+        width: 22px;
+        height: 22px;
+        top: -10px;
+        background-color: #951516;
+        border-radius: 16px;
+    }
+    .ngx-slider .ngx-slider-pointer:after {
+        top: 7px;
+        left: 7px;
+    }
+    .ngx-slider .ngx-slider-selection {
+        background: #951516;
+        height: 2px;
+    }
+    .ngx-slider .ngx-slider-bar {
+        height: 2px;
+    }
+    .rnge_srch_btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        button {
+            padding: 10px 40px;
+        }
+    }
+}
+.rnge_sld mat-checkbox {
+    width: 100%;
+    .mt_chk_bx_mn {
+        width: 50%;
+    }
+}
+.dropdown-menu_custm {
+    padding: 24px 20px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    border: 1px solid #dde5eb;
+    box-shadow: 0 8px 20px #ebf4f9;
+    border-radius: 5px;
+    cursor: default;
+    z-index: 99;
+    width: 460px;
+}
 /* Importing Bootstrap SCSS file. */
 
 // @import "~bootstrap/scss/bootstrap";
