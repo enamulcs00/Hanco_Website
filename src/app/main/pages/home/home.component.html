@@ -32,16 +32,17 @@
 
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group pric_flt">
                     <label for="price">Price</label>
-                    <div class="psw_cls">
-                        <select class="form-control" id="price">
-                <option selected>Select Price</option>
-                <option>100</option>
-                <option>200</option>
-                <option>300</option>
-              </select>
-                        <i class="fa fa-caret-down"></i>
+                    <div class="dropdown">
+
+                        <button class=" dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">HTML</a></li>
+                            <li><a href="#">CSS</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="form-group">
@@ -164,7 +165,12 @@
 
 <section class="logo_sec comn_pd">
     <div class="conta_iner">
-        <ul class="nav nav-tabs logo_inner" role="tablist">
+        <ngx-slick-carousel class="carousel slide_point" #slickModal="slick-carousel" [config]="slideConfig1" (afterChange)="afterChange($event)">
+            <div class="logo_inner" ngxSlickItem *ngFor="let slide of slides1;let i=index">
+                <figure class="fig_img"> <img [src]="slide.img" alt=""> </figure>
+            </div>
+        </ngx-slick-carousel>
+        <!-- <ul class="nav nav-tabs logo_inner" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#logo1" role="tab"><img src="assets/images/tesla.png " alt="Logo" class="img-fluid"></a>
             </li>
@@ -183,12 +189,12 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#logo6" role="tab"><img src="assets/images/car-logo.png " alt="Logo" class="img-fluid"></a>
             </li>
-        </ul>
+        </ul> -->
         <div class="tab-content">
             <div class="tab-pane active" id="logo1" role="tabpanel">
                 <div class="logo_inner">
                     <h2>Watchlist</h2>
-                    <a href="">See All</a>
+                    <!-- <a href="">See All</a> -->
                 </div>
                 <div class="d_flex logo_inner">
                     <div class="watch_lst">

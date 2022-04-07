@@ -1296,6 +1296,28 @@ section.logo_sec {
     }
 }
 
+.brand_item {
+    border: 1px solid #DADADA;
+    width: 125px;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    .fig_img {
+        border: unset;
+    }
+    &:hover {
+        background-color: #AA1D1E;
+        transition: all .5s;
+        border: 1px solid #AA1D1E;
+        a {
+            background-color: unset;
+            border: 0;
+        }
+    }
+}
+
 .prc_lst {
     padding: 10px 0px;
     h3 {
@@ -2948,6 +2970,23 @@ section.about_sec {
 
 .pac-container {
     z-index: 9999 !important;
+}
+
+.pric_flt {
+    margin-right: 25px;
+}
+
+.pric_flt button {
+    background: transparent;
+    height: auto;
+    border: unset;
+    background: #FAFAFA;
+    border-radius: 50px;
+    line-height: normal;
+    font-weight: 400;
+    color: #B9B9B9;
+    font-size: 16px;
+    padding: 15px;
 }
 
 
