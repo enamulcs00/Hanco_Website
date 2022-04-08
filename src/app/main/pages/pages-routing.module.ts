@@ -96,7 +96,8 @@ const routes: Routes = [
   },
   {
     path : 'watchlist',
-    component :WatchlistComponent
+    component :WatchlistComponent,
+    canActivate:[AuthGuard],
   },
   {
     path : 'buynow/:id',
