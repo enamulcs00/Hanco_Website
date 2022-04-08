@@ -1149,7 +1149,7 @@ section.emty_spec {
 ***********************************/
 
 section.form_sec {
-    margin-top: -420px;
+    margin-top: -280px;
     position: relative;
     padding: 20px 0px;
     .form_sec_inner {
@@ -1174,8 +1174,13 @@ section.form_sec {
             }
         }
     }
+  
 }
-
+.bnnr_mg {
+    height: 700px;
+    object-fit: cover;
+    object-position: bottom;
+}
 .f_form_in {
     display: flex;
     flex-wrap: wrap;
@@ -1273,7 +1278,7 @@ section.logo_sec {
         font-size: 20px;
         line-height: 25px;
     }
-    li.nav-item {
+    .fig_img{
         border: 1px solid #DADADA;
         width: 125px;
         height: 125px;
@@ -1293,7 +1298,21 @@ section.logo_sec {
                 border: 0;
             }
         }
+        img {
+            object-fit: contain;
+        }
     }
+    // .fig_img {
+    //     border: 1px solid #DADADA;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     border-radius: 12px;
+    //     margin-right: 10px;
+    //     width: 125px;
+    //     height: 125px;
+    // }
+   
 }
 
 .brand_item {
@@ -1347,15 +1366,18 @@ section.logo_sec {
 }
 
 .watch_lst {
-    width: 32%;
+    // width: 32%;
     box-shadow: 0px 3px 19px #00000029;
     padding: 12px;
     border-radius: 10px;
     border-radius: 18px;
     background-color: #fff;
     z-index: 9;
-    img {
-        width: 100%;
+    margin-right: 20px;
+     img {
+        height: 360px;
+        object-fit: cover;
+        border-radius: 15px;
     }
 }
 
@@ -1368,7 +1390,13 @@ section.logo_sec {
         @include f_c_center;
     }
 }
-
+div.slick--center .slick-slide.slick-center {
+    transform: scale(1) !important;
+    }
+  
+  .slick-arrow:before {
+    color: gray;
+  }
 
 /***********************************
 ************Button***********
@@ -1593,7 +1621,7 @@ section.listing_sec {
 section.car_lst_sec {
     padding: 40px 0px;
     .f_form_in .form-group {
-        width: 24%;
+        width: 18%;
         display: inline-block;
         margin-right: 20px;
     }
@@ -1639,11 +1667,11 @@ section.car_lst_sec {
     }
 }
 
-.form_sec_inner .car_lsting_fom {
-    overflow-x: scroll;
-    white-space: nowrap;
-    display: block;
-}
+// .form_sec_inner .car_lsting_fom {
+//     overflow-x: scroll;
+//     white-space: nowrap;
+//     display: block;
+// }
 
 
 /***********************************
@@ -2755,7 +2783,7 @@ section.about_sec {
 
 .arrw_bnr {
     text-align: center;
-    width: 90%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3092,6 +3120,45 @@ section.about_sec {
     cursor: default;
     z-index: 99;
     width: 460px;
+}
+.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background, .mat-checkbox-checked.mat-warn .mat-checkbox-background {
+    background-color: #aa1d1e;
+}
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #aa1d1e;
+}
+
+.mat-checkbox-indeterminate.mat-primary .mat-checkbox-background, .mat-checkbox-checked.mat-primary .mat-checkbox-background {
+    background-color: #aa1d1e;
+}
+.mt_chk_bx_mn {
+    padding-left: 22px;
+    width: 50%;
+}
+.ngx-slider .ngx-slider-pointer.ngx-slider-active:after {
+    background-color: #951516 !important;
+}
+.pric_flt .dropdown-toggle_custm {
+    width: 100%;
+}
+.rnge_lastch label {
+    text-align: right;
+}
+.mt_chk_bx .mat-checkbox-frame {
+    border-color: rgb(170 29 30);
+}
+// .watch_lst figure {
+//     height: 300px;
+//     width: 300px;
+// }
+.logo_inner .fig_img {
+    border: 1px solid #DADADA;
+    width: 125px;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
 }
 /* Importing Bootstrap SCSS file. */
 

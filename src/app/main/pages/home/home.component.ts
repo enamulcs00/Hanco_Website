@@ -20,8 +20,11 @@ export class HomeComponent implements OnInit {
     floor: 0,
     ceil: 250
   };
+  
   minValue: number = 50;
   maxValue: number = 200;
+  minYear: number = 2000;
+  maxYear: number = 2022;
   slides = [
     {img: "assets/images/banner2.jpg"},
     {img: "assets/images/banner2.jpg"},
@@ -33,6 +36,15 @@ export class HomeComponent implements OnInit {
   ];
 
   slides1 = [
+    {img: "assets/images/banner2.jpg"},
+    {img: "assets/images/tesla.png"},
+    {img: "assets/images/srev_img.jpg"},
+    {img: "assets/images/srev_img.jpg"},
+    
+
+  ];
+
+  slides2 = [
     {img: "assets/images/tesla.png"},
     {img: "assets/images/tesla.png"},
     {img: "assets/images/tesla.png"},
@@ -44,13 +56,19 @@ export class HomeComponent implements OnInit {
     slideConfig = {
     'slidesToShow': 1,
     'slidesToScroll': 1,
-    infinite: true, centerMode: true, variableWidth: true, autoplay: true, arrows: false,
+    infinite: true, autoplay: true, arrows: false,loop: true
     }
     slideConfig1 = {
       'slidesToShow': 6,
       'slidesToScroll': 1,
       infinite: true, centerMode: true, autoplay: true, arrows: true,
       }
+      slideConfig2 = {
+        'slidesToShow': 3,
+        'slidesToScroll': 1,
+      infinite: true, centerMode: true, autoplay: true, arrows: true,
+       
+        }
   currentSlide: any=1;
   totalSlide:any
   constructor() { }
@@ -96,7 +114,5 @@ export class HomeComponent implements OnInit {
 this.currentSlide=ev.currentSlide
 this.currentSlide=this.currentSlide+1;
 // console.log(this.currentSlide);
-
-
   }
 }
