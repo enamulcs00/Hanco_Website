@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Options } from '@angular-slider/ngx-slider';
 import {ThemePalette} from '@angular/material/core';
+import { ApiService } from 'src/app/servies/api/api.service';
+import { HttpParams } from '@angular/common/http';
 
 export interface Task {
   name: string;
@@ -15,67 +17,39 @@ export interface Task {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
- 
+  brandItem:any=[];
+  vechileItem:any=[];
   options: Options = {
     floor: 0,
     ceil: 250
   };
-  
+  searchText:any='';
+  bannerItem:any=[];
   minValue: number = 50;
   maxValue: number = 200;
   minYear: number = 2000;
   maxYear: number = 2022;
-  slides = [
-    {img: "assets/images/banner2.jpg"},
-    {img: "assets/images/banner2.jpg"},
-    {img: "assets/images/banner2.jpg"},
-    {img: "assets/images/banner2.jpg"},
-    {img: "assets/images/banner2.jpg"},
-    {img: "assets/images/banner2.jpg"},
-    {img: "assets/images/banner2.jpg"},
-  ];
-
-  slides1 = [
-    {img: "assets/images/banner2.jpg"},
-    {img: "assets/images/tesla.png"},
-    {img: "assets/images/srev_img.jpg"},
-    {img: "assets/images/srev_img.jpg"},
-    
-
-  ];
-
-  slides2 = [
-    {img: "assets/images/tesla.png"},
-    {img: "assets/images/tesla.png"},
-    {img: "assets/images/tesla.png"},
-    {img: "assets/images/tesla.png"},
-    {img: "assets/images/tesla.png"},
-    {img: "assets/images/tesla.png"},
-    {img: "assets/images/tesla.png"},
-  ];
     slideConfig = {
     'slidesToShow': 1,
     'slidesToScroll': 1,
-    infinite: true, autoplay: true, arrows: false,loop: true
+     arrows: false,loop: true
     }
     slideConfig1 = {
-      'slidesToShow': 6,
+      'slidesToShow': 5,
       'slidesToScroll': 1,
-      infinite: true, centerMode: true, autoplay: true, arrows: true,
+      infinite: true, arrows: true,
       }
       slideConfig2 = {
         'slidesToShow': 3,
         'slidesToScroll': 1,
-      infinite: true, centerMode: true, autoplay: true, arrows: true,
+      infinite: true, arrows: true,
        
         }
   currentSlide: any=1;
-  totalSlide:any
-  constructor() { }
+  constructor(private http:ApiService) { }
 
   ngOnInit(): void {
-    this.totalSlide=this.slides.length
-    
+    this.getBrand();
   }
 
   task: Task = {
@@ -108,6 +82,40 @@ export class HomeComponent implements OnInit {
       return;
     }
     this.task.subtasks.forEach(t => (t.completed = completed));
+  }
+
+  getBrand(){
+    this.http.getRequest('getBrand',{}).subscribe(res=>{
+      console.log(res);
+      this.getBanner();
+      if(res.statusCode==200){
+      this.brandItem=res.data.filter(((x:any)=>x.brandName!=""));
+      this.getVehicle();
+      }
+    })
+  }
+
+  getBanner(){
+    this.http.getRequest('getBanner',{}).subscribe(res=>{
+      console.log(res);
+      if(res.statusCode==200){
+      this.bannerItem=res.data;
+      }
+    })
+  }
+
+  getVehicle(){
+    var params=new HttpParams().set('search',this.searchText)
+    this.http.postRequestWithParam('getVehicle',params,{}).subscribe(res=>{
+      if(res.statusCode==200){
+        this.vechileItem=res.data;
+        console.log(res);
+      }})
+  }
+
+  searchFuc(e){
+    this.searchText=e;
+    this.getVehicle();
   }
 
   afterChange(ev){

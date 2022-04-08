@@ -1,8 +1,8 @@
 <section class="banner_sec">
     <ngx-slick-carousel class="carousel slide_point" #slickModal="slick-carousel" [config]="slideConfig" (afterChange)="afterChange($event)">
-        <div ngxSlickItem *ngFor="let slide of slides;let i=index">
-            <img [src]="slide.img" alt="" class="bnnr_mg" width="100%">
-            <div class="conta_iner">
+        <div ngxSlickItem *ngFor="let slide of bannerItem;let i=index">
+            <img [src]="slide.bannerImage" alt="" class="bnnr_mg" width="100%">
+            <!-- <div class="conta_iner">
                 <div class="bnner_inner">
                     <h2>URUS GRAPHITE CAPSULE</h2>
                     <h1>UNLOCK ANY ROAD</h1>
@@ -12,7 +12,7 @@
                         <i class="fa fa-angle-right"></i>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </ngx-slick-carousel>
 </section>
@@ -24,11 +24,11 @@
             <h2>Search Your Best Cars.</h2>
             <form action="" class="f_form_in">
                 <div class="form-group loctin_cls">
-                    <label for="search">Location</label>
+                    <label for="search">Search</label>
                     <div class="psw_cls">
                         <input type="text" class="form-control" placeholder="Search" id="search">
 
-                        <img src="assets/images/loctn_icon.svg " alt="Images" class="img-fluid">
+                        <!-- <img src="assets/images/loctn_icon.svg " alt="Images" class="img-fluid"> -->
 
                     </div>
                 </div>
@@ -36,27 +36,27 @@
                     <label for="price">Price</label>
                     <div class="dropdown">
 
-                        <button class=" dropdown-toggle_custm" (click)="price=1" type="button" >Select Price
+                        <button class=" dropdown-toggle_custm" (click)="price=1" type="button">Select Price
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu_custm" *ngIf="price==1">
                             <div class="rnge_sld">
                                 <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" [ngModelOptions]="{standalone: true}"></ngx-slider>
                                 <div class="rnge_sld_inn">
-                                    <label>Min Price</label>   
-                                    <div class="rnge_conpu"> 
+                                    <label>Min Price</label>
+                                    <div class="rnge_conpu">
                                         <i class="fa fa-usd" aria-hidden="true"></i>
-                                    <input type="number" [(ngModel)]="minValue" [ngModelOptions]="{standalone: true}">
+                                        <input type="number" [(ngModel)]="minValue" [ngModelOptions]="{standalone: true}">
                                     </div>
-                                    </div>
-                                    <div class="rnge_sld_inn rnge_lastch">
+                                </div>
+                                <div class="rnge_sld_inn rnge_lastch">
                                     <label>Max Price</label>
                                     <div class="rnge_conpu">
-                                    <i class="fa fa-usd" aria-hidden="true"></i>   
-                                    <input type="number" [(ngModel)]="maxValue" [ngModelOptions]="{standalone: true}">
+                                        <i class="fa fa-usd" aria-hidden="true"></i>
+                                        <input type="number" [(ngModel)]="maxValue" [ngModelOptions]="{standalone: true}">
                                     </div>
                                 </div>
                                 <div class="rnge_srch_btn">
-                                    <button type="submit" routerlink="" class="btn btn-primary" (click)="price=''" >Search</button>
+                                    <button type="submit" routerlink="" class="btn btn-primary" (click)="price=''">Search</button>
                                 </div>
                             </div>
                         </ul>
@@ -64,47 +64,37 @@
                 </div>
 
                 <div class="form-group pric_flt">
- <label for="price">Make & Model</label>
+                    <label for="price">Make & Model</label>
                     <div class="dropdown">
 
                         <button class=" dropdown-toggle_custm" (click)="price=2" type="button" data-toggle="dropdown">Make & Model
                         <span class="caret"></span></button>
-                        <ul class="dropdown-menu_custm"  *ngIf="price==2">
+                        <ul class="dropdown-menu_custm" *ngIf="price==2">
                             <div class="rnge_sld">
-                                <mat-checkbox class="example-margin"
-                                [checked]="allComplete"
-                                [color]="task.color"
-                                [indeterminate]="someComplete()"
-                                (change)="setAll($event.checked)">
-                    {{task.name}}
-                  
-                  </mat-checkbox>
-                  <div class="mt_chk_bx_mn">
-                  <div class="mt_chk_bx"  *ngFor="let subtask of task.subtasks">
-                    <mat-checkbox [(ngModel)]="subtask.completed"
-                    [ngModelOptions]="{standalone: true}" [ngModelOptions]="{standalone: true}"
-                                  [color]="subtask.color"
-                                  (ngModelChange)="updateAllComplete()">
-                      {{subtask.name}}
-                    </mat-checkbox>
-                  </div>
-                  
-                  </div>
-                  <div class="mt_chk_bx_mn">
-                    <div class="mt_chk_bx"  *ngFor="let subtask of task.subtasks">
-                      <mat-checkbox [(ngModel)]="subtask.completed"
-                      [ngModelOptions]="{standalone: true}" [ngModelOptions]="{standalone: true}"
-                                    [color]="subtask.color"
-                                    (ngModelChange)="updateAllComplete()">
-                        {{subtask.name}}
-                      </mat-checkbox>
-                    </div>
-                    
-                    </div>
-                  
-                                 
+                                <mat-checkbox class="example-margin" [checked]="allComplete" [color]="task.color" [indeterminate]="someComplete()" (change)="setAll($event.checked)">
+                                    {{task.name}}
+
+                                </mat-checkbox>
+                                <div class="mt_chk_bx_mn">
+                                    <div class="mt_chk_bx" *ngFor="let subtask of task.subtasks">
+                                        <mat-checkbox [(ngModel)]="subtask.completed" [ngModelOptions]="{standalone: true}" [ngModelOptions]="{standalone: true}" [color]="subtask.color" (ngModelChange)="updateAllComplete()">
+                                            {{subtask.name}}
+                                        </mat-checkbox>
+                                    </div>
+
+                                </div>
+                                <div class="mt_chk_bx_mn">
+                                    <div class="mt_chk_bx" *ngFor="let subtask of task.subtasks">
+                                        <mat-checkbox [(ngModel)]="subtask.completed" [ngModelOptions]="{standalone: true}" [ngModelOptions]="{standalone: true}" [color]="subtask.color" (ngModelChange)="updateAllComplete()">
+                                            {{subtask.name}}
+                                        </mat-checkbox>
+                                    </div>
+
+                                </div>
+
+
                                 <div class="rnge_srch_btn">
-                                    <button type="submit" routerlink="" class="btn btn-primary" (click)="price=''" >Search</button>
+                                    <button type="submit" routerlink="" class="btn btn-primary" (click)="price=''">Search</button>
                                 </div>
                             </div>
                         </ul>
@@ -112,33 +102,33 @@
                 </div>
 
 
-           
+
 
                 <div class="form-group pric_flt">
                     <label for="year">Year</label>
                     <div class="dropdown">
 
-                        <button class=" dropdown-toggle_custm" (click)="price=3" type="button" >Select Year
+                        <button class=" dropdown-toggle_custm" (click)="price=3" type="button">Select Year
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu_custm" *ngIf="price==3">
                             <div class="rnge_sld">
                                 <ngx-slider [(value)]="minYear" [(highValue)]="maxYear" [options]="options" [ngModelOptions]="{standalone: true}"></ngx-slider>
                                 <div class="rnge_sld_inn">
-                                    <label>Min Year</label>   
-                                    <div class="rnge_conpu"> 
-                                      
-                                    <input type="number" [(ngModel)]="minYear" [ngModelOptions]="{standalone: true}">
+                                    <label>Min Year</label>
+                                    <div class="rnge_conpu">
+
+                                        <input type="number" [(ngModel)]="minYear" [ngModelOptions]="{standalone: true}">
                                     </div>
-                                    </div>
-                                    <div class="rnge_sld_inn rnge_lastch">
+                                </div>
+                                <div class="rnge_sld_inn rnge_lastch">
                                     <label>Max Year</label>
                                     <div class="rnge_conpu">
-                                  
-                                    <input type="number" [(ngModel)]="maxYear" [ngModelOptions]="{standalone: true}">
+
+                                        <input type="number" [(ngModel)]="maxYear" [ngModelOptions]="{standalone: true}">
                                     </div>
                                 </div>
                                 <div class="rnge_srch_btn">
-                                    <button type="submit" routerlink="" class="btn btn-primary" (click)="price=''" >Search</button>
+                                    <button type="submit" routerlink="" class="btn btn-primary" (click)="price=''">Search</button>
                                 </div>
                             </div>
                         </ul>
@@ -157,123 +147,36 @@
                     <label for="km">KM</label>
                     <div class="dropdown">
 
-                        <button class=" dropdown-toggle_custm" (click)="price=4" type="button" >Select KM
+                        <button class=" dropdown-toggle_custm" (click)="price=4" type="button">Select KM
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu_custm" *ngIf="price==4">
                             <div class="rnge_sld">
                                 <ngx-slider [(value)]="minYear" [(highValue)]="maxYear" [options]="options" [ngModelOptions]="{standalone: true}"></ngx-slider>
                                 <div class="rnge_sld_inn">
-                                    <label>Min Kilometers</label>   
-                                    <div class="rnge_conpu"> 
-                                      
-                                    <input type="number" [(ngModel)]="minYear" [ngModelOptions]="{standalone: true}">
+                                    <label>Min Kilometers</label>
+                                    <div class="rnge_conpu">
+
+                                        <input type="number" [(ngModel)]="minYear" [ngModelOptions]="{standalone: true}">
                                     </div>
-                                    </div>
-                                    <div class="rnge_sld_inn rnge_lastch">
+                                </div>
+                                <div class="rnge_sld_inn rnge_lastch">
                                     <label>Max  Kilometers</label>
                                     <div class="rnge_conpu">
-                                  
-                                    <input type="number" [(ngModel)]="maxYear" [ngModelOptions]="{standalone: true}">
+
+                                        <input type="number" [(ngModel)]="maxYear" [ngModelOptions]="{standalone: true}">
                                     </div>
                                 </div>
                                 <div class="rnge_srch_btn">
-                                    <button type="submit" routerlink="" class="btn btn-primary" (click)="price=''" >Search</button>
+                                    <button type="submit" routerlink="" class="btn btn-primary" (click)="price=''">Search</button>
                                 </div>
                             </div>
                         </ul>
                     </div>
-                        <!-- <div class="psw_cls">
-                            <select class="form-control" id="km">
-                                <option selected>Select Km</option>
-                                <option>10km</option>
-                                <option>20km</option>
-                                <option>30km</option>
-                            </select>
-                            <i class="fa fa-caret-down"></i>
-                        </div> -->
                 </div>
-                <!-- <div class="form-group">
-                    <label for="body_type">Body Type</label>
-                    <div class="psw_cls">
-                        <select class="form-control" id="body_type">
-                <option selected>Select Body</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                </div> -->
-
-
-<!-- 
-                <div class="form-group fom_grp_sec1">
-                    <label for="brand_name">Brand Name</label>
-                    <div class="psw_cls">
-                        <select class="form-control" id="brand_name">
-                <option selected>Select Brand</option>
-                <option>Hyundai</option>
-                <option>Toyota</option>
-                <option>KIA</option>
-                <option>Mahindra</option>
-                <option>Tata Motors</option>
-              </select>
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                </div>
-                <div class="form-group fom_grp_sec1">
-                    <label for="model_name">Model Name</label>
-                    <div class="psw_cls">
-                        <select class="form-control" id="model_name">
-                <option selected>Select Model</option>
-                <option>Hyundai Venue</option>
-                <option>Tata Punch</option>
-                <option>Hyundai Creta</option>
-              </select>
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                </div> -->
-                <!-- <div class="form-group fom_grp_sec">
-                    <label for="fuel_type">Fuel Type</label>
-                    <div class="psw_cls">
-                        <select class="form-control" id="fuel_type">
-                <option selected>Select Fuel</option>
-                <option>10km</option>
-                <option>20km</option>
-                <option>30km</option>
-              </select>
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                </div>
-                <div class="form-group fom_grp_sec">
-                    <label for="transmission">Transmission Type</label>
-                    <div class="psw_cls">
-                        <select class="form-control" id="transmission">
-                <option selected>Select</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                </div>
-                <div class="form-group fom_grp_sec">
-                    <label for="color">Color</label>
-                    <div class="psw_cls">
-                        <select class="form-control" id="color">
-                <option selected>Select Color</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                </div> -->
-
                 <div class="flter_btn">
                     <div class="btn_commn">
                         <button type="submit" class="btn clr_btn">Clear Filters</button>
-                        <button type="submit" class="btn btn-primary" routerLink="../carlisting">Search</button>
+                        <button type="submit" class="btn btn-primary" routerLink="/main/carlisting/1">Search</button>
                     </div>
                 </div>
 
@@ -289,178 +192,43 @@
 <section class="logo_sec comn_pd">
     <div class="conta_iner">
         <ngx-slick-carousel class="carousel slide_point" #slickModal="slick-carousel" [config]="slideConfig1" (afterChange)="afterChange($event)">
-            <div class="logo_inner" ngxSlickItem *ngFor="let slide of slides2;let i=index">
-                <figure class="fig_img"> <img [src]="slide.img" alt=""> </figure>
+            <div class="logo_inner" (click)="searchFuc('')">
+                <figure [class]="searchText==''?'fig_img act_ve':'fig_img'">
+                    <h3>All</h3>
+                </figure>
+            </div>
+            <div class="logo_inner" ngxSlickItem *ngFor="let slide of brandItem;let i=index" (click)="searchFuc(slide?.brandName)">
+                <figure [class]="slide?.brandName==searchText?'fig_img act_ve':'fig_img'"> <img [src]="slide.brandLogo" alt="All"> </figure>
             </div>
         </ngx-slick-carousel>
-        <!-- <ul class="nav nav-tabs logo_inner" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#logo1" role="tab"><img src="assets/images/tesla.png " alt="Logo" class="img-fluid"></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#logo2" role="tab"><img src="assets/images/bmw.png " alt="Logo" class="img-fluid"></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#logo3" role="tab"><img src="assets/images/mg.png " alt="Logo" class="img-fluid"></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#logo4" role="tab"><img src="assets/images/hyundai.png " alt="Logo" class="img-fluid"></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#logo6" role="tab"><img src="assets/images/toyota.png " alt="Logo" class="img-fluid"></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#logo6" role="tab"><img src="assets/images/car-logo.png " alt="Logo" class="img-fluid"></a>
-            </li>
-        </ul> -->
         <div class="tab-content">
             <div class="tab-pane active" id="logo1" role="tabpanel">
                 <div class="logo_inner">
-                    <h2>Watchlist</h2>
+                    <!-- <h2>Watchlist</h2> -->
                     <!-- <a href="">See All</a> -->
                 </div>
-                    <ngx-slick-carousel class="carousel slide_point" #slickModal="slick-carousel" [config]="slideConfig2" (afterChange)="afterChange($event)">
-                    <div class="watch_lst"  ngxSlickItem *ngFor="let slide of slides1;let i=index">
+                <ngx-slick-carousel class="carousel slide_point" #slickModal="slick-carousel" [config]="slideConfig2" (afterChange)="afterChange($event)">
+                    <div routerLink="/main/cancelbid/{{slide?._id}}" class="watch_lst" ngxSlickItem *ngFor="let slide of vechileItem;let i=index">
                         <figure>
-                            <img [src]="slide.img" alt="Logo" class="img-fluid">
+                            <img [src]="slide?.vehicleImage[0]" alt="Logo" class="img-fluid">
+                            <div *ngIf="slide?.isFavourite" class="heart_ic"><i class="fa fa-heart" aria-hidden="true"></i></div>
                         </figure>
                         <div class="prc_lst">
-                            <h3>Range Rover 2018 Model</h3>
-                            <h4>$1500.00</h4>
+                            <h3>{{slide?.name}}</h3>
+                            <h4>${{slide?.price}}</h4>
                         </div>
                         <div class="prc_btn">
-                            <button type="submit" class="btn clr_btn" routerLink="/main/buynow">Offer Now</button>
-                            <button type="submit" class="btn btn-primary" routerLink="/main/buynow">Buy Now</button>
+                            <button type="submit" class="btn clr_btn" routerLink="/main/cancelbid/{{slide?._id}}">Offer Now</button>
+                            <button type="submit" class="btn btn-primary" routerLink="/main/buynow/{{slide?._id}}">Buy Now</button>
                         </div>
                     </div>
-            </ngx-slick-carousel>
-                    <!-- <div class="watch_lst">
-                        <figure>
-                            <img src="assets/images/car_1.jpg " alt="Logo" class="img-fluid">
-                        </figure>
-                        <div class="prc_lst">
-                            <h3>Range Rover 2018 Model</h3>
-                            <h4>$1500.00</h4>
-                        </div>
-                        <div class="prc_btn">
-                            <button type="submit" class="btn clr_btn" routerLink="/main/buynow">Offer Now</button>
-                            <button type="submit" class="btn btn-primary" routerLink="/main/buynow">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="watch_lst">
-                        <figure>
-                            <img src="assets/images/car_3.jpg " alt="Logo" class="img-fluid">
-                        </figure>
-                        <div class="prc_lst">
-                            <h3>Range Rover 2018 Model</h3>
-                            <h4>$1500.00</h4>
-                        </div>
-                        <div class="prc_btn">
-                            <button type="submit" class="btn clr_btn" routerLink="/main/buynow">Offer Now</button>
-                            <button type="submit" class="btn btn-primary" routerLink="/main/buynow">Buy Now</button>
-                        </div>
-                    </div> -->
+                </ngx-slick-carousel>
+                <div class="text-center" *ngIf="vechileItem?.length==0">
+                    <h3>No Data Found</h3>
                 </div>
             </div>
-
-            <!-- <div class="tab-pane " id="logo2" role="tabpanel">
-                <div class="logo_inner">
-                    <h2>Watchlist</h2>
-                    <a>See All</a>
-                </div>
-                <div class="d_flex logo_inner">
-
-                    <div class="watch_lst">
-                        <figure>
-                            <img src="assets/images/car_1.jpg " alt="Logo" class="img-fluid">
-                        </figure>
-                        <div class="prc_lst">
-                            <h3>Range Rover 2018 Model</h3>
-                            <h4>$1500.00</h4>
-                        </div>
-                        <div class="prc_btn">
-                            <button type="submit" class="btn clr_btn">Offer Now</button>
-                            <button type="submit" class="btn btn-primary">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="watch_lst">
-                        <figure>
-                            <img src="assets/images/car_2.jpg " alt="Logo" class="img-fluid">
-                        </figure>
-                        <div class="prc_lst">
-                            <h3>Range Rover 2018 Model</h3>
-                            <h4>$1500.00</h4>
-                        </div>
-                        <div class="prc_btn">
-                            <button type="submit" class="btn clr_btn">Offer Now</button>
-                            <button type="submit" class="btn btn-primary">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="watch_lst">
-                        <figure>
-                            <img src="assets/images/car_3.jpg " alt="Logo" class="img-fluid">
-                        </figure>
-                        <div class="prc_lst">
-                            <h3>Range Rover 2018 Model</h3>
-                            <h4>$1500.00</h4>
-                        </div>
-                        <div class="prc_btn">
-                            <button type="submit" class="btn clr_btn">Offer Now</button>
-                            <button type="submit" class="btn btn-primary">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="tab-pane " id="logo3" role="tabpanel">
-                <div class="logo_inner">
-                    <h2>Watchlist</h2>
-                    <a>See All</a>
-                </div>
-                <div class="d_flex logo_inner">
-
-                    <div class="watch_lst">
-                        <figure>
-                            <img src="assets/images/car_1.jpg " alt="Logo" class="img-fluid">
-                        </figure>
-                        <div class="prc_lst">
-                            <h3>Range Rover 2018 Model</h3>
-                            <h4>$1500.00</h4>
-                        </div>
-                        <div class="prc_btn">
-                            <button type="submit" class="btn clr_btn">Offer Now</button>
-                            <button type="submit" class="btn btn-primary">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="watch_lst">
-                        <figure>
-                            <img src="assets/images/car_3.jpg " alt="Logo" class="img-fluid">
-                        </figure>
-                        <div class="prc_lst">
-                            <h3>Range Rover 2018 Model</h3>
-                            <h4>$1500.00</h4>
-                        </div>
-                        <div class="prc_btn">
-                            <button type="submit" class="btn clr_btn">Offer Now</button>
-                            <button type="submit" class="btn btn-primary">Buy Now</button>
-                        </div>
-                    </div>
-                    <div class="watch_lst">
-                        <figure>
-                            <img src="assets/images/car_2.jpg " alt="Logo" class="img-fluid">
-                        </figure>
-                        <div class="prc_lst">
-                            <h3>Range Rover 2018 Model</h3>
-                            <h4>$1500.00</h4>
-                        </div>
-                        <div class="prc_btn">
-                            <button type="submit" class="btn clr_btn">Offer Now</button>
-                            <button type="submit" class="btn btn-primary">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
+    </div>
 
 </section>
 

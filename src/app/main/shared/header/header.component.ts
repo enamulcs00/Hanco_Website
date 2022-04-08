@@ -15,24 +15,25 @@ import { environment } from 'src/environments/environment';
 export class HeaderComponent implements OnInit {
   userDetails: any;
   showTokenFlag:boolean=false;
+  dropdownFlag:any;
   constructor(private commonData : ModalService,
     private common : CommonService,
-    private router:Router,
+    public router:Router,
     private http:ApiService,
     private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.showTokenFlag=localStorage[environment?.storageKey]?true:false;
+    this.showTokenFlag=sessionStorage[environment?.storageKey]?true:false;
     this.showTokenFlag?this.getProfile():'';
     this.http.isLoggedInOut.subscribe((res:any) => {
-      this.showTokenFlag=localStorage[environment?.storageKey]?true:false;
+      this.showTokenFlag=sessionStorage[environment?.storageKey]?true:false;
       this.showTokenFlag?this.getProfile():"";
     });
   }
 
   logOut(){
     this.http.postRequest('logout',{}).subscribe(res=>{
-    localStorage.removeItem(environment.storageKey);
+    sessionStorage.removeItem(environment.storageKey);
     if(res.statusCode==200){
     this.common.successMsg("Logout Successfully");
     this.http.isLoggedInOut.next(false);

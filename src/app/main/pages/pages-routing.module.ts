@@ -70,7 +70,7 @@ const routes: Routes = [
     component :HomeComponent
   },
   {
-    path : 'carlisting',
+    path : 'carlisting/:data',
     component :CarListingComponent
   },
   {
@@ -99,7 +99,7 @@ const routes: Routes = [
     component :WatchlistComponent
   },
   {
-    path : 'buynow',
+    path : 'buynow/:id',
      component :BuyNowComponent
   },
   {
@@ -142,7 +142,7 @@ const routes: Routes = [
      component :CarDetailsComponent
   },
   {
-    path : 'cancelbid',
+    path : 'cancelbid/:id',
      component :CancelBidComponent
   },
   {

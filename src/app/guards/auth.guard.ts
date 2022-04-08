@@ -11,8 +11,8 @@ export class AuthGuard implements CanActivate {
   constructor(private router: Router,private modalService:ModalService) {}
 
   canActivate(next: ActivatedRouteSnapshot,state: RouterStateSnapshot):| Observable<boolean | UrlTree>| Promise<boolean | UrlTree>| boolean| UrlTree {
-    if (localStorage[environment.storageKey]) {
-      var user =JSON.parse(localStorage[environment.storageKey]);
+    if (sessionStorage[environment.storageKey]) {
+      var user =JSON.parse(sessionStorage[environment.storageKey]);
     } else {
       user = '';
     }

@@ -92,7 +92,7 @@ export class ProfileSetupComponent implements OnInit {
     body['phoneNo']=this.profileForm.value.phoneNo?.e164Number.replace(this.profileForm?.value?.phoneNo?.dialCode,'');
     this.http.putRequest('updateProfile',body).subscribe((res:any)=>{
     if (res.statusCode == 200) {
-    localStorage.removeItem(environment.storageKey);
+    sessionStorage.removeItem(environment.storageKey);
     this.http.isLoggedInOut.next(true);
     this.dialog.closeAll();
     this.commonData.congrats();

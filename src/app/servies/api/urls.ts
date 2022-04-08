@@ -6,10 +6,17 @@ export const urls:any= {
 	login:'login',
 	logout:'logout',
 	forgotPassword:'forgotPassword',
+	changePassword:'changePassword',
 	uploadFile:'uploadFile',
 	resetPassword:'resetPassword',
 	socialLogin:'socialLogin',
 	getProfile:'getProfile',
 	getCMS:'getCMS',
-	sendContactUs:'sendContactUs'
+	sendContactUs:'sendContactUs',
+	getBrand:'getBrand',
+	getVehicle:'getVehicle',
+	getBanner:'getBanner',
+	myFavouriteList:'myFavouriteList',
+	addToFavourite:'addToFavourite',
+	removeFromFavourite:"removeFromFavourite"
 }

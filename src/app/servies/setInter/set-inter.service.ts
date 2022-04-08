@@ -17,7 +17,7 @@ export class SetInterceptorService implements HttpInterceptor  {
     this.totalRequests++;
     this.common.showSpinner();
     let token:any;
-    token = !(localStorage[environment.storageKey] == undefined || localStorage[environment.storageKey] == null || localStorage[environment.storageKey] == '') ? JSON.parse(localStorage[environment.storageKey]) : '';
+    token = !(sessionStorage[environment.storageKey] == undefined || sessionStorage[environment.storageKey] == null || sessionStorage[environment.storageKey] == '') ? JSON.parse(sessionStorage[environment.storageKey]) : '';
     console.log("token",token);
     if (token) {
       request = request.clone({

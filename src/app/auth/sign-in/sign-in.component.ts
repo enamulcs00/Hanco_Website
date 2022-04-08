@@ -130,7 +130,7 @@ export class SignInComponent implements OnInit {
           localStorage.removeItem("remember");
         }
         this.dialog.closeAll();
-        localStorage.setItem(environment.storageKey,JSON.stringify(res?.data));
+        sessionStorage.setItem(environment.storageKey,JSON.stringify(res?.data));
         this.http.isLoggedInOut.next(true);
       }
     })

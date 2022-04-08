@@ -77,7 +77,7 @@ export class ModalService {
       panelClass: ['custom-modalbox', 'profile-setup-main'],
       data:val
    });
-   this.dialog.afterAllClosed.subscribe(res=>{localStorage.removeItem(environment.storageKey)})
+   this.dialog.afterAllClosed.subscribe(res=>{sessionStorage.removeItem(environment.storageKey)})
     return dialogRef.afterClosed();
   }
 
@@ -87,7 +87,7 @@ export class ModalService {
       panelClass: ['custom-modalbox', 'set-pass-main'],
    });
     // dialogRef.componentInstance.data = val;
-    this.dialog.afterAllClosed.subscribe(res=>{localStorage.removeItem(environment.storageKey)})
+    this.dialog.afterAllClosed.subscribe(res=>{sessionStorage.removeItem(environment.storageKey)})
   }
 // education(val) {
 //     let dialogRef: MatDialogRef<EducationComponent1>;

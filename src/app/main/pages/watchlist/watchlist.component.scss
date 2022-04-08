@@ -1,0 +1,9 @@
+.logo_inner.watch_inn {
+    max-height: 800px;
+    overflow-y: auto;
+    margin-bottom: 50px;
+}
+
+.logo_inner.watch_inn::-webkit-scrollbar {
+    width: 0px;
+}

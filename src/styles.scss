@@ -1174,13 +1174,14 @@ section.form_sec {
             }
         }
     }
-  
 }
+
 .bnnr_mg {
     height: 700px;
     object-fit: cover;
     object-position: bottom;
 }
+
 .f_form_in {
     display: flex;
     flex-wrap: wrap;
@@ -1263,6 +1264,7 @@ section.logo_sec {
     @include f_c_c;
     padding: 20px 0px;
     border-bottom: 0;
+    justify-content: flex-start;
     h2 {
         font-size: 22px;
         line-height: 30px;
@@ -1278,7 +1280,7 @@ section.logo_sec {
         font-size: 20px;
         line-height: 25px;
     }
-    .fig_img{
+    .fig_img {
         border: 1px solid #DADADA;
         width: 125px;
         height: 125px;
@@ -1312,7 +1314,6 @@ section.logo_sec {
     //     width: 125px;
     //     height: 125px;
     // }
-   
 }
 
 .brand_item {
@@ -1366,15 +1367,13 @@ section.logo_sec {
 }
 
 .watch_lst {
-    // width: 32%;
+    width: 30%;
     box-shadow: 0px 3px 19px #00000029;
     padding: 12px;
     border-radius: 10px;
-    border-radius: 18px;
     background-color: #fff;
-    z-index: 9;
-    margin-right: 20px;
-     img {
+    margin-right: 30px;
+    img {
         height: 360px;
         object-fit: cover;
         border-radius: 15px;
@@ -1390,13 +1389,15 @@ section.logo_sec {
         @include f_c_center;
     }
 }
+
 div.slick--center .slick-slide.slick-center {
     transform: scale(1) !important;
-    }
-  
-  .slick-arrow:before {
+}
+
+.slick-arrow:before {
     color: gray;
-  }
+}
+
 
 /***********************************
 ************Button***********
@@ -1672,7 +1673,6 @@ section.car_lst_sec {
 //     white-space: nowrap;
 //     display: block;
 // }
-
 
 /***********************************
 ************Bidding Page***********
@@ -3001,9 +3001,9 @@ section.about_sec {
 }
 
 .pric_flt {
-.dropdown-toggle {
-    padding: 15px 30px;
-}
+    .dropdown-toggle {
+        padding: 15px 30px;
+    }
 }
 
 .pric_flt button {
@@ -3020,7 +3020,7 @@ section.about_sec {
 }
 
 .pric_flt .dropdown-menu {
-    padding: 24px  20px;
+    padding: 24px 20px;
     position: absolute;
     left: 0;
     top: 100%;
@@ -3033,6 +3033,7 @@ section.about_sec {
     z-index: 99;
     width: 460px;
 }
+
 .rnge_sld {
     display: flex;
     flex-wrap: wrap;
@@ -3102,12 +3103,14 @@ section.about_sec {
         }
     }
 }
+
 .rnge_sld mat-checkbox {
     width: 100%;
     .mt_chk_bx_mn {
         width: 50%;
     }
 }
+
 .dropdown-menu_custm {
     padding: 24px 20px;
     position: absolute;
@@ -3121,32 +3124,43 @@ section.about_sec {
     z-index: 99;
     width: 460px;
 }
-.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background, .mat-checkbox-checked.mat-warn .mat-checkbox-background {
-    background-color: #aa1d1e;
-}
-.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+
+.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background,
+.mat-checkbox-checked.mat-warn .mat-checkbox-background {
     background-color: #aa1d1e;
 }
 
-.mat-checkbox-indeterminate.mat-primary .mat-checkbox-background, .mat-checkbox-checked.mat-primary .mat-checkbox-background {
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
     background-color: #aa1d1e;
 }
+
+.mat-checkbox-indeterminate.mat-primary .mat-checkbox-background,
+.mat-checkbox-checked.mat-primary .mat-checkbox-background {
+    background-color: #aa1d1e;
+}
+
 .mt_chk_bx_mn {
     padding-left: 22px;
     width: 50%;
 }
+
 .ngx-slider .ngx-slider-pointer.ngx-slider-active:after {
     background-color: #951516 !important;
 }
+
 .pric_flt .dropdown-toggle_custm {
     width: 100%;
 }
+
 .rnge_lastch label {
     text-align: right;
 }
+
 .mt_chk_bx .mat-checkbox-frame {
     border-color: rgb(170 29 30);
 }
+
 // .watch_lst figure {
 //     height: 300px;
 //     width: 300px;
@@ -3160,6 +3174,38 @@ section.about_sec {
     justify-content: center;
     border-radius: 12px;
 }
+
+.logo_sec .watch_lst img {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.logo_sec .watch_lst figure {
+    position: relative;
+    background: #f6f6ef;
+    border-radius: 10px;
+}
+
+.logo_sec .watch_lst .heart_ic {
+    position: absolute;
+    right: 16px;
+    top: 13px;
+}
+
+.logo_sec .watch_lst .heart_ic i {
+    background-color: #fff;
+    padding: 6px;
+    border-radius: 6px;
+    color: #AA1D1E;
+    font-size: 16px;
+}
+
+.logo_sec .tab-content .slick-list.draggable {
+    padding: 30px;
+}
+
+
 /* Importing Bootstrap SCSS file. */
 
 // @import "~bootstrap/scss/bootstrap";

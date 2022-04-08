@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1649250667342,
+  "timestamp": 1649423037998,
   "index": "/hanco/web/index.html",
   "assetGroups": [
     {
@@ -11,18 +11,18 @@
         "ignoreVary": true
       },
       "urls": [
-        "/hanco/web/1.1a8fa5930dd557e5a7a7.js",
-        "/hanco/web/5.ca199949e1c328673a85.js",
-        "/hanco/web/6.ec1de0fb7cba2bcc3f24.js",
-        "/hanco/web/7.fbd77b59cea282895087.js",
+        "/hanco/web/1.37ae875058869f1a3f59.js",
+        "/hanco/web/5.31fe248761352949ebb7.js",
+        "/hanco/web/6.7cf47f6ad8c9e8e4b004.js",
+        "/hanco/web/7.6179420d0708414aa511.js",
         "/hanco/web/favicon.ico",
         "/hanco/web/index.html",
-        "/hanco/web/main.fcc25f4e7eceb306c5a1.js",
+        "/hanco/web/main.681db4a56db250f0dc77.js",
         "/hanco/web/manifest.webmanifest",
         "/hanco/web/polyfills.c79abaedf3533a4e30d8.js",
-        "/hanco/web/runtime.d7417d8812078c28853a.js",
+        "/hanco/web/runtime.b2a53a6240aab8da03ba.js",
         "/hanco/web/scripts.126ec44fa30e87a7be91.js",
-        "/hanco/web/styles.7b5065b3f66d77077b64.css"
+        "/hanco/web/styles.92e17433a17a96f4d8ad.css"
       ],
       "patterns": []
     },
@@ -146,10 +146,10 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/hanco/web/1.1a8fa5930dd557e5a7a7.js": "9887ba23a84049498be4bce0b1f3cea1c2cb0e0e",
-    "/hanco/web/5.ca199949e1c328673a85.js": "306cd4b49d46c3c9bb7cfd9f0158c18288a2aee1",
-    "/hanco/web/6.ec1de0fb7cba2bcc3f24.js": "8c3a5f9448d89ca69bb6126b020b87a56e04012c",
-    "/hanco/web/7.fbd77b59cea282895087.js": "2d4067fce313c4e0c1e73e9dde0afec6547e34ae",
+    "/hanco/web/1.37ae875058869f1a3f59.js": "27e0e40817c9df6e0b6c96d3f83f7cfba1bed829",
+    "/hanco/web/5.31fe248761352949ebb7.js": "9d2f84ca53fb503a814ba3b422868b95377952b5",
+    "/hanco/web/6.7cf47f6ad8c9e8e4b004.js": "f58361c5ecf7fea04354fb03ac4d7daaed42bc84",
+    "/hanco/web/7.6179420d0708414aa511.js": "2c3177659d7e4b83cfeb8cb451faf7cc0305aa11",
     "/hanco/web/ProximaNova-Black.330329718c3b7f7a2d51.woff2": "4e40c0ccd264044c675a68a1b61d19f3a9ef1010",
     "/hanco/web/ProximaNova-Black.786c5b02790e1f7ff378.woff": "664fa9253774c2af7036bc34f02ce5c5e4b06d99",
     "/hanco/web/ProximaNova-Bold.a648f375f2fc6c4c79bb.woff2": "13d3ab83bbd76486654f96bc22ad4ba712dd5c22",
@@ -252,18 +252,18 @@
     "/hanco/web/flags.007b2705c0a8f69dfdf6.png": "21572c9751e5a3dc20395befa0fcb349c32c4811",
     "/hanco/web/flags@2x.9d5328fb490cddd43f66.png": "d6f843711c3cfe6d9a037e4c61d293f563e55802",
     "/hanco/web/fot_bg.bb8e042ffb0acbe60a7a.jpg": "aad61f98124088ba97acfbbde0f26f681241be36",
-    "/hanco/web/index.html": "8ad2b19938f8f4c495543afd081a51ce30ddbd86",
+    "/hanco/web/index.html": "17749acff779da9459c494f53a7a469f2b5befec",
     "/hanco/web/listing_img.2155f97e29492e71b8e8.jpg": "cf0e1f5e24907c0c51458563fc4bb9c911a2dfa4",
-    "/hanco/web/main.fcc25f4e7eceb306c5a1.js": "5c639b0d9855391bdd1b89c74ec7582eb576df5a",
+    "/hanco/web/main.681db4a56db250f0dc77.js": "c860d7835188a48941d6bd4720f6c1921937aa2b",
     "/hanco/web/manifest.webmanifest": "e6c3b7308e3f69ea29d066d767e564400f09ee8d",
     "/hanco/web/polyfills.c79abaedf3533a4e30d8.js": "9db3f1bf5afbecb31233abc0b143858b395cc9e9",
-    "/hanco/web/runtime.d7417d8812078c28853a.js": "2e5c03a6e1cec7cd6a22cf412be94d035f437c5c",
+    "/hanco/web/runtime.b2a53a6240aab8da03ba.js": "2d1f7d17d6eb7b315f6b84ccc10b294f8ed0e03e",
     "/hanco/web/scripts.126ec44fa30e87a7be91.js": "484b36de5276e5a3a7f39d7c1d2490dd53feb1e3",
     "/hanco/web/slick.2630a3e3eab21c607e21.svg": "17f63c6f6131389462ba3d814b7ddf83344705f9",
     "/hanco/web/slick.295183786cd8a1389865.woff": "af91c12f0f406a4f801aeb3b398768fe41d8f864",
     "/hanco/web/slick.a4e97f5a2a64f0ab1323.eot": "2dff0768f4c0a53228761eab917e2c65556042d4",
     "/hanco/web/slick.c94f7671dcc99dce43e2.ttf": "3331eebdd4ba348ef25abe00c39ffbe867d46575",
-    "/hanco/web/styles.7b5065b3f66d77077b64.css": "6812d23ca2b29b5393d913710e2459be506b00f3"
+    "/hanco/web/styles.92e17433a17a96f4d8ad.css": "048ca4e36a5db644b751e800d7ce2c9737ab3485"
   },
   "navigationUrls": [
     {

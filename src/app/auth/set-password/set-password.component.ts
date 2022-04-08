@@ -29,7 +29,7 @@ export class SetPasswordComponent implements OnInit {
      }
 
   ngOnInit(): void {
-    this.user =JSON.parse(localStorage[environment.storageKey]);
+    this.user =JSON.parse(sessionStorage[environment.storageKey]);
   }
 
   openLogin(){

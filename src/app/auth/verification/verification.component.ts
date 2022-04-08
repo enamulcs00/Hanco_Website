@@ -77,9 +77,9 @@ export class VerificationComponent implements OnInit {
         this.common.successMsg(res.message)
         if(type==1){
         this.commonData.setPassword();
-        localStorage.setItem(environment.storageKey,JSON.stringify(res?.data));
+        sessionStorage.setItem(environment.storageKey,JSON.stringify(res?.data));
         }else{
-        localStorage.setItem(environment.storageKey,JSON.stringify(res?.data));
+        sessionStorage.setItem(environment.storageKey,JSON.stringify(res?.data));
         this.commonData.profileSetup(body);
        }
       }
