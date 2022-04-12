@@ -87,6 +87,7 @@ export class CarListingComponent implements OnInit {
     this.search=this.filterParams.search;
     this.brandItem=this.filterParams.brandItem;
     this.allComplete=this.filterParams.allComplete;
+    this.modalComplete=this.filterParams.modalComplete;
     // this.brandItem.filter(res=>{this.someComplete(res.brandName)});
     console.log("brand",this.brandItem);
     // this.cd.detectChanges();

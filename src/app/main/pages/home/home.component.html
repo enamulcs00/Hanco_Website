@@ -53,7 +53,7 @@
                     <label for="price">Make & Model</label>
                     <div class="dropdown">
 
-                        <button [class]="allComplete?'dropdown-toggle_custm act_ve':'dropdown-toggle_custm'" (click)="priceFlag=2" type="button">Make & Model
+                        <button [class]="allComplete || modalComplete == true ? 'dropdown-toggle_custm act_ve' : 'dropdown-toggle_custm'" (click)="priceFlag!=0?priceFlag=0:((allComplete || modalComplete)?clearFilter():priceFlag=2)" (click)="priceFlag=2" type="button">Make & Model
                         <span class="caret"></span></button>
                         <div class="dropdown-menu_custm" *ngIf="priceFlag==2">
                             <ul class="scr_ll">
@@ -64,7 +64,7 @@
                                     </mat-checkbox>
                                     <div class="mt_chk_bx_mn">
                                         <div class="mt_chk_bx" *ngFor="let subtask of item.brandModel">
-                                            <mat-checkbox [(ngModel)]="subtask.modalChecked" [ngModelOptions]="{standalone: true}">
+                                            <mat-checkbox [(ngModel)]="subtask.modalChecked" (ngModelChange)="updateAllComplete(item?.brandName)" [ngModelOptions]="{standalone: true}">
                                                 {{subtask?.modelName}}
                                             </mat-checkbox>
                                         </div>

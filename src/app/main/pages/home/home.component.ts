@@ -61,6 +61,7 @@ export class HomeComponent implements OnInit {
   currentSlide: any=1;
   allComplete: boolean = false;
   priceFlag:any=''
+  modalComplete: boolean=false;
   constructor(private http:ApiService,private router:Router) {
   }
 
@@ -69,8 +70,15 @@ export class HomeComponent implements OnInit {
   }
 
 
-  updateAllComplete() {
-    // this.allComplete = this.task.subtasks != null && this.task.subtasks.every(t => t.completed);
+  updateAllComplete(brandName) {
+    this.modalComplete=false;
+    this.brandItem.filter(x=>{
+      if(x.brandName==brandName){
+    this.allComplete = x.brandModel != null && x.brandModel.every(t => t.modalChecked);
+    x.brandChecked=this.allComplete;
+    x.brandModel.filter(t => t.modalChecked?this.modalComplete=true:'');
+    }
+    })
   }
 
   someComplete(brandName): boolean {
@@ -172,7 +180,8 @@ export class HomeComponent implements OnInit {
       endYear:this.endYear,
       brandItem:this.brandItem,
       search:this.search,
-      allComplete:this.allComplete
+      allComplete:this.allComplete,
+      modalComplete:this.modalComplete
     }
     var params=JSON.stringify(body);
     this.router.navigate(['/main/carlisting/',1])
