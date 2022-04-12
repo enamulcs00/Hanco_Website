@@ -136,10 +136,12 @@ const routes: Routes = [
   },
   {
     path : 'mybids',
-     component :MyBidsComponent
+    component :MyBidsComponent,
+    canActivate:[AuthGuard],
+
   },
   {
-    path : 'cardetails',
+    path : 'cardetails/:id',
      component :CarDetailsComponent
   },
   {

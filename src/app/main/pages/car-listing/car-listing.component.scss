@@ -1,0 +1,19 @@
+.logo_inner.watch_inn {
+    max-height: 800px;
+    overflow-y: auto;
+    margin-bottom: 50px;
+}
+
+.logo_inner.watch_inn::-webkit-scrollbar {
+    width: 0px;
+}
+
+.scr_ll {
+    height: 250px;
+    overflow-y: auto;
+}
+
+.act_ve {
+    background-color: #AA1D1E;
+    color: #ffff;
+}

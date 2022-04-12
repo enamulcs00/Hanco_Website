@@ -12,112 +12,90 @@
 
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Offer Request</a>
+                    <a [class]="bidSelected=='offer'?'nav-link active':'nav-link'" href="javaScript:Void(0)" (click)="bidType()" role="tab">Offer Request</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Buy  Request</a>
+                    <a [class]="bidSelected=='group'?'nav-link active':'nav-link'" data-toggle="tab" href="#tabs-2" href="javaScript:Void(0)" (click)="getGroupBid()" role="tab">Group Request</a>
                 </li>
-
+                <li class="nav-item ml-3">
+                    <a [class]="bidSelected=='buy'?'nav-link active':'nav-link'" data-toggle="tab" href="#tabs-3" role="tab">Buy  Request</a>
+                </li>
             </ul>
             <!-- Tab panes -->
-            <div class="tab-content" routerLink="/main/cancelbid">
-                <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                    <div class="mybd_flx">
+            <div class="tab-content mt-3">
+                <div class="tab-pane active" *ngIf="bidSelected=='offer'" id="tabs-1" role="tabpanel">
+                    <div class="mybd_flx" *ngFor="let item of single">
                         <div class="mybd_flx_inn">
                             <figure>
-                                <img src="/assets/images/car_8.png" alt="images" class="img-fluid">
+                                <img [src]="item?.vehicleId[0]?.vehicleImage[0] ||assets/images/car_8.png" alt="images" class="img-fluid">
                             </figure>
                             <div class="buy_txt">
-                                <h3>BMW 2018 Model</h3>
-                                <p class="buy_prs">$1500.00</p>
-                                <p>Jan 09, 2021</p>
+                                <h3>{{item?.vehicleId[0]?.name}}</h3>
+                                <p class="buy_prs">${{item?.vehicleId[0]?.price}}</p>
+                                <p>{{item?.vehicleId[0]?.createdAt | date:'mediumDate'}}</p>
                             </div>
                         </div>
                         <div class="btn_my_bd">
-                            <a href="" routerLink="/main/cancelbid">Pending</a>
-                        </div>
-                    </div>
-                    <div class="mybd_flx">
-                        <div class="mybd_flx_inn">
-                            <figure>
-                                <img src="/assets/images/car_8.png " alt="images" class="img-fluid">
-                            </figure>
-                            <div class="buy_txt">
-                                <h3>BMW 2018 Model</h3>
-                                <p class="buy_prs">$1500.00</p>
-                                <p>Jan 09, 2021</p>
-                            </div>
-                        </div>
-                        <div class="btn_my_bd cancel_bd">
-                            <a href="" routerLink="/main/orderreceipt">Canceled</a>
-                        </div>
-                    </div>
-                    <div class="mybd_flx">
-                        <div class="mybd_flx_inn">
-                            <figure>
-                                <img src="/assets/images/car_8.png " alt="images" class="img-fluid">
-                            </figure>
-                            <div class="buy_txt">
-                                <h3>BMW 2018 Model</h3>
-                                <p class="buy_prs">$1500.00</p>
-                                <p>Jan 09, 2021</p>
-                            </div>
-                        </div>
-                        <div class="btn_my_bd accept_bd">
-                            <a href="" routerLink="/main/orderreceipt">Accepted</a>
+                            <a href="" routerLink="/main/cancelbid/1">{{item?.status}}</a>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" id="tabs-2" role="tabpanel">
-                    <div class="mybd_flx">
+                <div *ngIf="bidSelected=='offer'">
+                    <h3>Multiple Offer Request</h3>
+                    <div class="mybd_flx" *ngFor="let item of multiple">
                         <div class="mybd_flx_inn">
                             <figure>
-                                <img src="/assets/images/car_8.png" alt="images" class="img-fluid">
+                                <img [src]="item?.vehicleId[0]?.vehicleImage[0] ||assets/images/car_8.png" alt="images" class="img-fluid">
+                                <div class="numr_dds">+ {{item?.vehicleId?.length}}</div>
                             </figure>
                             <div class="buy_txt">
-                                <h3>BMW 2018 Model</h3>
-                                <p class="buy_prs">$1500.00</p>
-                                <p>Jan 09, 2021</p>
+                                <h3>{{item?.vehicleId[0]?.name}}</h3>
+                                <p class="buy_prs">${{item?.vehicleId[0]?.price}}</p>
+                                <p>{{item?.vehicleId[0]?.createdAt | date:'mediumDate'}}</p>
+                            </div>
+
+                        </div>
+                        <div class="btn_my_bd">
+                            <a href="javaScript:void(0)" routerLink="/main/cancelbid/1">{{item?.status}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane active" *ngIf="bidSelected=='group'" id="tabs-2" role="tabpanel">
+                    <div class="mybd_flx" *ngFor="let item of groupItem">
+                        <div class="mybd_flx_inn">
+                            <figure>
+                                <img [src]="item?.groupVehicle[0]?.vehicleImage[0] ||assets/images/car_8.png" alt="images" class="img-fluid">
+                            </figure>
+                            <div class="buy_txt">
+                                <h3>{{item?.groupVehicle[0]?.name}}</h3>
+                                <p class="buy_prs">${{item?.groupVehicle[0]?.price}}</p>
+                                <p>{{item?.groupVehicle[0]?.createdAt | date:'mediumDate'}}</p>
                             </div>
                         </div>
                         <div class="btn_my_bd">
-                            <a href="" routerLink="/main/orderreceipt">Pending</a>
+                            <a href="" routerLink="/main/cancelbid/1">{{item?.status}}</a>
                         </div>
                     </div>
-                    <div class="mybd_flx">
-                        <div class="mybd_flx_inn">
-                            <figure>
-                                <img src="/assets/images/car_8.png" alt="images" class="img-fluid">
-                            </figure>
-                            <div class="buy_txt">
-                                <h3>BMW 2018 Model</h3>
-                                <p class="buy_prs">$1500.00</p>
-                                <p>Jan 09, 2021</p>
-                            </div>
-                        </div>
-                        <div class="btn_my_bd accept_bd">
-                            <a href="" routerLink="/main/orderreceipt">Accepted</a>
-                        </div>
-                    </div>
-                    <div class="mybd_flx">
-                        <div class="mybd_flx_inn">
-                            <figure>
-                                <img src="/assets/images/car_8.png" alt="images" class="img-fluid">
-                            </figure>
-                            <div class="buy_txt">
-                                <h3>BMW 2018 Model</h3>
-                                <p class="buy_prs">$1500.00</p>
-                                <p>Jan 09, 2021</p>
-                            </div>
-                        </div>
-                        <div class="btn_my_bd cancel_bd">
-                            <a href="">Canceled</a>
-                        </div>
-                    </div>
-
                 </div>
-
+                <div class="tab-pane active" *ngIf="bidSelected=='buy'" id="tabs-3" role="tabpanel">
+                    <div class="mybd_flx" *ngFor="let item of single">
+                        <div class="mybd_flx_inn">
+                            <figure>
+                                <img [src]="item?.vehicleId[0]?.vehicleImage[0] ||assets/images/car_8.png" alt="images" class="img-fluid">
+                            </figure>
+                            <div class="buy_txt">
+                                <h3>{{item?.vehicleId[0]?.name}}</h3>
+                                <p class="buy_prs">${{item?.vehicleId[0]?.price}}</p>
+                                <p>{{item?.vehicleId[0]?.createdAt | date:'mediumDate'}}</p>
+                            </div>
+                        </div>
+                        <div class="btn_my_bd">
+                            <a href="" routerLink="/main/cancelbid/1">Pending</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </section>

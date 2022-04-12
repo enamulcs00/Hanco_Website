@@ -1,8 +1,10 @@
+import { map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { Options } from '@angular-slider/ngx-slider';
 import {ThemePalette} from '@angular/material/core';
 import { ApiService } from 'src/app/servies/api/api.service';
 import { HttpParams } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 export interface Task {
   name: string;
@@ -19,16 +21,27 @@ export interface Task {
 export class HomeComponent implements OnInit {
   brandItem:any=[];
   vechileItem:any=[];
-  options: Options = {
+  options_year: Options = {
+    floor: 2000,
+    ceil: 2022
+  };
+  options_price: Options = {
     floor: 0,
-    ceil: 250
+    ceil: 1500000
+  };
+  options_km: Options = {
+    floor: 0,
+    ceil: 200000
   };
   searchText:any='';
   bannerItem:any=[];
-  minValue: number = 50;
-  maxValue: number = 200;
-  minYear: number = 2000;
-  maxYear: number = 2022;
+  startPrice:number=0;
+  endPrice:number=0;
+  startKm: number = 0;
+  endKm: number = 0;
+  startYear: number = 2000;
+  endYear: number = 2000;
+  search:any="";
     slideConfig = {
     'slidesToShow': 1,
     'slidesToScroll': 1,
@@ -46,60 +59,77 @@ export class HomeComponent implements OnInit {
        
         }
   currentSlide: any=1;
-  constructor(private http:ApiService) { }
+  allComplete: boolean = false;
+  priceFlag:any=''
+  constructor(private http:ApiService,private router:Router) {
+  }
 
   ngOnInit(): void {
     this.getBrand();
   }
 
-  task: Task = {
-    name: 'Indeterminate',
-    completed: false,
-    color: 'primary',
-    subtasks: [
-      {name: 'Primary', completed: false, color: 'primary'},
-      {name: 'Accent', completed: false, color: 'accent'},
-      {name: 'Warn', completed: false, color: 'warn'},
-    ],
-  };
 
-  allComplete: boolean = false;
-  price:any=''
   updateAllComplete() {
-    this.allComplete = this.task.subtasks != null && this.task.subtasks.every(t => t.completed);
+    // this.allComplete = this.task.subtasks != null && this.task.subtasks.every(t => t.completed);
   }
 
-  someComplete(): boolean {
-    if (this.task.subtasks == null) {
-      return false;
+  someComplete(brandName): boolean {
+    var flag=false;
+    this.brandItem.filter((res:any)=>{
+    if (res.brandModel == null) {
+      flag=false;
     }
-    return this.task.subtasks.filter(t => t.completed).length > 0 && !this.allComplete;
+    if(res.brandName==brandName){
+      flag= res.brandModel.filter(t => t.modalChecked).length > 0 && !this.allComplete;
+  }
+  });
+  return flag
   }
 
-  setAll(completed: boolean) {
+  setAll(completed: boolean,brandName) {
     this.allComplete = completed;
-    if (this.task.subtasks == null) {
+    console.log(completed,brandName);
+    this.brandItem.filter(res=>{
+    if (res.brandModel == null) {
       return;
     }
-    this.task.subtasks.forEach(t => (t.completed = completed));
+    else if(res.brandName==brandName){
+    res.brandChecked = completed
+    res.brandModel.forEach(t => (t.modalChecked = completed));
+    }
+  })
+  }
+
+  reset() {
+    this.allComplete = false;
+    this.brandItem.filter(res=>{
+    res.brandChecked = false
+    res.brandModel.forEach(t => (t.modalChecked = false));
+  })
   }
 
   getBrand(){
     this.http.getRequest('getBrand',{}).subscribe(res=>{
-      console.log(res);
       this.getBanner();
       if(res.statusCode==200){
-      this.brandItem=res.data.filter(((x:any)=>x.brandName!=""));
-      this.getVehicle();
+        this.brandItem=res.data
+        this.brandItem.map((val:any) =>{
+          val["brandChecked"] = false;
+          val.brandModel.map((ele:any)=>{
+            ele['modalChecked'] = false;
+          })
+        });
+        console.log(this.brandItem);
+        this.getVehicle();
       }
     })
   }
 
   getBanner(){
     this.http.getRequest('getBanner',{}).subscribe(res=>{
-      console.log(res);
       if(res.statusCode==200){
-      this.bannerItem=res.data;
+      this.bannerItem=res.data
+      console.log(this.bannerItem);
       }
     })
   }
@@ -113,9 +143,40 @@ export class HomeComponent implements OnInit {
       }})
   }
 
+
+
   searchFuc(e){
     this.searchText=e;
     this.getVehicle();
+  }
+
+  clearFilter(){
+    this.priceFlag="";
+    this.endKm=0;
+    this.startKm=0;
+    this.startPrice=0;
+    this.endPrice=0;
+    this.startYear=2000;
+    this.endYear=2000;
+    this.search="";
+    this.reset();
+  }
+
+  carListing(){
+    let body:any={
+      endKm:this.endKm,
+      startKm:this.startKm,
+      startPrice:this.startPrice,
+      endPrice:this.endPrice,
+      startYear:this.startYear,
+      endYear:this.endYear,
+      brandItem:this.brandItem,
+      search:this.search,
+      allComplete:this.allComplete
+    }
+    var params=JSON.stringify(body);
+    this.router.navigate(['/main/carlisting/',1])
+    this.http.filterParams.next(params);
   }
 
   afterChange(ev){

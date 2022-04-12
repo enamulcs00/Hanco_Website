@@ -18,5 +18,8 @@ export const urls:any= {
 	getBanner:'getBanner',
 	myFavouriteList:'myFavouriteList',
 	addToFavourite:'addToFavourite',
-	removeFromFavourite:"removeFromFavourite"
+	removeFromFavourite:"removeFromFavourite",
+	myBids:"myBids",
+	getGroupBid:'getGroupBid',
+	getVehicleById:'getVehicleById'
 }

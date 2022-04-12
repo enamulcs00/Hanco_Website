@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Router } from '@angular/router';
 import { CommonService } from '../common/common.service';
 import { FormGroup } from '@angular/forms';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { urls } from './urls';
 
 @Injectable({
@@ -16,6 +16,7 @@ export class ApiService {
   baseUrl = environment.baseUrl;
   uploadProfile = environment.baseUrl + '/upload/';
   isLoggedInOut = new Subject();
+  filterParams = new BehaviorSubject('');
   constructor(
     private _commonService: CommonService,
     private _http: HttpClient,

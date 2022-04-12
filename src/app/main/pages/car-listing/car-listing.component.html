@@ -1,387 +1,185 @@
 <section class="listing_sec">
-  <div class="conta_iner">
-    <div class="listing_inner">
-      <h1>CARS LISTING</h1>
+    <div class="conta_iner">
+        <div class="listing_inner">
+            <h1>CARS LISTING</h1>
 
+        </div>
     </div>
-  </div>
 </section>
 
 
 <section class="logo_sec comn_pd car_lst_sec">
-  <div class="conta_iner">
+    <div class="conta_iner">
 
-    <div class="logo_inner">
-      <div class="flter_lft">
-        <h2>FILTER</h2>
-        <a href=""> SEARCH YOUR CAR</a>
-      </div>
-      <div class="flter_rgt">
-        <a href="">
-          <img src="/assets/images/searchicon.png " alt="Logo" class="img-fluid">
-        </a>
-      </div>
-    </div>
-    <!--  -->
-    <div class="form_sec_inner">
-      <form action="" class="f_form_in car_lsting_fom">
-        <div class="form-group loctin_cls">
-          <div class="psw_cls">
-            <input type="text" class="form-control" placeholder="Search here..." id="search">
-
-          </div>
+        <div class="logo_inner">
+            <div class="flter_lft">
+                <h2>FILTER</h2>
+                <a href="javaScript:void(0)"> SEARCH YOUR CAR</a>
+            </div>
+            <div class="flter_rgt">
+                <a href="javaScript:void(0)">
+                    <img src="assets/images/searchicon.png " alt="Logo" class="img-fluid">
+                </a>
+            </div>
         </div>
+        <!--  -->
+        <div class="form_sec_inner">
+            <form action="" class="f_form_in car_lsting_fom">
+                <div class="form-group loctin_cls">
+                    <label for="search">Search</label>
+                    <div class="psw_cls">
+                        <input type="text" class="form-control" [(ngModel)]="search" [ngModelOptions]="{standalone: true}" (keyup)="getVehicle()" placeholder="Search here..." id="search">
 
-        <!-- <div class="form-group">
-                                <div class="psw_cls">
-                                <select class="form-control" id="price">
-                                  <option selected>Select Price</option>
-                                  <option>100</option>
-                                  <option>200</option>
-                                  <option>300</option>
-                                </select>
-                                <i class="fa fa-angle-down"></i>
+                    </div>
+                </div>
+                <div class="form-group pric_flt">
+                    <label for="price">Price </label>
+                    <div class="dropdown">
+
+                        <button [class]="endPrice==0?'dropdown-toggle_custm':'dropdown-toggle_custm act_ve'" (click)="priceFlag!=0?priceFlag=0:((endPrice!=0)?clearFilter(1):priceFlag=1)" type="button">Select Price
+                        <span class="caret"></span> <i *ngIf="endPrice!=0"  class="fa fa-times ml-3" aria-hidden="true"></i></button>
+                        <ul class="dropdown-menu_custm" *ngIf="priceFlag==1">
+                            <div class="rnge_sld">
+                                <ngx-slider [(value)]="startPrice" [(highValue)]="endPrice" [options]="options_price" [ngModelOptions]="{standalone: true}"></ngx-slider>
+                                <div class="rnge_sld_inn">
+                                    <label>Min Price</label>
+                                    <div class="rnge_conpu">
+                                        <i class="fa fa-usd" aria-hidden="true"></i>
+                                        <input type="number" [(ngModel)]="startPrice" [ngModelOptions]="{standalone: true}">
+                                    </div>
                                 </div>
-                              </div> -->
-        <div class="form-group pric_flt">
+                                <div class="rnge_sld_inn rnge_lastch">
+                                    <label>Max Price</label>
+                                    <div class="rnge_conpu">
+                                        <i class="fa fa-usd" aria-hidden="true"></i>
+                                        <input type="number" [(ngModel)]="endPrice" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                                <div class="rnge_srch_btn">
+                                    <button type="submit" class="btn btn-primary" (click)="getVehicle()">Search</button>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
 
-          <div class="dropdown">
+                <div class="form-group pric_flt">
+                    <label for="price">Make & Model </label>
+                    <div class="dropdown">
 
-            <button class=" dropdown-toggle_custm" (click)="price=1" type="button">Select Price
-              <span class="caret"></span></button>
-            <ul class="dropdown-menu_custm" *ngIf="price==1">
-              <div class="rnge_sld">
-                <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"
-                  [ngModelOptions]="{standalone: true}"></ngx-slider>
-                <div class="rnge_sld_inn">
-                  <label>Min Price</label>
-                  <div class="rnge_conpu">
-                    <i class="fa fa-usd" aria-hidden="true"></i>
-                    <input type="number" [(ngModel)]="minValue" [ngModelOptions]="{standalone: true}">
-                  </div>
+                        <button [class]="allComplete || modalComplete == true ? 'dropdown-toggle_custm act_ve' : 'dropdown-toggle_custm'" (click)="priceFlag!=0?priceFlag=0:((allComplete || modalComplete)?clearFilter(2):priceFlag=2)" type="button">Make & Model
+                        <span class="caret"></span><i *ngIf="allComplete || modalComplete"  class="fa fa-times ml-3" aria-hidden="true"></i></button>
+                        <div class="dropdown-menu_custm" *ngIf="priceFlag==2">
+                            <ul class="scr_ll">
+                                <div class="rnge_sld" *ngFor="let item of brandItem; let i=index">
+                                    <mat-checkbox class="example-margin" [(ngModel)]="item.brandChecked" [indeterminate]="someComplete(item?.brandName)" [ngModelOptions]="{standalone: true}" (change)="setAll($event.checked,item?.brandName)">
+                                        {{item?.brandName}}
+
+                                    </mat-checkbox>
+                                    <div class="mt_chk_bx_mn">
+                                        <div class="mt_chk_bx" *ngFor="let subtask of item.brandModel">
+                                            <mat-checkbox [(ngModel)]="subtask.modalChecked" (ngModelChange)="updateAllComplete(item?.brandName)" [ngModelOptions]="{standalone: true}">
+                                                {{subtask?.modelName}}
+                                            </mat-checkbox>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </ul>
+                            <div class="rnge_srch_btn">
+                                <button type="submit" class="btn btn-primary" (click)="getVehicle()">Search</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="rnge_sld_inn rnge_lastch">
-                  <label>Max Price</label>
-                  <div class="rnge_conpu">
-                    <i class="fa fa-usd" aria-hidden="true"></i>
-                    <input type="number" [(ngModel)]="maxValue" [ngModelOptions]="{standalone: true}">
-                  </div>
+                <div class="form-group pric_flt">
+                    <label for="year">Year</label>
+                    <div class="dropdown">
+
+                        <button [class]="endYear==2000?'dropdown-toggle_custm':'dropdown-toggle_custm act_ve'" (click)="priceFlag!=0?priceFlag=0:((endYear!=2000)?clearFilter(3):priceFlag=3)" type="button">Select Year
+                        <span class="caret"></span><i *ngIf="endYear!=2000"  class="fa fa-times ml-3" aria-hidden="true"></i></button>
+                        <ul class="dropdown-menu_custm" *ngIf="priceFlag==3">
+                            <div class="rnge_sld">
+                                <ngx-slider [(value)]="startYear" [(highValue)]="endYear" [options]="options_year" [ngModelOptions]="{standalone: true}"></ngx-slider>
+                                <div class="rnge_sld_inn">
+                                    <label>Min Year</label>
+                                    <div class="rnge_conpu">
+
+                                        <input type="number" [(ngModel)]="startYear" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                                <div class="rnge_sld_inn rnge_lastch">
+                                    <label>Max Year</label>
+                                    <div class="rnge_conpu">
+
+                                        <input type="number" [(ngModel)]="endYear" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                                <div class="rnge_srch_btn">
+                                    <button type="submit" routerlink="" class="btn btn-primary" (click)="getVehicle()">Search</button>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
                 </div>
-                <div class="rnge_srch_btn">
-                  <button type="submit" routerlink="" class="btn btn-primary" (click)="price=''">Search</button>
+                <div class="form-group pric_flt">
+                    <label for="km">KM</label>
+                    <div class="dropdown">
+
+                        <button [class]="endKm==0?'dropdown-toggle_custm':'dropdown-toggle_custm act_ve'" (click)="priceFlag!=0?priceFlag=0:((endKm!=0)?clearFilter(4):priceFlag=4)" type="button">Select KM
+                        <span class="caret"></span><i *ngIf="endKm!=0"  class="fa fa-times ml-3" aria-hidden="true"></i></button>
+                        <ul class="dropdown-menu_custm" *ngIf="priceFlag==4">
+                            <div class="rnge_sld">
+                                <ngx-slider [(value)]="startKm" [(highValue)]="endKm" [options]="options_km" [ngModelOptions]="{standalone: true}"></ngx-slider>
+                                <div class="rnge_sld_inn">
+                                    <label>Min Kilometers</label>
+                                    <div class="rnge_conpu">
+
+                                        <input type="number" [(ngModel)]="startKm" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                                <div class="rnge_sld_inn rnge_lastch">
+                                    <label>Max  Kilometers</label>
+                                    <div class="rnge_conpu">
+
+                                        <input type="number" [(ngModel)]="endKm" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                                <div class="rnge_srch_btn">
+                                    <button type="submit" class="btn btn-primary" (click)="getVehicle()">Search</button>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
                 </div>
-              </div>
-            </ul>
-          </div>
+            </form>
         </div>
 
-        <div class="form-group pric_flt">
 
-          <div class="dropdown">
-
-            <button class=" dropdown-toggle_custm" (click)="price=2" type="button" data-toggle="dropdown">Make & Model
-              <span class="caret"></span></button>
-            <ul class="dropdown-menu_custm" *ngIf="price==2">
-              <div class="rnge_sld">
-                <mat-checkbox class="example-margin" [checked]="allComplete" [color]="task.color"
-                  [indeterminate]="someComplete()" (change)="setAll($event.checked)">
-                  {{task.name}}
-
-                </mat-checkbox>
-                <div class="mt_chk_bx_mn">
-                  <div class="mt_chk_bx" *ngFor="let subtask of task.subtasks">
-                    <mat-checkbox [(ngModel)]="subtask.completed" [ngModelOptions]="{standalone: true}"
-                      [ngModelOptions]="{standalone: true}" [color]="subtask.color"
-                      (ngModelChange)="updateAllComplete()">
-                      {{subtask.name}}
-                    </mat-checkbox>
-                  </div>
- 
+        <div class="d_flex logo_inner watch_inn">
+            <div class="watch_lst" *ngFor="let item of vechileItem">
+                <figure routerLink="/main/cardetails/{{item?._id}}">
+                    <img [src]="item?.vehicleImage[0]" alt="images" class="img-fluid">
+                </figure>
+                <div class="prc_lst">
+                    <h3>{{item?.name}}</h3>
+                    <h4>${{item?.price}}</h4>
                 </div>
-                <div class="mt_chk_bx_mn">
-                  <div class="mt_chk_bx" *ngFor="let subtask of task.subtasks">
-                    <mat-checkbox [(ngModel)]="subtask.completed" [ngModelOptions]="{standalone: true}"
-                      [ngModelOptions]="{standalone: true}" [color]="subtask.color"
-                      (ngModelChange)="updateAllComplete()">
-                      {{subtask.name}}
-                    </mat-checkbox>
-                  </div>
-
+                <div class="prc_btn">
+                    <button type="submit" class="btn clr_btn" routerLink="/main/cardetails/{{item?._id}}">Offer Now</button>
+                    <button type="submit" class="btn btn-primary" routerLink="/main/buynow/{{item?._id}}">Buy Now</button>
                 </div>
-
-
-                <div class="rnge_srch_btn">
-                  <button type="submit" routerlink="" class="btn btn-primary" (click)="price=''">Search</button>
-                </div>
-              </div>
-            </ul>
-          </div>
+            </div>
+            <!-- <div class="pagination_mn">
+                <ul class="">
+                    <li><a class="page-link active" href="#">1</a></li>
+                    <li><a class="page-link" href="#">2</a></li>
+                    <li><a class="page-link" href="#">3</a></li>
+                    <li><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+            </div> -->
         </div>
-        <div class="form-group pric_flt">
 
-          <div class="dropdown">
-
-            <button class=" dropdown-toggle_custm" (click)="price=3" type="button">Select Year
-              <span class="caret"></span></button>
-            <ul class="dropdown-menu_custm" *ngIf="price==3">
-              <div class="rnge_sld">
-                <ngx-slider [(value)]="minYear" [(highValue)]="maxYear" [options]="options"
-                  [ngModelOptions]="{standalone: true}"></ngx-slider>
-                <div class="rnge_sld_inn">
-                  <label>Min Year</label>
-                  <div class="rnge_conpu">
-
-                    <input type="number" [(ngModel)]="minYear" [ngModelOptions]="{standalone: true}">
-                  </div>
-                </div>
-                <div class="rnge_sld_inn rnge_lastch">
-                  <label>Max Year</label>
-                  <div class="rnge_conpu">
-
-                    <input type="number" [(ngModel)]="maxYear" [ngModelOptions]="{standalone: true}">
-                  </div>
-                </div>
-                <div class="rnge_srch_btn">
-                  <button type="submit" routerlink="" class="btn btn-primary" (click)="price=''">Search</button>
-                </div>
-              </div>
-            </ul>
-          </div>
-          <!-- <div class="psw_cls">
-                                      <select class="form-control" id="year">
-                                          <option selected>Select Year</option>
-                                          <option>2018</option>
-                                          <option>2019</option>
-                                          <option>2020</option>
-                                      </select>
-                                      <i class="fa fa-caret-down"></i>
-                                  </div> -->
-        </div>
-        <div class="form-group pric_flt">
-
-          <div class="dropdown">
-
-            <button class=" dropdown-toggle_custm" (click)="price=4" type="button">Select KM
-              <span class="caret"></span></button>
-            <ul class="dropdown-menu_custm" *ngIf="price==4">
-              <div class="rnge_sld">
-                <ngx-slider [(value)]="minYear" [(highValue)]="maxYear" [options]="options"
-                  [ngModelOptions]="{standalone: true}"></ngx-slider>
-                <div class="rnge_sld_inn">
-                  <label>Min Kilometers</label>
-                  <div class="rnge_conpu">
-
-                    <input type="number" [(ngModel)]="minYear" [ngModelOptions]="{standalone: true}">
-                  </div>
-                </div>
-                <div class="rnge_sld_inn rnge_lastch">
-                  <label>Max Kilometers</label>
-                  <div class="rnge_conpu">
-
-                    <input type="number" [(ngModel)]="maxYear" [ngModelOptions]="{standalone: true}">
-                  </div>
-                </div>
-                <div class="rnge_srch_btn">
-                  <button type="submit" routerlink="" class="btn btn-primary" (click)="price=''">Search</button>
-                </div>
-              </div>
-            </ul>
-          </div>
-          <!-- <div class="psw_cls">
-                                          <select class="form-control" id="km">
-                                              <option selected>Select Km</option>
-                                              <option>10km</option>
-                                              <option>20km</option>
-                                              <option>30km</option>
-                                          </select>
-                                          <i class="fa fa-caret-down"></i>
-                                      </div> -->
-        </div>
-        <!-- <div class="form-group">
-                                <div class="psw_cls">
-                                <select class="form-control" id="year">
-                                  <option selected>Select Brand</option>
-                                  <option>Hyundai</option>
-                                  <option>Toyota</option>
-                                  <option>KIA</option>
-                                  <option>Mahindra</option>
-                                  <option>Tata Motors</option>
-                                </select>
-                                <i class="fa fa-angle-down"></i>
-                              </div>
-                              </div> -->
-        <!-- <div class="form-group">
-                                <div class="psw_cls">
-                                <select class="form-control" id="km">
-                                  <option selected>Select Model</option>
-                                  <option>Hyundai Venue</option>
-                                  <option>Tata Punch</option>
-                                  <option>Hyundai Creta</option>
-                                </select>
-                                <i class="fa fa-angle-down"></i>
-                              </div>
-                              </div> -->
-        <!-- <div class="form-group">
-                                <div class="psw_cls">
-                                <select class="form-control" id="km">
-                                  <option selected>Select Year</option>
-                                  <option>Hyundai Venue</option>
-                                  <option>Tata Punch</option>
-                                  <option>Hyundai Creta</option>
-                                </select>
-                                <i class="fa fa-angle-down"></i>
-                              </div>
-                              </div>
-                              <div class="form-group">
-                                <div class="psw_cls">
-                                <select class="form-control" id="km">
-                                  <option selected>Select KM</option>
-                                  <option>Hyundai Venue</option>
-                                  <option>Tata Punch</option>
-                                  <option>Hyundai Creta</option>
-                                </select>
-                                <i class="fa fa-angle-down"></i>
-                              </div>
-                              </div> -->
-        <!-- <div class="form-group">
-                                <div class="psw_cls">
-                                <select class="form-control" id="km">
-                                  <option selected>Select Body</option>
-                                  <option>Hyundai Venue</option>
-                                  <option>Tata Punch</option>
-                                  <option>Hyundai Creta</option>
-                                </select>
-                                <i class="fa fa-angle-down"></i>
-                              </div>
-                              </div>
-                              <div class="form-group">
-                                <div class="psw_cls">
-                                <select class="form-control" id="km">
-                                  <option selected>Any Fuel</option>
-                                  <option>Hyundai Venue</option>
-                                  <option>Tata Punch</option>
-                                  <option>Hyundai Creta</option>
-                                </select>
-                                <i class="fa fa-angle-down"></i>
-                              </div>
-                              </div> -->
-        <!-- <div class="form-group">
-                                <div class="psw_cls">
-                                <select class="form-control" id="km">
-                                  <option selected>Colour</option>
-                                  <option>Hyundai Venue</option>
-                                  <option>Tata Punch</option>
-                                  <option>Hyundai Creta</option>
-                                </select>
-                                <i class="fa fa-angle-down"></i>
-                              </div>
-                              </div> -->
-        <!-- <div class="form-group">
-                                <div class="psw_cls">
-                                <select class="form-control" id="km">
-                                  <option selected>Transmission</option>
-                                  <option>Hyundai Venue</option>
-                                  <option>Tata Punch</option>
-                                  <option>Hyundai Creta</option>
-                                </select>
-                                <i class="fa fa-angle-down"></i>
-                              </div>
-                              </div> -->
-      </form>
     </div>
-    <!--  -->
-
-
-    <div class="d_flex logo_inner">
-      <div class="watch_lst">
-        <figure routerLink="/main/cardetails">
-          <img src="/assets/images/car_2.jpg " alt="images" class="img-fluid">
-        </figure>
-        <div class="prc_lst">
-          <h3>Range Rover 2018 Model</h3>
-          <h4>$1500.00</h4>
-        </div>
-        <div class="prc_btn">
-          <button type="submit" class="btn clr_btn" routerLink="/main/cardetails">Offer Now</button>
-          <button type="submit" class="btn btn-primary" routerLink="/main/buynow">Buy Now</button>
-        </div>
-      </div>
-      <div class="watch_lst">
-        <figure routerLink="/main/cardetails">
-          <img src="/assets/images/car_1.jpg " alt="images" class="img-fluid">
-        </figure>
-        <div class="prc_lst">
-          <h3>Range Rover 2018 Model</h3>
-          <h4>$1500.00</h4>
-        </div>
-        <div class="prc_btn">
-          <button type="submit" class="btn clr_btn" routerLink="/main/cardetails">Offer Now</button>
-          <button type="submit" class="btn btn-primary" routerLink="/main/buynow">Buy Now</button>
-        </div>
-      </div>
-      <div class="watch_lst">
-        <figure routerLink="/main/cardetails">
-          <img src="/assets/images/car_3.jpg " alt="images" class="img-fluid">
-        </figure>
-        <div class="prc_lst">
-          <h3>Range Rover 2018 Model</h3>
-          <h4>$1500.00</h4>
-        </div>
-        <div class="prc_btn">
-          <button type="submit" class="btn clr_btn" routerLink="/main/cardetails">Offer Now</button>
-          <button type="submit" class="btn btn-primary" routerLink="/main/buynow">Buy Now</button>
-        </div>
-      </div>
-      <div class="watch_lst">
-        <figure routerLink="/main/cardetails">
-          <img src="/assets/images/car_1.jpg " alt="images" class="img-fluid">
-        </figure>
-        <div class="prc_lst">
-          <h3>Range Rover 2018 Model</h3>
-          <h4>$1500.00</h4>
-        </div>
-        <div class="prc_btn">
-          <button type="submit" class="btn clr_btn" routerLink="/main/cardetails">Offer Now</button>
-          <button type="submit" class="btn btn-primary" routerLink="/main/buynow">Buy Now</button>
-        </div>
-      </div>
-      <div class="watch_lst">
-        <figure routerLink="/main/cardetails">
-          <img src="/assets/images/car_3.jpg " alt="images" class="img-fluid">
-        </figure>
-        <div class="prc_lst">
-          <h3>Range Rover 2018 Model</h3>
-          <h4>$1500.00</h4>
-        </div>
-        <div class="prc_btn">
-          <button type="submit" class="btn clr_btn" routerLink="/main/cardetails">Offer Now</button>
-          <button type="submit" class="btn btn-primary" routerLink="/main/buynow">Buy Now</button>
-        </div>
-      </div>
-      <div class="watch_lst">
-        <figure>
-          <img src="/assets/images/car_2.jpg " alt="images" class="img-fluid">
-        </figure>
-        <div class="prc_lst">
-          <h3>Range Rover 2018 Model</h3>
-          <h4>$1500.00</h4>
-        </div>
-        <div class="prc_btn">
-          <button type="submit" class="btn clr_btn" routerLink="/main/cardetails">Offer Now</button>
-          <button type="submit" class="btn btn-primary" routerLink="/main/buynow">Buy Now</button>
-        </div>
-      </div>
-
-      <div class="pagination_mn">
-        <ul class="">
-          <li><a class="page-link active" href="#">1</a></li>
-          <li><a class="page-link" href="#">2</a></li>
-          <li><a class="page-link" href="#">3</a></li>
-          <li><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
 
 </section>
