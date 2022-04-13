@@ -10,52 +10,45 @@
     <div class="conta_iner">
         <div class="car_detal_inner">
             <div class="car_detal_lft">
-                <figure>
-                    <img src="assets/images/car_7.png " alt="Logo" class="img-fluid">
+                <figure class="fig_img3">
+                    <img [src]="productImg || 'assets/images/prod_dtail.png'" alt="">
+                    <div class="hurt">
+                        <div *ngIf="vechileData?.isFavourite" class="heart_ic"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                    </div>
                 </figure>
-                <div class="car_img_lst">
-                    <figure>
-                        <img src="assets/images/car_list.png " alt="Logo" class="img-fluid">
-                    </figure>
-                    <figure>
-                        <img src="assets/images/car_list.png " alt="Logo" class="img-fluid">
-                    </figure>
-                    <figure>
-                        <img src="assets/images/car_list.png " alt="Logo" class="img-fluid">
-                    </figure>
-                </div>
+                <ngx-slick-carousel class="car_img_lst" [config]="slideConfig1" #slickModal="slick-carousel">
+                    <div [class]="productImg!=item?'recmed_inr_lst':'recmed_inr_lst act_ve'" (click)="productImg=item" ngxSlickItem *ngFor="let item of vechileData?.vehicleImage;let i=index">
+                        <figure class="fig_img"> <img [src]="item || 'assets/images/shirts_1.png' " alt="images" class="img-fluid help_img"></figure>
+                    </div>
+                </ngx-slick-carousel>
             </div>
             <div class="car_detal_rgt">
-                <h2>Range Rover </h2>
-                <p class="buy_prs">$1500.00</p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                    no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+                <h2>{{vechileData?.name}}</h2>
+                <p class="buy_prs">${{vechileData?.price}}</p>
+                <p class="about_us">{{vechileData?.description}} </p>
                 <h3>Specification</h3>
                 <div class="biddg_lst">
                     <ul>
-                        <li><span>Year</span> <span>: 2021</span></li>
-                        <li><span>Fuel</span> <span>: Petrol</span></li>
-                        <li><span>Transmission</span> <span>: Auto</span></li>
-                        <li><span>Color</span> <span>: White</span></li>
+                        <li><span>Year</span> <span>: {{vechileData?.year}}</span></li>
+                        <li><span>Fuel</span> <span>: {{vechileData?.fuelType}}</span></li>
+                        <li><span>Transmission</span> <span>: {{vechileData?.transmissionType}}</span></li>
+                        <li><span>Color</span> <span>: {{vechileData?.color}}</span></li>
                     </ul>
                     <ul>
-                        <li><span>Mileage</span> <span>: 31,500</span></li>
-                        <li><span>Engine</span> <span>: 900 cm3</span></li>
-                        <li><span>Odometer</span> <span>: 130mph</span></li>
-                        <li><span>Condition</span> <span>: New</span></li>
+                        <li><span>Cylinders</span> <span>: {{vechileData?.cylinders}}</span></li>
+                        <li><span>Damage</span> <span>: {{vechileData?.damageDetails}}</span></li>
+                        <li><span>Body Type</span> <span>: {{vechileData?.bodyType}}</span></li>
+                        <li><span>Km Driven</span> <span>: {{vechileData?.kmDriven}} Km</span></li>
                     </ul>
                     <div class="prc_btn">
-                        <button type="submit" class="btn clr_btn" routerLink="/main/bidding">Offer Now</button>
-                        <button type="submit" class="btn btn-primary" routerLink="/main/buynow">Buy Now</button>
+                        <button type="submit" class="btn clr_btn" routerLink="/main/bidding/single/{{vechileData?._id}}">Offer Now</button>
+                        <button type="submit" class="btn btn-primary" routerLink="/main/buynow/{{vechileData?._id}}">Buy Now</button>
                     </div>
                 </div>
             </div>
             <div class="car_detal_bt">
-                <h2>Description</h2>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy </p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
+                <h2 *ngIf="vechileData?.description">Description</h2>
+                <p>{{vechileData?.description}}</p>
             </div>
         </div>
     </div>

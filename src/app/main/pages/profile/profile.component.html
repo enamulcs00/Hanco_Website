@@ -70,7 +70,7 @@
                         <label for="phone">Phone Number</label> <br>
                         <!-- <input type="text" class="form-control" placeholder="+91 9876543210" id="phone"> -->
                         <ngx-intl-tel-input matInput cssClass="form-control" [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true" [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
-                            [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.India" [maxLength]="'15'" [phoneValidation]="true" [separateDialCode]="separateDialCode" [numberFormat]="PhoneNumberFormat.National" name="phoneNo" formControlName="phoneNo">
+                            [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.SaudiArabia" [maxLength]="'15'" [phoneValidation]="true" [separateDialCode]="separateDialCode" [numberFormat]="PhoneNumberFormat.National" name="phoneNo" formControlName="phoneNo">
                         </ngx-intl-tel-input> <br>
                         <mat-error *ngIf="submitted && f['phoneNo'].touched && f['phoneNo'].invalid && !(f['phoneNo'].hasError('required'))" class="text-danger d-inline-block pt-1">
                             Phone No is Invalid

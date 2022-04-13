@@ -17,7 +17,7 @@ export class CancelBidComponent implements OnInit {
 
   ngOnInit(): void {
     this.vehicleId=this.route.snapshot.params.id;
-    this.addWatchList(this.vehicleId);
+    // this.addWatchList(this.vehicleId);
   }
 
   addWatchList(id){

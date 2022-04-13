@@ -74,11 +74,11 @@ const routes: Routes = [
     component :CarListingComponent
   },
   {
-    path : 'bidding',
+    path : 'bidding/:type/:id',
     component :BiddingComponent
   },  
   {
-    path : 'biddingupdate',
+    path : 'biddingupdate/:type/:id',
     component :BiddingUpdateComponent
   }, 
   {
@@ -142,7 +142,9 @@ const routes: Routes = [
   },
   {
     path : 'cardetails/:id',
-     component :CarDetailsComponent
+    component :CarDetailsComponent,
+    canActivate:[AuthGuard],
+
   },
   {
     path : 'cancelbid/:id',

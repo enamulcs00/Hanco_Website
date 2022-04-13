@@ -10,49 +10,61 @@
     <div class="conta_iner">
         <div class="bidding_inner">
             <div class="bidding_lft">
-                <figure>
-                    <img src="/assets/images/bar_bdd.png " alt="Logo" class="img-fluid">
+                <figure class="fig_img3">
+                    <img [src]="productImg || 'assets/images/prod_dtail.png'" alt="">
+                    <div class="hurt">
+                        <div *ngIf="vechileData?.isFavourite" class="heart_ic"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                    </div>
                 </figure>
                 <div class="biddg_flx">
-                    <h2>Range Rover </h2>
-                    <p>$1500.00</p>
+                    <h2>{{vechileData?.name}} </h2>
+                    <p>${{vechileData?.price}}</p>
                 </div>
-                <p class="biddg_dic">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <p class="about_us biddg_dic">{{vechileData?.description}} </p>
                 <h3>Specification</h3>
                 <div class="biddg_lst">
                     <ul>
-                        <li><span>Year</span> <span>: 2021</span></li>
-                        <li><span>Fuel</span> <span>: Petrol</span></li>
-                        <li><span>Transmission</span> <span>: Auto</span></li>
-                        <li><span>Color</span> <span>: White</span></li>
+                        <li><span>Year</span> <span>: {{vechileData?.year}}</span></li>
+                        <li><span>Fuel</span> <span>: {{vechileData?.fuelType}}</span></li>
+                        <li><span>Transmission</span> <span>: {{vechileData?.transmissionType}}</span></li>
+                        <li><span>Color</span> <span>: {{vechileData?.color}}</span></li>
                     </ul>
                     <ul>
-                        <li><span>Mileage</span> <span>: 31,500</span></li>
-                        <li><span>Engine</span> <span>: 900 cm3</span></li>
-                        <li><span>Odometer</span> <span>: 130mph</span></li>
-                        <li><span>Condition</span> <span>: New</span></li>
+                        <li><span>Cylinders</span> <span>: {{vechileData?.cylinders}}</span></li>
+                        <li><span>Damage</span> <span>: {{vechileData?.damageDetails}}</span></li>
+                        <li><span>Body Type</span> <span>: {{vechileData?.bodyType}}</span></li>
+                        <li><span>Km Driven</span> <span>: {{vechileData?.kmDriven}} Km</span></li>
                     </ul>
                     <div class="bdd_bt">
                         <p>Your Offer</p>
-                        <p class="pric_bt"><b>$300</b></p>
+                        <p class="pric_bt"><b>${{myBidsIds[0]?.offerPrice}}</b></p>
                     </div>
                 </div>
             </div>
-            <div class="bidding_rgt">
+            <form class="bidding_rgt" [formGroup]="biddingForm">
                 <div class="bidding_rgt_inn">
                     <div class="biddg_flx">
-                        <h2>We’ll offer for you, up to </h2><span>02h 01m 45s</span>
+                        <h2>We’ll offer for you, up to </h2>
+                        <!-- <span>02h 01m 45s</span> -->
                     </div>
                     <div class="enter_amu up_dat_flx">
-                        <span>$300+</span>
-                        <input type="text" class="form-control" placeholder="Enter the offer amount." id="search">
-                        <p>Place offer US $175.00 or higher</p>
+                        <span>${{myBidsIds[0]?.offerPrice}}+</span>
+                        <input type="number" class="form-control" formControlName="offerPrice" placeholder="Enter the bid amount." id="search">
+                        <mat-error *ngIf="submitted && biddingForm.controls['offerPrice'].hasError('required')">
+                            Offer price is required
+                        </mat-error>
+                        <!-- <mat-error *ngIf="submitted && biddingForm.value.offerPrice<myBidsIds[0]?.offerPrice && !(biddingForm.controls['offerPrice'].hasError('required'))">
+                            Offer price should not less than total price
+                        </mat-error> -->
+                        <p>Place offer US ${{myBidsIds[0]?.offerPrice}} or higher</p>
                     </div>
                     <div class="bdd_btn">
-                        <button type="submit" class="btn btn-primary" routerLink="../biddingbuy">Update offer</button>
+                        <button type="submit" class="btn btn-primary" (click)="addBid()">Update offer</button>
+                        <button type="submit" class="btn clr_btn mt-2" (click)="cancelBid()">Cancel</button>
+                        <!-- <button type="submit" class="btn btn-primary" routerLink="/main/biddingbuy">Update offer</button> -->
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </section>

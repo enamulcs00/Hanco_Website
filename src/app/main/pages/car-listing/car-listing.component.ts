@@ -190,7 +190,7 @@ export class CarListingComponent implements OnInit {
     if(this.modal.length){
       body["modelId"]=this.modal
     }
-    var params=new HttpParams().set('search',this.search);
+    var params=new HttpParams().set('search',this.search).set('status',"readyForSale");
     var startkey=['startKm','startPrice','startYear'];
     var endkey=['endKm','endPrice','endYear'];
     endkey.filter(res=>{this[res] && this[res]!=2000 ?params=params.set(res,this[res].toString()):''});

@@ -166,8 +166,8 @@
                     <h4>${{item?.price}}</h4>
                 </div>
                 <div class="prc_btn">
-                    <button type="submit" class="btn clr_btn" routerLink="/main/cardetails/{{item?._id}}">Offer Now</button>
-                    <button type="submit" class="btn btn-primary" routerLink="/main/buynow/{{item?._id}}">Buy Now</button>
+                    <button type="submit" class="btn clr_btn" *ngIf="item?.vehicleList=='offer' || item?.vehicleList=='both'" routerLink="/main/bidding/single/{{item?._id}}">Offer Now</button>
+                    <button type="submit" class="btn btn-primary" *ngIf="item?.vehicleList=='buyNow' || item?.vehicleList=='both'" routerLink="/main/buynow/{{item?._id}}">Buy Now</button>
                 </div>
             </div>
             <!-- <div class="pagination_mn">

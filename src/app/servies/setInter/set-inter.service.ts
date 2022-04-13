@@ -18,7 +18,7 @@ export class SetInterceptorService implements HttpInterceptor  {
     this.common.showSpinner();
     let token:any;
     token = !(sessionStorage[environment.storageKey] == undefined || sessionStorage[environment.storageKey] == null || sessionStorage[environment.storageKey] == '') ? JSON.parse(sessionStorage[environment.storageKey]) : '';
-    console.log("token",token);
+    // console.log("token",token);
     if (token) {
       request = request.clone({
         setHeaders: {

@@ -21,5 +21,8 @@ export const urls:any= {
 	removeFromFavourite:"removeFromFavourite",
 	myBids:"myBids",
 	getGroupBid:'getGroupBid',
-	getVehicleById:'getVehicleById'
+	getVehicleById:'getVehicleById',
+	addBid:"addBid",
+	updateBidPrice:"updateBidPrice",
+	cancelBid:"cancelBid"
 }

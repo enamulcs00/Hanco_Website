@@ -123,7 +123,7 @@ export class SignInComponent implements OnInit {
         this.common.successMsg(res.message);
         if (this.LoginForm.value.rememberMe) {
           var remember=this.LoginForm.value;
-          remember['phoneNo']=this.LoginForm.controls['phoneNo'].value.number?(this.LoginForm.controls['phoneNo'].value?.dialCode+" "+this.LoginForm.controls['phoneNo'].value.e164Number.replace(this.LoginForm?.value?.phoneNo?.dialCode,'')):''
+          remember['phoneNo']=this.LoginForm.controls['phoneNo'].value.number?(this.LoginForm.controls['phoneNo'].value.e164Number.replace(this.LoginForm?.value?.phoneNo?.dialCode,'')):''
           remember['dialCode']=this.LoginForm.controls['phoneNo'].value.number?this.LoginForm.controls['phoneNo'].value?.dialCode:'';
           localStorage.setItem("remember",JSON.stringify(remember));
         } else {

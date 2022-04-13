@@ -24,14 +24,14 @@
             <!-- Tab panes -->
             <div class="tab-content mt-3">
                 <div class="tab-pane active" *ngIf="bidSelected=='offer'" id="tabs-1" role="tabpanel">
-                    <div class="mybd_flx" *ngFor="let item of single">
+                    <div class="mybd_flx" *ngFor="let item of single" routerLink="/main/biddingupdate/single/{{item?.vehicleId[0]._id}}">
                         <div class="mybd_flx_inn">
                             <figure>
                                 <img [src]="item?.vehicleId[0]?.vehicleImage[0] ||assets/images/car_8.png" alt="images" class="img-fluid">
                             </figure>
                             <div class="buy_txt">
                                 <h3>{{item?.vehicleId[0]?.name}}</h3>
-                                <p class="buy_prs">${{item?.vehicleId[0]?.price}}</p>
+                                <p class="buy_prs">${{item?.offerPrice}}</p>
                                 <p>{{item?.vehicleId[0]?.createdAt | date:'mediumDate'}}</p>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                             </figure>
                             <div class="buy_txt">
                                 <h3>{{item?.vehicleId[0]?.name}}</h3>
-                                <p class="buy_prs">${{item?.vehicleId[0]?.price}}</p>
+                                <p class="buy_prs">${{item?.offerPrice}}</p>
                                 <p>{{item?.vehicleId[0]?.createdAt | date:'mediumDate'}}</p>
                             </div>
 
@@ -68,7 +68,7 @@
                             </figure>
                             <div class="buy_txt">
                                 <h3>{{item?.groupVehicle[0]?.name}}</h3>
-                                <p class="buy_prs">${{item?.groupVehicle[0]?.price}}</p>
+                                <p class="buy_prs">${{item?.offerPrice}}</p>
                                 <p>{{item?.groupVehicle[0]?.createdAt | date:'mediumDate'}}</p>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                             </figure>
                             <div class="buy_txt">
                                 <h3>{{item?.vehicleId[0]?.name}}</h3>
-                                <p class="buy_prs">${{item?.vehicleId[0]?.price}}</p>
+                                <p class="buy_prs">${{item?.offerPrice}}</p>
                                 <p>{{item?.vehicleId[0]?.createdAt | date:'mediumDate'}}</p>
                             </div>
                         </div>

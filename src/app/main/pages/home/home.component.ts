@@ -69,6 +69,9 @@ export class HomeComponent implements OnInit {
     this.getBrand();
   }
 
+  
+  
+
 
   updateAllComplete(brandName) {
     this.modalComplete=false;
@@ -143,7 +146,7 @@ export class HomeComponent implements OnInit {
   }
 
   getVehicle(){
-    var params=new HttpParams().set('search',this.searchText)
+    var params=new HttpParams().set('search',this.searchText).set('status',"readyForSale");
     this.http.postRequestWithParam('getVehicle',params,{}).subscribe(res=>{
       if(res.statusCode==200){
         this.vechileItem=res.data;
